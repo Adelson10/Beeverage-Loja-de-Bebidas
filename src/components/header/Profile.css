@@ -8,16 +8,17 @@
 }
 
 .Profile h3 {
-    color: var(--color);
+    color: var(--brand-dark);
+    font-weight: 600;
 }
 
 .Profile p {
-    color: var(--color);
+    color: var(--brand-dark);
 }
 
 .Profile_Photo {
     width: 50px;
     height: 50px;
     border-radius: .5rem;
-    background-color: var(--color);
+    background-color: var(--brand-dark);
 }

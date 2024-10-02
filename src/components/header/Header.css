@@ -1,16 +1,31 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.Logo {
-    background-image: url("../../assets/Logo/Logo.png");
-    height: 5rem;
-    width: 5rem;
-}
-
-header nav {
-    display: flex;
-    gap: 1rem;
+@media (min-width: 1000px) {
+    header {
+        margin-bottom: 2rem;
+    }
+    
+    .Header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem 0;
+    }
+    
+    .Logo {
+        background-image: url("../../assets/Logo/Logo.png");
+        height: 5rem;
+        width: 5rem;
+    }
+    
+    .Header nav {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    button.icons {
+        color: var(--brand-dark);
+    }
+    
+    button.icons:hover {
+        color: var(--brand-select);
+    }
 }

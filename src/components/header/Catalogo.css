@@ -1,0 +1,49 @@
+ul {
+    list-style: none;
+    display: flex;
+    gap: .5rem;
+    overflow-x: scroll;
+} 
+
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+.catalogo_button {
+    width: calc((100vw*0.90)/3 - 0.35rem);
+    max-width: 130px;
+    padding: 12px 8px;
+    border-radius: .5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: .8rem;
+    color: var(--brand-dark);
+    background: white;
+}
+
+.catalogo_button svg {
+    min-width: 1.5rem;
+}
+
+.catalogo_button.select {
+    color: white;
+    background: linear-gradient(-68deg, var(--brand-dark) 0%,var(--brand) 100%);
+}
+
+@media (min-width: 1000px) {
+    ul {
+        justify-content: space-between;
+        overflow-x: hidden;
+        gap: 0;
+    }
+
+    .catalogo_button {
+        width: 130px;
+        padding: 8px;
+        gap: .3rem;
+        font-size: .9rem;
+    }
+}
