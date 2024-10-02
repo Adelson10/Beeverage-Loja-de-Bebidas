@@ -1,0 +1,23 @@
+.Profile {
+    display: flex;
+    gap: .5rem;
+}
+
+.Profile_Title {
+    text-align: end;
+}
+
+.Profile h3 {
+    color: var(--color);
+}
+
+.Profile p {
+    color: var(--color);
+}
+
+.Profile_Photo {
+    width: 50px;
+    height: 50px;
+    border-radius: .5rem;
+    background-color: var(--color);
+}

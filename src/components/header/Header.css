@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Logo {
+    background-image: url("../../assets/Logo/Logo.png");
+    height: 5rem;
+    width: 5rem;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+}
