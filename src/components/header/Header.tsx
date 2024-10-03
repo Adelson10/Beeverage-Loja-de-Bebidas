@@ -8,7 +8,7 @@ import useMedia from "../../hooks/useMedia";
 
 const Header = () => {    
     const mobile = useMedia('1000px');
-
+    
     return (
     <>
         <header>

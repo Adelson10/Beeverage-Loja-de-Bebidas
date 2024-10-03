@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import './ButtonIcon.css';
 
-type buttonProps = React.ComponentProps<'button'> & PropsWithChildren;
+type buttonProps = React.ComponentProps<'button'> & React.PropsWithChildren;
 
 const ButtonIcon = ({children, ...props}: buttonProps) => {
   return (

@@ -10,7 +10,8 @@ const useMedia = (media: string) => {
         }
         window.addEventListener('resize', changeMatch);
         return window.addEventListener('resize', changeMatch);
-    })
+    },[media]);
+
   return match;
 }
 
