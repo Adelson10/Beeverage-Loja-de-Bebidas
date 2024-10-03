@@ -1,25 +1,34 @@
 import { MagnifyingGlass, SlidersHorizontal } from "@phosphor-icons/react";
 import ButtonIcon from "../utils/ButtonIcon";
 import './Search.css';
-import useMedia from "../../hooks/useMedia";
 import Button from "../utils/Button";
+import { useHref } from "react-router-dom";
 
-const Search = () => {
-  const desktop = true;
+interface SearchProps {
+  mobile: boolean | null;
+}
+
+const Search = ({mobile}: SearchProps) => {
+  const path = useHref();
   
   return (
     <div className="header_search">
-      { !desktop ? (
+      { !mobile ? (
         <>
           <label htmlFor="header_search">
-            <ButtonIcon className="header_search_button"><MagnifyingGlass size='1.3rem' weight="bold"/></ButtonIcon>
-              <input id="header_search" type="text" placeholder="Pesquisar produto"/></label>
+            <input id="header_search" type="text" placeholder="Pesquisar produto"/>
+          </label>
+          <ButtonIcon className="header_search_button"><MagnifyingGlass size='1.3rem' weight="bold"/></ButtonIcon>
         </>
-      ): (<>
-        <label htmlFor="header_search"><input id="header_search" type="text" placeholder="Pesquisar produto"/></label>
-        <ButtonIcon className="header_search_button"><MagnifyingGlass size='1.3rem' weight="bold"/></ButtonIcon>
-        <Button><SlidersHorizontal size='2rem' color="white"/></Button>
-      </>)
+      ) : (
+      <>  
+        <label htmlFor="header_search">
+            <ButtonIcon className="header_search_button"><MagnifyingGlass size='1.3rem' weight="bold"/></ButtonIcon>
+            <input id="header_search" type="text" placeholder="Pesquisar produto"/>
+        </label>
+        {path!=='/' && <Button><SlidersHorizontal size='2rem' color="white"/></Button>}
+      </>
+      )
       }
     </div>
   )

@@ -7,14 +7,14 @@ import Catalogo from "./Catalogo";
 import useMedia from "../../hooks/useMedia";
 
 const Header = () => {    
-    const mobile = useMedia('1000px');
+    const mobile = useMedia('(max-width: 1000px)');
     
     return (
     <>
         <header>
             <div className="Header">
                 {!mobile && <div className="Logo"></div>}
-                <Search />
+                <Search mobile={mobile}/>
                 <nav>
                     <ButtonIcon className="icons">
                         <ShoppingCartSimple size='1.5rem' weight="fill"/>

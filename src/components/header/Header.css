@@ -1,10 +1,20 @@
+.Header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: .5rem 0;
+}
+
+nav {
+    order: 1;
+    width: 50%;
+}
+
 @media (min-width: 1000px) {
     header {
         margin-bottom: 2rem;
     }
     
     .Header {
-        display: flex;
         justify-content: space-between;
         align-items: center;
         padding: .5rem 0;
