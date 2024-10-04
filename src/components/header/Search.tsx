@@ -2,15 +2,18 @@ import { MagnifyingGlass, SlidersHorizontal } from "@phosphor-icons/react";
 import ButtonIcon from "../utils/ButtonIcon";
 import './Search.css';
 import Button from "../utils/Button";
-import { useHref } from "react-router-dom";
+import { useCurrentPage } from "../../utils/context/CurrentPage";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 interface SearchProps {
   mobile: boolean | null;
 }
 
 const Search = ({mobile}: SearchProps) => {
-  const path = useHref();
-  
+  const location = useLocation();
+  const isCatalogoRoute = location.pathname.includes('/catalogo');
+
   return (
     <div className="header_search">
       { !mobile ? (
@@ -26,7 +29,7 @@ const Search = ({mobile}: SearchProps) => {
             <ButtonIcon className="header_search_button"><MagnifyingGlass size='1.3rem' weight="bold"/></ButtonIcon>
             <input id="header_search" type="text" placeholder="Pesquisar produto"/>
         </label>
-        {path!=='/' && <Button><SlidersHorizontal size='2rem' color="white"/></Button>}
+        { isCatalogoRoute && <Button><SlidersHorizontal size='2rem' color="white"/></Button>}
       </>
       )
       }

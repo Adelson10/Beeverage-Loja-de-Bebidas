@@ -1,6 +1,7 @@
 import React from 'react';
 import './Catalogo.css';
 import { List, BeerStein, Martini, BeerBottle, Champagne, Brandy, ForkKnife } from '@phosphor-icons/react';
+import { NavLink } from 'react-router-dom';
 
 interface IQuickAcess {
     icon: React.ReactElement;
@@ -14,32 +15,32 @@ const QuickAcess: IQuickAcess[] = [
     {
         icon: <BeerStein size={sizeIcon}/>,
         name: 'Cervejas',
-        src: 'cervejas'
+        src: '/catalogo/cervejas'
     },
     {
         icon: <Martini size={sizeIcon}/>,
         name: 'Vinhos',
-        src: 'vinhos'
+        src: '/catalogo/vinhos'
     },
     {
         icon: <BeerBottle size={sizeIcon}/>,
         name: 'Destilados',
-        src: 'destilados'
+        src: '/catalogo/destilados'
     },
     {
         icon: <Champagne size={sizeIcon}/>,
         name: 'Espumantes',
-        src: 'espumantes'
+        src: '/catalogo/espumantes'
     },
     {
         icon: <Brandy size={sizeIcon}/>,
         name: 'Gin',
-        src: 'gin'
+        src: '/catalogo/gin'
     },
     {
         icon: <ForkKnife size={sizeIcon}/>,
         name: 'Petiscos',
-        src: 'petiscos'
+        src: '/catalogo/petiscos'
     },
 ]
 
@@ -47,9 +48,9 @@ const Catalogo = () => {
   return (
     <div className={'Catalogo'}>
             <ul>
-                <li><button className='catalogo_button select'><List size={sizeIcon} onClick={() => console.log('catalogo')} />Catálogo</button></li>
+                <li><button className='catalogo_button'><List size={sizeIcon} onClick={() => console.log('catalogo')} />Catálogo</button></li>
                 {QuickAcess.map((catalogo) => {
-                    return <li key={catalogo.name}><button className='catalogo_button'>{catalogo.icon}{catalogo.name}</button></li>
+                    return <li key={catalogo.name}><NavLink to={catalogo.src} className={({isActive}) => isActive ? 'catalogo_button active' : 'catalogo_button'}>{catalogo.icon}{catalogo.name}</NavLink></li>
                 })}
             </ul>
         </div>
