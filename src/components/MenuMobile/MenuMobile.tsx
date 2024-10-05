@@ -13,7 +13,7 @@ import { X } from '@phosphor-icons/react';
 const MenuProps: MenuContainerProps[]  = [
     {
         title: 'Cervejas',
-        src: '/cervejas',
+        src: '/catalogo/cervejas',
         img: Cerveja,
         categorias: [
             {
@@ -36,7 +36,7 @@ const MenuProps: MenuContainerProps[]  = [
     },
     {
         title: 'Vinhos',
-        src: '/vinhos',
+        src: '/catalogo/vinhos',
         img: Vinhos,
         categorias: [
             {
@@ -63,7 +63,7 @@ const MenuProps: MenuContainerProps[]  = [
     },
     {
         title: 'Destilados',
-        src: '/destilados',
+        src: '/catalogo/destilados',
         img: Deslitados,
         categorias: [
             {
@@ -90,7 +90,7 @@ const MenuProps: MenuContainerProps[]  = [
     },
     {
         title: 'Espumantes',
-        src: '/espumantes',
+        src: '/catalogo/espumantes',
         img: Espumante,
         categorias: [
             {
@@ -113,7 +113,7 @@ const MenuProps: MenuContainerProps[]  = [
     },
     {
         title: 'Gin',
-        src: '/gin',
+        src: '/catalogo/gin',
         img: Gin,
         categorias: [
             {
@@ -144,7 +144,7 @@ const MenuProps: MenuContainerProps[]  = [
     },
     {
         title: 'Petiscos',
-        src: '/petiscos',
+        src: '/catalogo/petiscos',
         img: Petiscos,
         categorias: [
             {
