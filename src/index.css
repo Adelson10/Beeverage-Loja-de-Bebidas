@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+    font-family: 'Bebidas';
+    src: url('./assets/Fonts/Bebidas-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.MenuTitle {
+    font-family: 'Bebidas', sans-serif;
+    font-weight: normal;
+}
+
 :root {
     --brand: #009C33;
     --brand-dark: #006B23;
     --brand-select: #003010;
     --brand-primary: #989898;
+    --brand-menu: #32353A;
     --bg: #EEE9E2;
 }
 
@@ -14,14 +27,14 @@
     font-family: "Poppins", sans-serif;
 }
 
-#root {
+.App {
     max-width: 970px;
     margin: 0 auto;
     position: relative;
 }
 
 @media (max-width: 1000px) {
-    #root {
+    .App {
         max-width: 90%;
     }
 }

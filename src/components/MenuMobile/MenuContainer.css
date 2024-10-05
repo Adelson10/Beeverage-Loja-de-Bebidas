@@ -1,17 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+.Catalogo_Product * {
+    font-family: "Kalam", cursive !important;
+}
+
 .CatalogoProducts {
     padding: .5rem 0;
+}
+
+.ListProduct_toTitle {
+    padding: 1rem 0;
+    flex-grow: 1;
 }
 
 .CatalogoDescription.left {
     flex-direction: row-reverse;
 }
 
-.CatalogoContainer_title h1{
-    font-size: 26px;
+.ListProduct_bg_title {
+    margin: 0 auto;
+    width: 130px;
+    height: 40px;
+    background-image: url('../../assets/imagens/Menu/fundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.CatalogoContainer_title.MenuTitle {
+    font-size: .95rem;
     color: var(--brand-primary);
-    font-weight: bold;
     text-align: center;
-    margin: 1rem 0;
+    display: block;
+    padding-top: 8px;
+}
+
+.CatalogoImage {
+    height: 200px;
+    width: 130px;
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .CatalogoContainer_title h1:hover{
@@ -19,13 +49,12 @@
 }
 
 .Catalogo_Product {
-    padding: 1.3rem 1rem;
-    width: 100%;
+    padding: 1rem;
 }
 
 .Catalogo_Product a {
     display: flex;
-    gap: 1rem;
+    gap: .2rem;
     color: var(--brand-primary);
 }
 

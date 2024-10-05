@@ -1,12 +1,12 @@
 import { useCatalogoPage } from '../../utils/context/CatalogoPageProvider.tsx';
 import './MenuMobile.css';
 import CatalogoContainer from './MenuContainer.tsx';
-import Cerveja from '../../assets/imagens/Produto/Cervejas.png';
-import Vinhos from '../../assets/imagens/Produto/Vinhos.png';
-import Deslitados from '../../assets/imagens/Produto/Vodka.png';
-import Espumante from '../../assets/imagens/Produto/Espumante.png';
-import Gin from '../../assets/imagens/Produto/Gin.png';
-import Petiscos from '../../assets/imagens/Produto/Frios.png';
+import Cerveja from '../../assets/imagens/Menu/cervejas.png';
+import Vinhos from '../../assets/imagens/Menu/vinho.png';
+import Deslitados from '../../assets/imagens/Menu/vodka.png';
+import Espumante from '../../assets/imagens/Menu/espumante.png';
+import Gin from '../../assets/imagens/Menu/gin.png';
+import Petiscos from '../../assets/imagens/Menu/petiscos.png';
 import MenuHeader from './MenuHeader.tsx';
 
 const MenuProps: MenuContainerProps[]  = [
@@ -14,7 +14,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Cervejas',
         src: '/cervejas',
         img: Cerveja,
-        shadowImage: '100px',
         categorias: [
             {
                 name: 'Lager',
@@ -38,7 +37,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Vinhos',
         src: '/vinhos',
         img: Vinhos,
-        shadowImage: '80px',
         categorias: [
             {
                 name: 'Vinhos Tintos',
@@ -66,7 +64,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Destilados',
         src: '/destilados',
         img: Deslitados,
-        shadowImage: '50px',
         categorias: [
             {
                 name: 'Uísque',
@@ -94,7 +91,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Espumantes',
         src: '/espumantes',
         img: Espumante,
-        shadowImage: '50px',
         categorias: [
             {
                 name: 'Champagne',
@@ -118,7 +114,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Gin',
         src: '/gin',
         img: Gin,
-        shadowImage: '55px',
         categorias: [
             {
                 name: 'London Dry Gin',
@@ -150,7 +145,6 @@ const MenuProps: MenuContainerProps[]  = [
         title: 'Petiscos',
         src: '/petiscos',
         img: Petiscos,
-        shadowImage: '100px',
         categorias: [
             {
                 name: 'Frios e Queijos',
@@ -185,12 +179,21 @@ const CatalogoMobile = () => {
   
   if (CatalogoPage) return (
     <div className='MenuMobile_Container'>
+        <div className="MenuMobile_Container_Bg">
+            <div className="MenuMobile_Container_Bg_Cevada left"></div>
+            <div className="MenuMobile_Container_Bg_Cevada right"></div>
+        </div>
         <div className='MenuvMobile_Header'>
             <MenuHeader />
             <div className='AllCatalogoProduct'>
                 {MenuProps.map((catalogo, index) => 
-                    <CatalogoContainer key={catalogo.title} img={catalogo.img} id={index} shadowImage={catalogo.shadowImage} title={catalogo.title} src={catalogo.src} categorias={catalogo.categorias}/>
+                    <CatalogoContainer key={catalogo.title} img={catalogo.img} id={index} title={catalogo.title} src={catalogo.src} categorias={catalogo.categorias}/>
                 )}
+            </div>
+            <div className="MenuMobile_footer">
+                <div className='MenuMobile_footer_Image1'></div>
+                <div className='MenuMobile_footer_Image2'></div>
+                <div className='MenuMobile_footer_Image1 reverse'></div>
             </div>
         </div>
     </div>

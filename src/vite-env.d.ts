@@ -10,7 +10,6 @@ interface MenuContainerProps {
     title: string;
     src: string;
     img: string;
-    shadowImage: string,
     categorias: MenuCategorias[];
 }
 

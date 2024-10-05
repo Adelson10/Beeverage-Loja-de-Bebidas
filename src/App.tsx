@@ -12,14 +12,16 @@ function App() {
         <CatalogoPageProvider>
           <BrowserRouter>
           <CatalogoMobile/>
-          <Header />
-            <Routes>
-              <Route path='/' element={<Home />}/>
-              <Route path='/catalogo/:catalogo'element={<Catalogo />}/>
-              <Route path='/carrinho' element={<Home />}/>
-              <Route path='/carrinho' element={<Home />}/>
-              <Route path='/carrinho' element={<Home />}/>
-            </Routes>
+          <div className="App">
+            <Header />
+                <Routes>
+                  <Route path='/' element={<Home />}/>
+                  <Route path='/catalogo/:catalogo'element={<Catalogo />}/>
+                  <Route path='/carrinho' element={<Home />}/>
+                  <Route path='/carrinho' element={<Home />}/>
+                  <Route path='/carrinho' element={<Home />}/>
+                </Routes>
+          </div>
           </BrowserRouter>
         </CatalogoPageProvider>
     </>
