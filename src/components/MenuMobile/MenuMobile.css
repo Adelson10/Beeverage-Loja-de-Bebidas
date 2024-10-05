@@ -5,6 +5,17 @@
     z-index: 12;
 }
 
+.MenuMobile_Close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 16;
+}
+
+.MenuMobile_Close svg {
+    color: var(--brand-dark) !important;
+}
+
 .MenuMobile_Container_Bg {
     position: absolute;
     width: 100%;
@@ -33,7 +44,7 @@
 }
 
 .MenuMobile_Container {
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 30px);
     background-color: var(--bg);
 
@@ -41,6 +52,7 @@
     overflow-y: scroll;
     position: absolute;
     z-index: 9;
+    overflow-x: hidden;
 }
 
 .MenuMobile_Container::-webkit-scrollbar {

@@ -8,6 +8,7 @@ import Espumante from '../../assets/imagens/Menu/espumante.png';
 import Gin from '../../assets/imagens/Menu/gin.png';
 import Petiscos from '../../assets/imagens/Menu/petiscos.png';
 import MenuHeader from './MenuHeader.tsx';
+import { X } from '@phosphor-icons/react';
 
 const MenuProps: MenuContainerProps[]  = [
     {
@@ -175,7 +176,7 @@ const MenuProps: MenuContainerProps[]  = [
 ]
 
 const CatalogoMobile = () => {
-    const { CatalogoPage } = useCatalogoPage();
+    const { CatalogoPage, setCatalogoPage } = useCatalogoPage();
   
   if (CatalogoPage) return (
     <div className='MenuMobile_Container'>
@@ -196,6 +197,7 @@ const CatalogoMobile = () => {
                 <div className='MenuMobile_footer_Image1 reverse'></div>
             </div>
         </div>
+        <button onClick={() => setCatalogoPage(false)} className="MenuMobile_Close"><X size={'2rem'} fill='bold'/></button>
     </div>
   )
 }

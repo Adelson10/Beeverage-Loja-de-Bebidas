@@ -8,7 +8,7 @@ const CatalogoContainer = ({title, src, img, categorias, id}: MenuContainerProps
     return (
     <div className='CatalogoProducts'>
         <div className={`CatalogoDescription ${(id+1) % 2 == 1 ? 'right' : 'left'}`}>
-            <div className="CatalogoImage" style={{backgroundImage: `url(${img})`}}></div>
+            <Link to={src} className="CatalogoImage" style={{backgroundImage: `url(${img})`}}></Link>
             <div className='ListProduct_toTitle'>
                 <div className="ListProduct_bg_title">
                 <Link onClick={() => setCatalogoPage(false)} to={src} className='CatalogoContainer_title MenuTitle'>{title}</Link>
