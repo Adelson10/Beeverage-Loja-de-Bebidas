@@ -6,7 +6,15 @@ interface IModal {
     src: string;
 }
 
-interface ValueProps {
-    currentPage: string;
-    setCurrentPage: React.Dispatch<React.SetStateAction<string>>;
-  }
+interface CatalogoContainerProps {
+    title: string;
+    src: string;
+    img: string;
+    shadowImage: string,
+    categorias: CatalogoCategorias[];
+}
+
+interface CatalogoCategorias {
+    name: string;
+    src: string;
+}

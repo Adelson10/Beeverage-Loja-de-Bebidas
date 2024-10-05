@@ -2,8 +2,6 @@ import { MagnifyingGlass, SlidersHorizontal } from "@phosphor-icons/react";
 import ButtonIcon from "../utils/ButtonIcon";
 import './Search.css';
 import Button from "../utils/Button";
-import { useCurrentPage } from "../../utils/context/CurrentPage";
-import React from "react";
 import { useLocation } from "react-router-dom";
 
 interface SearchProps {

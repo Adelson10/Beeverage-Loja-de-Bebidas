@@ -17,6 +17,7 @@
 #root {
     max-width: 970px;
     margin: 0 auto;
+    position: relative;
 }
 
 @media (max-width: 1000px) {

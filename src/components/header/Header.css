@@ -81,8 +81,10 @@ nav {
     
     .Logo {
         background-image: url("../../assets/Logo/Logo.png");
-        height: 5rem;
-        width: 5rem;
+        background-size: cover;
+        background-position: center;
+        height: 5.8rem;
+        width: 5.8rem;
     }
     
     .Header nav {

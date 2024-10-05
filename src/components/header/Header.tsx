@@ -34,7 +34,7 @@ const Header = () => {
     <>
         <header>
             <div className="Header">
-                {!mobile && <div className="Logo"></div>}
+                { !mobile && <div className="Logo"></div> }
                 <Search mobile={mobile}/>
                 { !mobile ?
                 (<>
@@ -59,7 +59,7 @@ const Header = () => {
                 }               
                 <Profile />
             </div>
-            <Catalogo />
+            <Catalogo mobile={mobile}/>
         </header>
     </>
   )

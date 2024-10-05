@@ -1,0 +1,27 @@
+.PhotoProduct_Container {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: end;
+    height: 150px;
+}
+
+.PhotoProduct_Photo {
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 15;
+    bottom: 7px;
+}
+
+.shadow_product {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.473);
+    height: 10px;
+    border-radius: 50%;
+    bottom: 6px;
+    filter: blur(2px);
+}

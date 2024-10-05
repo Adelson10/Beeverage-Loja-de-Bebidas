@@ -2,6 +2,7 @@ import React from 'react';
 import './Catalogo.css';
 import { List, BeerStein, Martini, BeerBottle, Champagne, Brandy, ForkKnife } from '@phosphor-icons/react';
 import { NavLink } from 'react-router-dom';
+import { useCatalogoPage } from '../../utils/context/CatalogoPageProvider';
 
 interface IQuickAcess {
     icon: React.ReactElement;
@@ -44,11 +45,23 @@ const QuickAcess: IQuickAcess[] = [
     },
 ]
 
-const Catalogo = () => {
-  return (
+const Catalogo = ({mobile} : {mobile: boolean}) => {
+    const {CatalogoPage, setCatalogoPage} = useCatalogoPage();
+    
+    function handleClick() {
+        if(!CatalogoPage) document.body.style.overflowY = 'hidden';
+        else document.body.style.overflowY = 'scroll'
+        setCatalogoPage(!CatalogoPage);
+    }
+    
+    return (
     <div className={'Catalogo'}>
             <ul>
-                <li><button className='catalogo_button'><List size={sizeIcon} onClick={() => console.log('catalogo')} />Catálogo</button></li>
+                { mobile ? 
+                <li><button className='catalogo_button' onClick={handleClick}><List size={sizeIcon} />Catálogo</button></li>
+                :
+                <li><button className='catalogo_button'><List size={sizeIcon} />Catálogo</button></li>
+                }
                 {QuickAcess.map((catalogo) => {
                     return <li key={catalogo.name}><NavLink to={catalogo.src} className={({isActive}) => isActive ? 'catalogo_button active' : 'catalogo_button'}>{catalogo.icon}{catalogo.name}</NavLink></li>
                 })}
