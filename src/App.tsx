@@ -4,7 +4,7 @@ import Catalogo from './Pages/Catalogo';
 import Home from './Pages/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CatalogoPageProvider from './utils/context/CatalogoPageProvider';
-import CatalogoMobile from './components/CatalogoMobile/CatalogoMobile';
+import CatalogoMobile from './components/MenuMobile/MenuMobile';
 
 function App() {
   return (

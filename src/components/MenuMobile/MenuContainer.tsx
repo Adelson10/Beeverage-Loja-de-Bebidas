@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import PhotoProduct from '../utils/PhotoProduct';
-import './CatalogoContainer.css';
+import './MenuContainer.css';
 import { useCatalogoPage } from '../../utils/context/CatalogoPageProvider';
 
-const CatalogoContainer = ({title, src, img, shadowImage, categorias, id}: CatalogoContainerProps & {id: number}) => {
+const CatalogoContainer = ({title, src, img, shadowImage, categorias, id}: MenuContainerProps & {id: number}) => {
     const {setCatalogoPage} = useCatalogoPage();
 
     return (

@@ -6,15 +6,15 @@ interface IModal {
     src: string;
 }
 
-interface CatalogoContainerProps {
+interface MenuContainerProps {
     title: string;
     src: string;
     img: string;
     shadowImage: string,
-    categorias: CatalogoCategorias[];
+    categorias: MenuCategorias[];
 }
 
-interface CatalogoCategorias {
+interface MenuCategorias {
     name: string;
     src: string;
 }

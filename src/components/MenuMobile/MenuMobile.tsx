@@ -1,16 +1,15 @@
 import { useCatalogoPage } from '../../utils/context/CatalogoPageProvider.tsx';
-import './CatalogoMobile.css';
-import CevadaLeft from '../../assets/imagens/CatalogoMobile/CevadaLeft.tsx';
-import CevadaRight from '../../assets/imagens/CatalogoMobile/CevadaRight.tsx';
-import CatalogoContainer from './CatalogoContainer.tsx';
+import './MenuMobile.css';
+import CatalogoContainer from './MenuContainer.tsx';
 import Cerveja from '../../assets/imagens/Produto/Cervejas.png';
 import Vinhos from '../../assets/imagens/Produto/Vinhos.png';
 import Deslitados from '../../assets/imagens/Produto/Vodka.png';
 import Espumante from '../../assets/imagens/Produto/Espumante.png';
 import Gin from '../../assets/imagens/Produto/Gin.png';
 import Petiscos from '../../assets/imagens/Produto/Frios.png';
+import MenuHeader from './MenuHeader.tsx';
 
-const CatalogoProps: CatalogoContainerProps[]  = [
+const MenuProps: MenuContainerProps[]  = [
     {
         title: 'Cervejas',
         src: '/cervejas',
@@ -185,16 +184,11 @@ const CatalogoMobile = () => {
     const { CatalogoPage } = useCatalogoPage();
   
   if (CatalogoPage) return (
-    <div className='CatalogoMobile_Container'>
-        <div className='CatalogoMobile_Header'>
-            <div className='CatalogoMobile_Header_Logo'></div>
-            <div className='CatalogoMobile_Header_Title'>
-                <CevadaLeft />
-                    <h1>Cardápio</h1>
-                <CevadaRight />
-            </div>
+    <div className='MenuMobile_Container'>
+        <div className='MenuvMobile_Header'>
+            <MenuHeader />
             <div className='AllCatalogoProduct'>
-                {CatalogoProps.map((catalogo, index) => 
+                {MenuProps.map((catalogo, index) => 
                     <CatalogoContainer key={catalogo.title} img={catalogo.img} id={index} shadowImage={catalogo.shadowImage} title={catalogo.title} src={catalogo.src} categorias={catalogo.categorias}/>
                 )}
             </div>
