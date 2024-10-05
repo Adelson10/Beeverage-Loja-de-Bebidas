@@ -59,7 +59,7 @@ const Catalogo = ({mobile} : {mobile: boolean}) => {
     <div className={'Catalogo'}>
             <ul>
                 { mobile ? 
-                <li><button className='catalogo_button' onClick={handleClick}><List size={sizeIcon} />Catálogo</button></li>
+                <li><button className='catalogo_button' onClick={handleClick}><List size={sizeIcon} />Menu</button></li>
                 :
                 <li><button className='catalogo_button'><List size={sizeIcon} />Catálogo</button></li>
                 }

@@ -22,6 +22,7 @@ ul::-webkit-scrollbar {
     font-size: .8rem;
     color: var(--brand-dark);
     background: white;
+    gap: .5rem;
 }
 
 .catalogo_button svg {
