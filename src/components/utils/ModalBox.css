@@ -7,16 +7,17 @@
     background: var(--bg);
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.233);
     border-radius: 5px;
+    padding: .3rem 0;
 }
 
 @keyframes Modal {
     0% {
         opacity: 0;
-        transform: translateY(60px);
+        transform: translateY(80px);
     } 
     100% {
         opacity: 1;
-        transform: translateY(80px);
+        transform: translateY(90px);
     }
 }
 
