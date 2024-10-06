@@ -41,23 +41,23 @@ const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Vinhos Tintos',
-                src: '/catalogo/cervejas/vinhosTintos',
+                src: '/catalogo/vinhos/vinhosTintos',
             },
             {
                 name: 'Vinhos Brancos',
-                src: '/catalogo/cervejas/vinhosBrancos',
+                src: '/catalogo/vinhos/vinhosBrancos',
             },
             {
                 name: 'Vinhos Rosés',
-                src: '/catalogo/cervejas/vinhosRoses',
+                src: '/catalogo/vinhos/vinhosRoses',
             },
             {
                 name: 'Vinhos de Sobremesa',
-                src: '/catalogo/cervejas/vinhosDeSobremesa',
+                src: '/catalogo/vinhos/vinhosDeSobremesa',
             },
             {
                 name: 'Vinhos Espumantes',
-                src: '/catalogo/cervejas/vinhosEspumantes',
+                src: '/catalogo/vinhos/vinhosEspumantes',
             },
         ]
     },
@@ -68,23 +68,23 @@ const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Uísque',
-                src: '/catalogo/cervejas/uisque',
+                src: '/catalogo/destilados/uisque',
             },
             {
                 name: 'Vodka',
-                src: '/catalogo/cervejas/vodka',
+                src: '/catalogo/destilados/vodka',
             },
             {
                 name: 'Rum',
-                src: '/catalogo/cervejas/rum',
+                src: '/catalogo/destilados/rum',
             },
             {
                 name: 'Tequila e Mezcal',
-                src: '/catalogo/cervejas/tequilaMezcal',
+                src: '/catalogo/destilados/tequilaMezcal',
             },
             {
                 name: 'Cachaça',
-                src: '/catalogo/cervejas/cachaca',
+                src: '/catalogo/destilados/cachaca',
             },
         ]
     },
@@ -118,27 +118,27 @@ const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'London Dry Gin',
-                src: '/catalogo/cervejas/londonDryGin',
+                src: '/catalogo/gin/londonDryGin',
             },
             {
                 name: 'Gin Floral',
-                src: '/catalogo/cervejas/ginFloral',
+                src: '/catalogo/gin/ginFloral',
             },
             {
                 name: 'Gin Saborizado',
-                src: '/catalogo/cervejas/ginSaborizado',
+                src: '/catalogo/gin/ginSaborizado',
             },
             {
                 name: 'Gin Old Tom',
-                src: '/catalogo/cervejas/ginOldTom',
+                src: '/catalogo/gin/ginOldTom',
             },
             {
                 name: 'Gin Navy Strength',
-                src: '/catalogo/cervejas/ginNavyStrength',
+                src: '/catalogo/gin/ginNavyStrength',
             },
             {
                 name: 'Gin Artesanal',
-                src: '/catalogo/cervejas/ginArtesanal',
+                src: '/catalogo/gin/ginArtesanal',
             },
         ]
     },
@@ -149,27 +149,27 @@ const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Frios e Queijos',
-                src: '/catalogo/cervejas/friosQueijos',
+                src: '/catalogo/petiscos/friosQueijos',
             },
             {
                 name: 'Petiscos de Boteco',
-                src: '/catalogo/cervejas/petiscosDeBoteco',
+                src: '/catalogo/petiscos/petiscosDeBoteco',
             },
             {
                 name: 'Carnes e Grelhados',
-                src: '/catalogo/cervejas/carnesGrelhados',
+                src: '/catalogo/petiscos/carnesGrelhados',
             },
             {
                 name: 'Frutos do Mar',
-                src: '/catalogo/cervejas/frutosDoMar',
+                src: '/catalogo/petiscos/frutosDoMar',
             },
             {
                 name: 'Vegetarianos',
-                src: '/catalogo/cervejas/vegetarianos',
+                src: '/catalogo/petiscos/vegetarianos',
             },
             {
                 name: 'Snacks Rápidos',
-                src: '/catalogo/cervejas/snacksRápidos',
+                src: '/catalogo/petiscos/snacksRápidos',
             },
         ]
     },

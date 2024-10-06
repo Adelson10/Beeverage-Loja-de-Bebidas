@@ -33,6 +33,11 @@
     position: relative;
 }
 
+button, input, textarea {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 @media (max-width: 1000px) {
     .App {
         max-width: 90%;
