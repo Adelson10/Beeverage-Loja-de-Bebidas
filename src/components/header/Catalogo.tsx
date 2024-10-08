@@ -4,26 +4,31 @@ import { List } from '@phosphor-icons/react';
 import { Link, useHref } from 'react-router-dom';
 import { useCatalogoPage } from '../../utils/context/CatalogoPageProvider';
 import { MenuProps, QuickAcess, sizeIcon } from '../../utils/ProductsMenu/ProductsMenu';
-import ModalCatalogo from './ModalCatalogo';
 
 const Catalogo = ({mobile} : {mobile: boolean}) => {
     const {CatalogoPage, setCatalogoPage} = useCatalogoPage();
     const pageNow = useHref({}).split('/').filter((path) => path!=='');
-    const [containerCatalogo, setContainerCatalogo] = React.useState<boolean>(false);  
+
+    const [showCategories, setShowCategories] = React.useState(false);
     
     function handleClick() {
         if(!CatalogoPage) document.body.style.overflowY = 'hidden';
         else document.body.style.overflowY = 'scroll'
         setCatalogoPage(!CatalogoPage);
     }
-    
+
     return (
     <div className={'Catalogo'}>
-            <ul>
+        <ul>
                 { mobile ? 
-                <li><button className='catalogo_button' onClick={handleClick}><List size={sizeIcon} />Menu</button></li>
+                <li>
+                    <button className='catalogo_button' onClick={handleClick}><List size={sizeIcon} />Menu</button>
+                </li>
                 :
-                <li><button className={`catalogo_button ${containerCatalogo ? 'active' : ''}`} onFocus={() => setContainerCatalogo(!containerCatalogo)} onBlur={() => setContainerCatalogo(!containerCatalogo)}><List size={sizeIcon} />Catálogo</button></li>
+                <li>
+                    <button onClick={() => setShowCategories(!showCategories)} className={`catalogo_button ${showCategories ? 'active' : ''}`}>
+                    <div className={`noCategories ${ showCategories ? 'active' : ''}` }></div>Catálogo</button>
+                </li>
                 }
                 {QuickAcess.map((catalogo) => {
                     const pageButton = catalogo.src.split('/').filter((path) => path!=='');
@@ -35,7 +40,19 @@ const Catalogo = ({mobile} : {mobile: boolean}) => {
                     </Link></li>
                 })}
             </ul>
-            { containerCatalogo && <ModalCatalogo MenuProps={MenuProps}/>}
+            { showCategories && 
+            <ul className='ModalCatalogo_Container'>
+                {MenuProps.map((catalogo) => 
+                        <li key={catalogo.title}><h3>{catalogo.title}</h3>
+                            <ul className='ModalCatalogo_List'>
+                                {catalogo.categorias.map((catalogo) => 
+                                    <li key={catalogo.name}><Link onClick={() => setShowCategories(false)} to={catalogo.src}>{catalogo.name}</Link></li>
+                                )}
+                            </ul>
+                        </li>
+                )}
+            </ul>
+            }
         </div>
   )
 }
