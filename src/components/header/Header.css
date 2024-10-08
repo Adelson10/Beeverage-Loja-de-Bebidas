@@ -1,5 +1,5 @@
 header {
-    padding: 1rem 0;
+    padding-top: 1rem;
 }
 
 .Header {
@@ -69,7 +69,7 @@ nav {
 
 @media (min-width: 1000px) {
     header {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
     
     .Header {

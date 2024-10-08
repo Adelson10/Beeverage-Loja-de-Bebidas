@@ -7,6 +7,7 @@ import Catalogo from "./Catalogo";
 import useMedia from "../../hooks/useMedia";
 import React from "react";
 import ModalBox from "../utils/ModalBox";
+import { Link } from "react-router-dom";
 
 const MenuMobileModal: IModal[] = [
     {
@@ -34,7 +35,7 @@ const Header = () => {
     <>
         <header>
             <div className="Header">
-                { !mobile && <div className="Logo"></div> }
+                { !mobile && <Link to={'/'} className="Logo"></Link> }
                 <Search mobile={mobile}/>
                 { !mobile ?
                 (<>

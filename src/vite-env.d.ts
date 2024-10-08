@@ -17,3 +17,18 @@ interface MenuCategorias {
     name: string;
     src: string;
 }
+
+interface productModal {
+    code: number;
+    image: ImageProductModal;
+    score: number;
+    name: string;
+    volume: number;
+    priceNow: number;
+    price: number;
+}
+
+type ImageProductModal = {
+    src: string;
+    shadowWidth: number;
+}

@@ -50,6 +50,7 @@ a {
     border-radius: .5rem;
 
     animation: ModalCatalogo 300ms forwards;
+    z-index: 15;
 }
 
 @keyframes ModalCatalogo {
