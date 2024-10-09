@@ -1,0 +1,8 @@
+.ScoreStart {
+    display: flex;
+}
+
+.ScoreStart span {
+    display: flex;
+    align-items: center;
+}

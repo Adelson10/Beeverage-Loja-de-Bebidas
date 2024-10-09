@@ -1,5 +1,6 @@
 import React from 'react';
 import PhotoProduct from '../utils/PhotoProduct';
+import ScoreProduct from './ScoreProduct';
 
 interface ListProductShowProps {
     title: string;
@@ -9,9 +10,9 @@ interface ListProductShowProps {
 const ListProductShow = ({title, productModal}: ListProductShowProps) => {
   return (
     <div className='ListProductShow'>
-        <h1 className='ListProductShow_Title'>{}</h1>
+        <h1 className='ListProductShow_Title'>{title}</h1>
         {productModal.map((product) => 
-            <div className='ProductModal'>
+            <div key={product.code} className='ProductModal'>
                 <div className="ProductModalBoxImage">
                     <PhotoProduct
                     color1='#FFFFFF'
@@ -19,9 +20,8 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
                     shadowImage={`${product.image.shadowWidth}px`}
                     srcImg={product.image.src}/>
                     {product.price && <div className='ProductModal_Image_Discount'>-{(product.priceNow*100)/product.price}%</div>}
-                    { product.code === }
                 </div>
-
+                <ScoreProduct score={product.score}/>
             </div>
         )}
     </div>

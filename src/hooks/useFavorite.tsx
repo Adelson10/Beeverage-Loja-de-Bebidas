@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface useFavoriteProps {
-    []: boolean;
+    [code: string]: boolean;
 }
 
 export const useFavorite = () => {
@@ -22,13 +22,13 @@ export const useFavorite = () => {
         try {
             if(favorite) {
                 const isProduct = favorite.every( (productFav) => 
-                    productFav[code]
+                    productFav.hasOwnProperty(code)
                 );
-    
+
+                console.log(isProduct);
+                
                 if(isProduct) {
-                    setFavorite((favorite) => 
-                        {}
-                    );
+                    setFavorite({...favorite, [code]: !favorite[code]});
                 } else {
                     throw new Error('Não existe registro desse produto.');
                 }
