@@ -2,15 +2,17 @@ import React from "react";
 
 type PhotoMoldProps = React.PropsWithChildren<{
     color1: string,
-    color2: string
+    color2: string,
+    height: string;
+    width: string;
 }>
 
-function PhotoMold({color1, color2, children}: PhotoMoldProps) {
+function PhotoMold({color1, color2, height, width ,children}: PhotoMoldProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="124"
-      height="114"
+      width={width}
+      height={height}
       fill="none"
       viewBox="0 0 124 114"
     >

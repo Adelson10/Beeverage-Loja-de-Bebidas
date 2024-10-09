@@ -23,7 +23,7 @@ interface productModal {
     image: ImageProductModal;
     score: number;
     name: string;
-    volume: number;
+    volume: string;
     priceNow: number;
     price: number;
 }

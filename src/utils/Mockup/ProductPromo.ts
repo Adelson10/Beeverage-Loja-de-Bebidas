@@ -1,13 +1,15 @@
+import Imagem01 from '../../assets/imagens/Mockup/Produto/cervejas.png';
+
 export const ProdutoMockup: productModal[] = [
     {
         code: '303030',
         image: {
-            src: '',
-            shadowWidth: 0
+            src: Imagem01,
+            shadowWidth: 100
         },
-        score: 0,
-        name: 'Teste',
-        volume: 200,
+        score: 3.5,
+        name: 'Cerveja Amstel Lager Puro Malte Pack 6 unidades',
+        volume: '200ml',
         priceNow: 20,
         price: 0
     },
@@ -19,7 +21,7 @@ export const ProdutoMockup: productModal[] = [
         },
         score: 5,
         name: 'Teste',
-        volume: 200,
+        volume: '200ml',
         priceNow: 20,
         price: 0
     },

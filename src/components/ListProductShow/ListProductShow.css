@@ -1,0 +1,64 @@
+.ProductModalList {
+    display: flex;
+    gap: 2rem;
+}
+
+.ListProductShow_Title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    background-image: linear-gradient(to left, var(--brand-dark), var(--brand));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ListProductShow_Title::selection {
+    -webkit-text-fill-color: white;
+}
+
+.ProductModalBoxImage {
+    display: flex;
+    flex-direction: column;
+}
+
+.ProductModal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 1rem;
+    width: 180px;
+    height: 270px;
+}
+
+.ProductModal h3 {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.ProductModal_Volume {
+    color: var(--brand-primary);
+    font-size: .6rem;
+    font-weight: 400;
+}
+
+.ProductModal_Volume strong {
+    font-weight: 500;
+}
+
+.ProductModal_Prices {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.ProductModal .price {
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--brand-primary);
+}
+
+.ProductModal .priceNow {
+    color: var(--brand-dark);
+}

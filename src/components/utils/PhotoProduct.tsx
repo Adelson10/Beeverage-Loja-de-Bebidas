@@ -12,7 +12,7 @@ const PhotoProduct = ({color1 ,color2 ,shadowImage, srcImg }: PhotoProductProps)
     
   return (
     <div className='PhotoProduct_Container'>
-        <PhotoMold color1={color1} color2={color2}/>
+        <PhotoMold height='135px' width='155px' color1={color1} color2={color2}/>
         <div style={{width: shadowImage}} className='shadow_product'></div>
         <div style={{backgroundImage: `url(${srcImg})`}} className='PhotoProduct_Photo'></div>
     </div>
