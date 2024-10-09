@@ -19,8 +19,8 @@ export const MenuProps: MenuContainerProps[]  = [
                 src: '/catalogo/cervejas/lager',
             },
             {
-                name: 'Ale',
-                src: '/catalogo/cervejas/ale',
+                name: 'Long',
+                src: '/catalogo/cervejas/long',
             },
             {
                 name: 'Pilsen',

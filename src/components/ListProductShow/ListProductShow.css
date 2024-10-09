@@ -1,12 +1,13 @@
 .ProductModalList {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    position: relative;
 }
 
 .ListProductShow_Title {
     font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
 
     background-image: linear-gradient(to left, var(--brand-dark), var(--brand));
     background-clip: text;
@@ -19,6 +20,7 @@
 }
 
 .ProductModalBoxImage {
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -28,13 +30,21 @@
     flex-direction: column;
     gap: 4px;
     padding: 1rem;
-    width: 180px;
+    width: calc(100vw / 5) - 16px;
     height: 270px;
 }
 
 .ProductModal h3 {
     font-size: .8rem;
     font-weight: 500;
+    color: var(--brand-secudary) !important;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .ProductModal_Volume {
@@ -48,17 +58,52 @@
 }
 
 .ProductModal_Prices {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    gap: .2rem;
 }
 
 .ProductModal .price {
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: .9rem;
     color: var(--brand-primary);
 }
 
 .ProductModal .priceNow {
     color: var(--brand-dark);
+    font-size: 1.2rem;
+}
+
+.ProductModal_Image_Discount {
+    position: absolute;
+    bottom: 0;
+    height: 35px;
+    width: 35px;
+    background-image: url('../../assets/imagens/Product/discount.svg');
+    background-position: center center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: .6rem;
+}
+
+.ListModalList_Button.Right{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media (max-width: 1000px) {
+    .ListProductShow {
+        overflow-x: scroll;
+    }
+
+    .ListProductShow::-webkit-scrollbar {
+        display: none;
+    }
 }

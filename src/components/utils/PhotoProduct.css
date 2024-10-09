@@ -3,12 +3,12 @@
     position: relative;
     justify-content: center;
     align-items: end;
-    height: 150px;
+
 }
 
 .PhotoProduct_Photo {
     height: 155px;
-    width: 100%;
+    width: 125px;
     position: absolute;
     background-size: contain;
     background-position: center;

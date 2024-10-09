@@ -26,6 +26,7 @@ interface productModal {
     volume: string;
     priceNow: number;
     price: number;
+    categoriaSrc: string;
 }
 
 type ImageProductModal = {

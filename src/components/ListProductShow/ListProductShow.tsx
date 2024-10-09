@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoProduct from '../utils/PhotoProduct';
 import ScoreProduct from './ScoreProduct';
 import './ListProductShow.css';
-import { Link } from 'react-router-dom';
+import { Link, useHref } from 'react-router-dom';
 
 interface ListProductShowProps {
     title: string;
@@ -10,19 +10,23 @@ interface ListProductShowProps {
 }
 
 const ListProductShow = ({title, productModal}: ListProductShowProps) => {
+
+    const refRight = useHref<HTMLButtonElement>(null);
+    console.log();
+
   return (
     <div className='ListProductShow'>
         <h1 className='ListProductShow_Title'>{title}</h1>
         <div className='ProductModalList'>
             {productModal.map((product) => 
-                <Link to={product.} key={product.code} className='ProductModal'>
+                <Link id={product.code} to={product.categoriaSrc} key={product.code} className='ProductModal'>
                     <div className="ProductModalBoxImage">
                         <PhotoProduct
                         color1='#FFFFFF'
                         color2='#CECECE'
                         shadowImage={`${product.image.shadowWidth}px`}
                         srcImg={product.image.src}/>
-                        {product.price!==0 && <div className='ProductModal_Image_Discount'>-{(product.priceNow*100)/product.price}%</div>}
+                        {product.price!==0 && <div className='ProductModal_Image_Discount'>{(((product.priceNow*100)/product.price)-100).toFixed(0)}%</div>}
                     </div>
                     <ScoreProduct score={product.score}/>
                     <h3>{product.name}</h3>
@@ -33,6 +37,7 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
                     </div>
                 </Link>
             )}
+            <button ref={refRight} className='ListModalList_Button Right'></button>
         </div>
     </div>
   )
