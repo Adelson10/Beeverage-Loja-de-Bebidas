@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { TouchEventHandler, useRef } from 'react';
 import PhotoProduct from '../utils/PhotoProduct';
 import ScoreProduct from './ScoreProduct';
 import './ListProductShow.css';
-import { Link, useHref } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface ListProductShowProps {
     title: string;
@@ -11,13 +11,53 @@ interface ListProductShowProps {
 
 const ListProductShow = ({title, productModal}: ListProductShowProps) => {
 
-    const refRight = useHref<HTMLButtonElement>(null);
-    console.log();
+    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [isMoving, setIsMoving] = React.useState(false);
+    const startX = useRef(0);
+
+    const updateSlidePosition = (index: {index: number}) => {        
+        return {
+            transform: `translateX(-${index}%)`,
+            transition: 'transform 0.3s ease'
+        }
+    }
+
+    const handleTouchStart: TouchEventHandler = (e) => {
+        startX.current = e.touches[0].clientX;
+    }
+
+    const handleTouchMove: TouchEventHandler = (e) => {
+        if (isMoving) return;
+    
+        const touchX = e.touches[0].clientX;
+        const diffX = touchX - startX.current;
+    
+        if (Math.abs(diffX) > 50) {
+          setIsMoving(true);
+          if (diffX > 0 && currentIndex > 0) {
+            setCurrentIndex((prevIndex) => prevIndex - 1);
+          } else if (diffX < 0 && currentIndex < productModal.length - 1) {
+            setCurrentIndex((prevIndex) => prevIndex + 1);
+          }
+        }
+      };
+
+      const handleTouchEnd: TouchEventHandler = (e) => {
+        if (isMoving) {
+          const touchX = e.changedTouches[0].clientX;
+          const diffX = touchX - startX.current;
+    
+          if (Math.abs(diffX) < 200) {
+            setCurrentIndex((prevIndex) => prevIndex);
+          }
+        }
+        setIsMoving(false);
+      };
 
   return (
     <div className='ListProductShow'>
         <h1 className='ListProductShow_Title'>{title}</h1>
-        <div className='ProductModalList'>
+        <div className='ProductModalList' style={updateSlidePosition(currentIndex)} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {productModal.map((product) => 
                 <Link id={product.code} to={product.categoriaSrc} key={product.code} className='ProductModal'>
                     <div className="ProductModalBoxImage">
@@ -37,7 +77,7 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
                     </div>
                 </Link>
             )}
-            <button ref={refRight} className='ListModalList_Button Right'></button>
+            <button className='ListModalList_Button Right'></button>
         </div>
     </div>
   )
