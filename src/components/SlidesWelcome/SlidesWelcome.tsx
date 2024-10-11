@@ -1,9 +1,8 @@
 import './SlidesWelcome.css';
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import React from 'react';
 import { Navigation, Pagination } from 'swiper/modules';
 
 interface ISlidesWelcome {
@@ -13,14 +12,14 @@ interface ISlidesWelcome {
 
 const SlidesWelcome = ({slides} : { slides: ISlidesWelcome[] }) => {  
   return (
-    <div className='SlidesWelcome'>
-      <div className='SlidesWelcomeBox'>
+        <>
         <Swiper
+        style={{borderRadius: '1.2rem', width:'100%'}}
         modules={[Pagination, Navigation]}
         pagination={{el:'.swiper-pagination', clickable: true}}
         navigation={{
-          nextEl: '.SlidesWelcome_ButtonNext',
-          prevEl: '.SlidesWelcome_ButtonPrev',
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom',
         }}
         grabCursor={true}
         centeredSlides={true}
@@ -29,15 +28,14 @@ const SlidesWelcome = ({slides} : { slides: ISlidesWelcome[] }) => {
         >
           {slides.map(({id, src}) =>
             <SwiperSlide key={id}>
-              <div id={`${id}`} className="SlidesWelcome_Slide" style={{backgroundImage: `url(${src})`}}></div>
+              <div id={`${id}`} className="swiper-slide-img" style={{backgroundImage: `url(${src})`}}></div>
             </SwiperSlide>
           )}
-          <button className='SlidesWelcome_ButtonPrev'></button>
-          <button className='SlidesWelcome_ButtonNext'></button>
+          <button className='swiper-button-prev-custom'></button>
+          <button className='swiper-button-next-custom'></button>
           <div className="swiper-pagination"></div>
         </Swiper>
-      </div>
-    </div>
+        </>
   )
 }
 

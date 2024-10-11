@@ -1,15 +1,4 @@
-.SlidesWelcome {
-    display: flex;
-    flex-direction: column;
-}
-
-.SlidesWelcomeBox {
-    width: 100%;
-    position: relative;
-    overflow-x: hidden;
-    border-radius: 1.2rem;
-}
-.SlidesWelcome_Slide {
+.swiper-slide-img {
     width: 100%;
     height: 350px;
     background-repeat: no-repeat;
@@ -17,7 +6,7 @@
     background-size: cover;
 }
 
-.SlidesWelcome_ButtonPrev {
+.swiper-button-prev-custom {
     background: none;
     width: 20%;
     height: 100%;
@@ -27,7 +16,7 @@
     z-index: 2;
 }
 
-.SlidesWelcome_ButtonNext {
+.swiper-button-next-custom {
     background: none;
     width: 20%;
     height: 100%;
@@ -35,14 +24,6 @@
     top: 0;
     right: 0;
     z-index: 2;
-}
-
-.SlideNow_Container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    margin-top: .8rem;
 }
 
 .swiper-pagination > .swiper-pagination-bullet {
@@ -58,6 +39,11 @@
     width: 2.5rem;
     border-radius: .5rem;
     background: var(--brand-dark);
+}
+
+.swiper > .swiper-pagination {
+    position: relative;
+    margin-top: 5px;
 }
 
 @media (max-width: 1000px) {
