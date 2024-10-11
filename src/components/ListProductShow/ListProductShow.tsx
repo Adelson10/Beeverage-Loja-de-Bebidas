@@ -14,30 +14,28 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const [isMoving, setIsMoving] = React.useState(false);
     const startX = useRef(0);
-
-    const updateSlidePosition = (index: {index: number}) => {        
-        return {
-            transform: `translateX(-${index}%)`,
-            transition: 'transform 0.3s ease'
-        }
-    }
+    const href = useRef<HTMLDivElement>(null);
 
     const handleTouchStart: TouchEventHandler = (e) => {
         startX.current = e.touches[0].clientX;
-    }
+    }    
 
     const handleTouchMove: TouchEventHandler = (e) => {
         if (isMoving) return;
     
         const touchX = e.touches[0].clientX;
         const diffX = touchX - startX.current;
-    
-        if (Math.abs(diffX) > 50) {
+        
+        if (Math.abs(diffX) > 0) {
           setIsMoving(true);
           if (diffX > 0 && currentIndex > 0) {
             setCurrentIndex((prevIndex) => prevIndex - 1);
+            console.log(currentIndex);
+            
           } else if (diffX < 0 && currentIndex < productModal.length - 1) {
             setCurrentIndex((prevIndex) => prevIndex + 1);
+              console.log(currentIndex);
+              
           }
         }
       };
@@ -57,7 +55,7 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
   return (
     <div className='ListProductShow'>
         <h1 className='ListProductShow_Title'>{title}</h1>
-        <div className='ProductModalList' style={updateSlidePosition(currentIndex)} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <div className='ProductModalList' ref={href} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {productModal.map((product) => 
                 <Link id={product.code} to={product.categoriaSrc} key={product.code} className='ProductModal'>
                     <div className="ProductModalBoxImage">
