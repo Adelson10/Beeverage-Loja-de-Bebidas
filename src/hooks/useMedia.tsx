@@ -1,11 +1,12 @@
 import React from 'react';
 
-const useMedia = (media: string) => {
-    const [match, setMatch] = React.useState<boolean>(window.matchMedia(media).matches);
+const useMedia = (media: number) => {
+    const Media = `(max-width: ${media}px)`;
+    const [match, setMatch] = React.useState<boolean>(window.matchMedia(Media).matches);
 
     React.useEffect(() => {
         function changeMatch() {
-            const { matches } = window.matchMedia(media);            
+            const { matches } = window.matchMedia(Media);            
             setMatch(matches);
         }
 
@@ -13,7 +14,7 @@ const useMedia = (media: string) => {
         return () => {
             window.addEventListener('resize', changeMatch);
         }
-    },[media]);
+    },[Media]);
 
   return match;
 }

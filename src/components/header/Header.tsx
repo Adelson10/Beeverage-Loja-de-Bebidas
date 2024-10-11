@@ -28,7 +28,7 @@ const MenuMobileModal: IModal[] = [
 ]
 
 const Header = () => {    
-    const mobile = useMedia('(max-width: 1000px)');
+    const mobile = useMedia(1000);
     const [menuMobile, setMenuMobile] = React.useState<boolean>(false);
     
     return (

@@ -70,4 +70,30 @@ export const ProdutoMockup: productModal[] = [
         price: 28.36,
         categoriaSrc: '/catalogo/cervejas/lager/'
     },
+    {
+        code: '303024',
+        image: {
+            src: Imagem05,
+            shadowWidth: 110
+        },
+        score: 5,
+        name: 'Cerveja Amstel Lager Puro Malte Pack 6 unidades',
+        volume: '200ml',
+        priceNow: 20.78,
+        price: 28.36,
+        categoriaSrc: '/catalogo/cervejas/lager/'
+    },
+    {
+        code: '303059',
+        image: {
+            src: Imagem05,
+            shadowWidth: 110
+        },
+        score: 5,
+        name: 'Cerveja Amstel Lager Puro Malte Pack 6 unidades',
+        volume: '200ml',
+        priceNow: 20.78,
+        price: 28.36,
+        categoriaSrc: '/catalogo/cervejas/lager/'
+    },
 ]

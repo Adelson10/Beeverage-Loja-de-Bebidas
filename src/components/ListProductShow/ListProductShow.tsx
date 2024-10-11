@@ -1,8 +1,10 @@
-import React, { TouchEventHandler, useRef } from 'react';
 import PhotoProduct from '../utils/PhotoProduct';
 import ScoreProduct from './ScoreProduct';
 import './ListProductShow.css';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import useMedia from '../../hooks/useMedia';
 
 interface ListProductShowProps {
     title: string;
@@ -10,54 +12,18 @@ interface ListProductShowProps {
 }
 
 const ListProductShow = ({title, productModal}: ListProductShowProps) => {
-
-    const [currentIndex, setCurrentIndex] = React.useState(0);
-    const [isMoving, setIsMoving] = React.useState(false);
-    const startX = useRef(0);
-    const href = useRef<HTMLDivElement>(null);
-
-    const handleTouchStart: TouchEventHandler = (e) => {
-        startX.current = e.touches[0].clientX;
-    }    
-
-    const handleTouchMove: TouchEventHandler = (e) => {
-        if (isMoving) return;
-    
-        const touchX = e.touches[0].clientX;
-        const diffX = touchX - startX.current;
-        
-        if (Math.abs(diffX) > 0) {
-          setIsMoving(true);
-          if (diffX > 0 && currentIndex > 0) {
-            setCurrentIndex((prevIndex) => prevIndex - 1);
-            console.log(currentIndex);
-            
-          } else if (diffX < 0 && currentIndex < productModal.length - 1) {
-            setCurrentIndex((prevIndex) => prevIndex + 1);
-              console.log(currentIndex);
-              
-          }
-        }
-      };
-
-      const handleTouchEnd: TouchEventHandler = (e) => {
-        if (isMoving) {
-          const touchX = e.changedTouches[0].clientX;
-          const diffX = touchX - startX.current;
-    
-          if (Math.abs(diffX) < 200) {
-            setCurrentIndex((prevIndex) => prevIndex);
-          }
-        }
-        setIsMoving(false);
-      };
-
+  const Tablet = useMedia(1000);
+  const Mobile = useMedia(600);
+  
   return (
     <div className='ListProductShow'>
         <h1 className='ListProductShow_Title'>{title}</h1>
-        <div className='ProductModalList' ref={href} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+        <Swiper style={{overflow: 'visible'}}
+        spaceBetween={8}
+        slidesPerView={Tablet ? Mobile ? 2 : 4 : 5}>
             {productModal.map((product) => 
-                <Link id={product.code} to={product.categoriaSrc} key={product.code} className='ProductModal'>
+                <SwiperSlide key={product.code}>
+                  <Link id={product.code} to={product.categoriaSrc} className='ProductModal'>
                     <div className="ProductModalBoxImage">
                         <PhotoProduct
                         color1='#FFFFFF'
@@ -73,10 +39,11 @@ const ListProductShow = ({title, productModal}: ListProductShowProps) => {
                         { product.price>0 && <h2 className="price"><del>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
                         <h2 className="priceNow">{product.priceNow.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
                     </div>
-                </Link>
+                  </Link>
+                </SwiperSlide>
+                
             )}
-            <button className='ListModalList_Button Right'></button>
-        </div>
+        </Swiper>
     </div>
   )
 }

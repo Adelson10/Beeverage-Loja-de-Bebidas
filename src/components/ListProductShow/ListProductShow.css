@@ -1,7 +1,5 @@
-.ProductModalList {
-    display: flex;
-    gap: 1rem;
-    position: relative;
+.ListProductShow {
+    overflow-x: hidden;
 }
 
 .ListProductShow_Title {
@@ -30,8 +28,6 @@
     flex-direction: column;
     gap: 4px;
     padding: 1rem;
-    width: calc(100vw / 5) - 16px;
-    height: 270px;
 }
 
 .ProductModal h3 {
@@ -96,14 +92,4 @@
     position: absolute;
     top: 0;
     right: 0;
-}
-
-@media (max-width: 1000px) {
-    .ListProductShow {
-        overflow-x: scroll;
-    }
-
-    .ListProductShow::-webkit-scrollbar {
-        display: none;
-    }
 }

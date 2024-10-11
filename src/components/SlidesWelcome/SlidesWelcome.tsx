@@ -1,40 +1,42 @@
-import React, { useRef } from 'react';
 import './SlidesWelcome.css';
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import React from 'react';
+import { Navigation, Pagination } from 'swiper/modules';
 
 interface ISlidesWelcome {
   id: number;
   src: string;
 }
 
-const SlidesWelcome = ({slides} : { slides: ISlidesWelcome[] }) => {
-  const [slideNow, SetSlideNow] = React.useState<number>(0);
-  const refSlide = useRef<HTMLDivElement>(null);
-  
-  React.useEffect(() => {    
-    refSlide.current!.style.transform = `translateX(${(-(refSlide.current!.offsetWidth)) * slideNow}px)`;
-  },[slideNow]);
-
+const SlidesWelcome = ({slides} : { slides: ISlidesWelcome[] }) => {  
   return (
     <div className='SlidesWelcome'>
       <div className='SlidesWelcomeBox'>
-        <div ref={refSlide} className="SlidesWelcome_Container">
-          {slides.map(({id, src}) =>
-            <div key={id} id={`${id}`} className="SlidesWelcome_Slide" style={{backgroundImage: `url(${src})`}}></div>
-          )}
-        </div>
-        <button onClick={() => { 
-          if(slideNow > 0) return SetSlideNow((a) => a - 1);
-        }} className='SlidesWelcome_Button Left'></button>
-        <button onClick={() => {
-          if(slideNow < slides.length-1 ) return SetSlideNow((a) => a + 1);
+        <Swiper
+        modules={[Pagination, Navigation]}
+        pagination={{el:'.swiper-pagination', clickable: true}}
+        navigation={{
+          nextEl: '.SlidesWelcome_ButtonNext',
+          prevEl: '.SlidesWelcome_ButtonPrev',
         }}
-        className='SlidesWelcome_Button Right'></button>
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        slidesPerView={'auto'}
+        >
+          {slides.map(({id, src}) =>
+            <SwiperSlide key={id}>
+              <div id={`${id}`} className="SlidesWelcome_Slide" style={{backgroundImage: `url(${src})`}}></div>
+            </SwiperSlide>
+          )}
+          <button className='SlidesWelcome_ButtonPrev'></button>
+          <button className='SlidesWelcome_ButtonNext'></button>
+          <div className="swiper-pagination"></div>
+        </Swiper>
       </div>
-      <div className="SlideNow_Container">
-        {slides.map(({id}) => 
-          <div key={id} className={`SlideNow ${slideNow==id ? 'active' : ''}`}></div>
-        )}
-    </div>
     </div>
   )
 }

@@ -1,13 +1,19 @@
-import ListProductShow from "../components/ListProductShow/ListProductShow";
-import SlidesWelcome from "../components/SlidesWelcome/SlidesWelcome";
+import React from "react";
 import { ProdutoMockup } from "../utils/Mockup/ProductPromo";
 import { Slides } from "../utils/Mockup/SlidesWelcome";
+const ListProductShow = React.lazy(() => import('../components/ListProductShow/ListProductShow'));
+const SlidesWelcome = React.lazy(() => import('../components/SlidesWelcome/SlidesWelcome'));
+
 
 const Home = () => {
   return (
     <>
-      <SlidesWelcome slides={Slides}/>
-      <ListProductShow title={"Promoções"} productModal={ProdutoMockup} />
+      <React.Suspense fallback={<div>Carregando...</div>}>
+        <SlidesWelcome slides={Slides}/>
+      </React.Suspense>
+      <React.Suspense fallback={<div>Carregando...</div>}>
+        <ListProductShow title={"Promoções"} productModal={ProdutoMockup} />
+      </React.Suspense>
     </>
   )
 }
