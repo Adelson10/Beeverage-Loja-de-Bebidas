@@ -3,7 +3,7 @@
     position: relative;
     justify-content: center;
     align-items: end;
-
+    height: 170px;
 }
 
 .PhotoProduct_Photo {
@@ -13,7 +13,8 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    bottom: 15px;
+    bottom: 5px;
+    transition: bottom .1s ease;
 }
 
 .shadow_product {
@@ -21,6 +22,10 @@
     background: rgba(0, 0, 0, 0.274);
     height: 13px;
     border-radius: 50%;
-    bottom: 13px;
+    bottom: 4px;
     filter: blur(3px);
+}
+
+.ProductModal:hover .PhotoProduct_Photo {
+    bottom: 15px;
 }

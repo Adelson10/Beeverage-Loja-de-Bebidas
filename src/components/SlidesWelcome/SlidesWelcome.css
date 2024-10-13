@@ -19,7 +19,7 @@
 .swiper-button-prev-custom {
     background-image: none;
     width: 20%;
-    height: calc(100% - 25px);
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@
 
 .swiper-button-next-custom {
     width: 20%;
-    height: calc(100% - 25px);
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -57,7 +57,16 @@
     border-radius: 0 1.2rem 1.2rem 0;
 }
 
-.swiper-pagination > .swiper-pagination-bullet {
+.swiper-pagination-perso {
+    width: 100%;
+    margin: .5rem 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.swiper-pagination-perso > .swiper-pagination-bullet {
     height: .4rem;
     width: .4rem;
     background: var(--brand-primary);
@@ -66,7 +75,7 @@
     opacity: 1;
 }
 
-.swiper-pagination > .swiper-pagination-bullet-active {
+.swiper-pagination-perso > .swiper-pagination-bullet-active {
     width: 2.5rem;
     border-radius: .5rem;
     background: var(--brand-dark);
@@ -78,16 +87,13 @@
 }
 
 @media (max-width: 1000px) {
-    .SlidesWelcome {
+    .swiper-welcome {
+        display: flex;
         flex-direction: column-reverse;
     }
 
-    .SlidesWelcome_Slide {
+    .swiper-slide-img {
         height: 185px;
     }
 
-    .SlideNow_Container {
-        margin-top: 0rem;
-        margin-bottom: .8rem;
-    }
 }

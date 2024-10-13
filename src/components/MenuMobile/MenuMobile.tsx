@@ -6,6 +6,13 @@ import { X } from '@phosphor-icons/react';
 
 const CatalogoMobile = ({MenuProps}: {MenuProps: MenuContainerProps[]}) => {
     const { CatalogoPage, setCatalogoPage } = useCatalogoPage();
+
+    function handleClick() {
+        if(document.body.style.overflowY==='hidden') {
+          document.body.style.overflowY = 'scroll';
+        }
+        setCatalogoPage(false);
+    }
   
   if (CatalogoPage) return (
     <div className='MenuMobile_Container'>
@@ -26,7 +33,7 @@ const CatalogoMobile = ({MenuProps}: {MenuProps: MenuContainerProps[]}) => {
                 <div className='MenuMobile_footer_Image1 reverse'></div>
             </div>
         </div>
-        <button onClick={() => setCatalogoPage(false)} className="MenuMobile_Close"><X size={'2rem'} fill='bold'/></button>
+        <button onClick={handleClick} className="MenuMobile_Close"><X size={'2rem'} fill='bold'/></button>
     </div>
   )
 }
