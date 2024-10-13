@@ -5,7 +5,7 @@ const ListProductShow = React.lazy(() => import('../components/ListProductShow/L
 const SlidesWelcome = React.lazy(() => import('../components/SlidesWelcome/SlidesWelcome'));
 
 
-const Home = () => {
+const Home = () => {  
   return (
     <>
       <React.Suspense fallback={<div>Carregando...</div>}>

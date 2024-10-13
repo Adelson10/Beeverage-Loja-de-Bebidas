@@ -1,5 +1,5 @@
 .ListProductShow {
-    overflow-x: hidden;
+    position: relative;
 }
 
 .ListProductShow_Title {
@@ -92,4 +92,24 @@
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.swiper-controller {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.swiper-button-prev-custom.list-product {
+    transform: translateX(-2rem);
+    opacity: 1;
+}
+
+.swiper-button-next-custom.list-product {
+    transform: translateX(2rem);
+    opacity: 1;
+}
+
+.swiper-list-products {
+    overflow: hidden;
 }
