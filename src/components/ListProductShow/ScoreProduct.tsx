@@ -6,8 +6,8 @@ const ScoreProduct = ({score}: {score: number}) => {
     const temMeiaEstrela = score % 1 >= 0.5;
         
   return (
-    <div className='ScoreStart'>
-      <div className="ScoreStartIcon Reverse">
+    <div className='score-start'>
+      <div className="score-start-icon reverse">
         {[...Array(5)].map((_, index) => {
             const isLastStar = index === 4;
             const starFill = (score === 5 && isLastStar) ? <StarLastFill /> : <StarFill />;
@@ -24,7 +24,7 @@ const ScoreProduct = ({score}: {score: number}) => {
         })}
       </div>
       {score.toFixed(1)}
-      <div className="ScoreStartIcon">
+      <div className="score-start-icon">
         {[...Array(5)].map((_, index) => {
             const isLastStar = index === 4;
             const starFill = (score === 5 && isLastStar) ? <StarLastFill /> : <StarFill />;

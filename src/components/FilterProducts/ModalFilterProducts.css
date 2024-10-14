@@ -1,0 +1,23 @@
+.modal-filter-products-container {
+    padding: .8rem;
+    border-radius: .8rem;
+    background-color: var(--color-secundary);
+}
+
+.modal-filter-products-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal-filter-products-title {
+    font-size: .9rem;
+    font-weight: normal;
+    color: var(--brand-dark);
+}
+
+.modal-filter-products-filter {
+    font-size: .9rem;
+    font-weight: lighter;
+    color: var(--color-primary);
+}

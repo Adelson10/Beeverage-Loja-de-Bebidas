@@ -33,3 +33,13 @@ type ImageProductModal = {
     src: string;
     shadowWidth: number;
 }
+
+interface ModalFilterProducts {
+    title: string;
+    filters: FiltersProducts;
+}
+
+type FiltersProducts = {
+    title: string,
+    src: string,
+}

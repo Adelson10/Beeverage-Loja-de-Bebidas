@@ -22,7 +22,7 @@
 }
 
 .Modal .icons {
-    color: var(--brand-primary);
+    color: var(--color-primary);
     display: flex;
     padding: .5rem 1rem;
 

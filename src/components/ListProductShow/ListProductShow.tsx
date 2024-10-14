@@ -32,7 +32,8 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
 
   const NumberSlidesViewNotCover = Tablet ? Mobile ? 2 : 4 : 5;
   const NumberSlidesView = Tablet ? Mobile ? 1 : 3 : 4;
-  const NumberLengthSlides = productModal.length-(NumberSlidesView-1);
+  const WidthSlidesView = Tablet ? Mobile ? '50%' : '75%' : '80%';
+  const NumberLengthSlides = productModal.length-((HasCoverProduct ? NumberSlidesView : NumberSlidesViewNotCover)-1);
 
   const handleSlideChange = (swiper: SwiperClass) => {
     setIsBeginning(swiper.isBeginning);
@@ -41,9 +42,9 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
   };
   
   return (
-    <div className='ListProductShow'>
-      <div className="swiper-list-products">
-        <h1 className='ListProductShow_Title'>{title}</h1>
+    <div className='list-products-container'>
+      <div className="list-products">
+        <h1 className='list-products-title'>{title}</h1>
         <div style={{display: 'flex', gap: '1rem'}}>
         { HasCoverProduct && 
           <Link to={HasCoverProduct.src} className='swiper-cover-product-container'>
@@ -54,25 +55,25 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
         onSwiper={setSwiperInstance}
         onSlideChange={handleSlideChange}
         spaceBetween={8}
-        style={{width: HasCoverProduct ? '80%' : '100%'}}
+        style={{width: HasCoverProduct ?  WidthSlidesView : '100%'}}
         slidesPerView={HasCoverProduct ? NumberSlidesView : NumberSlidesViewNotCover}>
             {productModal.map((product) => 
                 <SwiperSlide key={product.code}>
-                  <Link id={product.code} to={product.categoriaSrc} className='ProductModal'>
-                    <div className="ProductModalBoxImage">
+                  <Link id={product.code} to={product.categoriaSrc} className='product-modal'>
+                    <div className="product-modal-image">
                         <PhotoProduct
                         color1='#FFFFFF'
                         color2='#CECECE'
                         shadowImage={`${product.image.shadowWidth}px`}
                         srcImg={product.image.src}/>
-                        {product.price!==0 && <div className='ProductModal_Image_Discount'>{(((product.priceNow*100)/product.price)-100).toFixed(0)}%</div>}
+                        {product.price!==0 && <div className='product-modal-image-discount'>{(((product.priceNow*100)/product.price)-100).toFixed(0)}%</div>}
                     </div>
                     <ScoreProduct score={product.score}/>
                     <h3>{product.name}</h3>
-                    <h4 className="ProductModal_Volume"><strong>Volume:</strong> {product.volume}</h4>
-                    <div className='ProductModal_Prices'>
+                    <h4 className="product-modal-volume"><strong>Volume:</strong> {product.volume}</h4>
+                    <div className='product-modal-price-container'>
                         { product.price>0 && <h2 className="price"><del>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
-                        <h2 className="priceNow">{product.priceNow.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
+                        <h2 className="price-now">{product.priceNow.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
                     </div>
                   </Link>
                 </SwiperSlide>

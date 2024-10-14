@@ -77,7 +77,7 @@ a {
 }
 
 .ModalCatalogo_List a {
-    color: var(--brand-primary);
+    color: var(--color-primary);
 }
 
 .ModalCatalogo_Container a:hover,

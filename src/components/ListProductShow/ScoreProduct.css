@@ -1,4 +1,4 @@
-.ScoreStart {
+.score-start {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,17 +8,17 @@
     font-size: .9rem;
 }
 
-.ScoreStartIcon {
+.score-start-icon {
     display: flex;
     align-items: center;
     gap: .1rem;
 }
 
-.ScoreStartIcon span {
+.score-start-icon span {
     display: flex;
     align-items: center;
 }
 
-.ScoreStartIcon.Reverse {
+.score-start-icon.reverse {
     transform: scaleX(-1);
 }

@@ -1,39 +1,24 @@
-.ListProductShow {
+.list-products-container {
     position: relative;
 }
 
-.ListProductShow_Title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-
-    background-image: linear-gradient(to left, var(--brand-dark), var(--brand));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.ListProductShow_Title::selection {
-    -webkit-text-fill-color: white;
-}
-
-.ProductModalBoxImage {
+.product-modal-image {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-.ProductModal {
+.product-modal {
     display: flex;
     flex-direction: column;
     gap: 4px;
     padding: 1rem;
 }
 
-.ProductModal h3 {
+.product-modal h3 {
     font-size: .8rem;
     font-weight: 500;
-    color: var(--brand-secudary) !important;
+    color: var(--color-secundary) !important;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -43,35 +28,35 @@
     -webkit-box-orient: vertical;
 }
 
-.ProductModal_Volume {
-    color: var(--brand-primary);
+.product-modal-volume {
+    color: var(--color-primary);
     font-size: .6rem;
     font-weight: 400;
 }
 
-.ProductModal_Volume strong {
+.product-modal-volume strong {
     font-weight: 500;
 }
 
-.ProductModal_Prices {
+.product-modal-price-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: .2rem;
 }
 
-.ProductModal .price {
+.product-modal-price-container .price {
     font-weight: 500;
     font-size: .9rem;
-    color: var(--brand-primary);
+    color: var(--color-primary);
 }
 
-.ProductModal .priceNow {
+.product-modal-price-container .price-now {
     color: var(--brand-dark);
     font-size: 1.2rem;
 }
 
-.ProductModal_Image_Discount {
+.product-modal-image-discount {
     position: absolute;
     bottom: 0;
     height: 35px;
@@ -84,14 +69,6 @@
     justify-content: center;
     color: white;
     font-size: .6rem;
-}
-
-.ListModalList_Button.Right{
-    width: 20%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .swiper {
@@ -143,7 +120,13 @@
 }
 
 @media (max-width: 1000px) {
-    .ListProductShow_Title {
-        margin-bottom: 0px;
+    .swiper-cover-product-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .swiper-cover-product-container {
+        width: 50%;
     }
 }

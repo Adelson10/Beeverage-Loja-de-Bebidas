@@ -30,7 +30,7 @@ header {
     width: 23px;
     height: 2px;
     border-radius: 10px;
-    background: var(--brand-primary);
+    background: var(--color-primary);
     transition: transform 500ms;
 }
 

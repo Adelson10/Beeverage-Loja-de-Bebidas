@@ -1,6 +1,10 @@
+import FilterProducts from "../components/FilterProducts/FilterProducts";
+
 const Catalogo = () => {
   return (
-    <div>Catalogo</div>
+    <>
+      <FilterProducts />
+    </>
   )
 }
 
