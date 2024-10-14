@@ -30,7 +30,8 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
   const [isEnd, setIsEnd] = React.useState<boolean>(false);
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
 
-  const NumberSlidesView = Tablet ? Mobile ? 1 : 4 : 5;
+  const NumberSlidesViewNotCover = Tablet ? Mobile ? 2 : 4 : 5;
+  const NumberSlidesView = Tablet ? Mobile ? 1 : 3 : 4;
   const NumberLengthSlides = productModal.length-(NumberSlidesView-1);
 
   const handleSlideChange = (swiper: SwiperClass) => {
@@ -43,7 +44,7 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
     <div className='ListProductShow'>
       <div className="swiper-list-products">
         <h1 className='ListProductShow_Title'>{title}</h1>
-        <div>
+        <div style={{display: 'flex', gap: '1rem'}}>
         { HasCoverProduct && 
           <Link to={HasCoverProduct.src} className='swiper-cover-product-container'>
             <div className='swiper-cover-product' style={{backgroundImage: `url(${HasCoverProduct.img})`}}></div>
@@ -53,7 +54,8 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
         onSwiper={setSwiperInstance}
         onSlideChange={handleSlideChange}
         spaceBetween={8}
-        slidesPerView={NumberSlidesView}>
+        style={{width: HasCoverProduct ? '80%' : '100%'}}
+        slidesPerView={HasCoverProduct ? NumberSlidesView : NumberSlidesViewNotCover}>
             {productModal.map((product) => 
                 <SwiperSlide key={product.code}>
                   <Link id={product.code} to={product.categoriaSrc} className='ProductModal'>
