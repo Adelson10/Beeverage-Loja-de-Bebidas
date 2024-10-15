@@ -7,26 +7,26 @@ const listFilterProduct: ModalFilterProducts[] = [
         title: 'Em Promoção',
         filters: [{
             title: 'Promoção',
-            src: '/catalogo/q?filter=promoção',
+            src: '/q?filter=promoção',
         }]
     },
     {
         title: 'Tipo de Cerveja',
         filters: [{
             title: 'Lager',
-            src: '/catalogo/q?filter=Lager',
+            src: '/q?filter=Lager',
         } , {
             title: 'IPA',
-            src: '/catalogo/q?filter=IPA',
+            src: '/q?filter=IPA',
         } , {
             title: 'Pilsen',
-            src: '/catalogo/q?filter=Pilsen',
+            src: '/q?filter=Pilsen',
         } , {
             title: 'Weiss',
-            src: '/catalogo/q?filter=Weiss',
+            src: '/q?filter=Weiss',
         } , {
             title: 'Stout',
-            src: '/catalogo/q?filter=Stout',
+            src: 'filter=Stout',
         },
         ]
     },

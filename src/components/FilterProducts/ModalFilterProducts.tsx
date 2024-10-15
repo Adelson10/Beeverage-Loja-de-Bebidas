@@ -1,6 +1,7 @@
 import { CaretDown } from "@phosphor-icons/react";
 import './ModalFilterProducts.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { ChangeEvent } from "react";
 
 interface ModalFilterProducts {
     title: string;
@@ -8,11 +9,47 @@ interface ModalFilterProducts {
 }
 
 const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
+    const key = 'filter';
 
-    const navigation = useNavigate();
+    const [filter, setFilter] = useSearchParams();
 
-    function handleChange() {
+    function handleChange(event: ChangeEvent) {
+        const value = event.currentTarget.id;
 
+        setFilter((filter) => {
+            let values = filter.get(key)?.split(",");
+            
+            if(values) {
+
+                if(values.includes(value)) {
+                    values = values.filter((valueNow) => valueNow !== value);
+                } else {
+                    values.push(value)
+                }
+                console.log(values);
+                
+                if (values.length) {                    
+                    filter.set(key, values);
+                } else {
+                    filter.delete(key);
+                }
+                
+            } else {
+                filter.set(key, [value]);
+            }            
+
+            return filter;
+        });
+    }
+
+    function isChecked(id: string): boolean {
+        const verific = filter.get(key)?.split(',');
+         
+        if(verific) {
+            const listFilter = verific.includes(id);
+            return listFilter;
+        }
+        else return false;
     }
 
   return (
@@ -24,8 +61,8 @@ const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
             </button>
         </div>
         {filters.map((filter) => 
-            <label key={filter.title} className="modal-filter-products-filter" htmlFor={filter.src}>
-                <input type="checkbox" onChange={handleChange} name={filter.src} id={filter.src} />
+            <label key={filter.title} className="modal-filter-products-filter" htmlFor={filter.title}>
+                <input type="checkbox" onChange={handleChange} value={filter.title} name={filter.title} id={filter.title} checked={isChecked(filter.title)}/>
                 {filter.title}
             </label>
         )}
