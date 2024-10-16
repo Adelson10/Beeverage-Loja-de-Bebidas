@@ -5,30 +5,23 @@ import ModalFilterProducts from './ModalFilterProducts';
 const listFilterProduct: ModalFilterProducts[] = [
     {
         title: 'Em Promoção',
-        filters: [{
-            title: 'Promoção',
-            src: '/q?filter=promoção',
-        }]
+        filters: ['Promoção']
     },
     {
         title: 'Tipo de Cerveja',
-        filters: [{
-            title: 'Lager',
-            src: '/q?filter=Lager',
-        } , {
-            title: 'IPA',
-            src: '/q?filter=IPA',
-        } , {
-            title: 'Pilsen',
-            src: '/q?filter=Pilsen',
-        } , {
-            title: 'Weiss',
-            src: '/q?filter=Weiss',
-        } , {
-            title: 'Stout',
-            src: 'filter=Stout',
-        },
-        ]
+        filters: ['Lager', 'IPA', 'Pilsen', 'Weiss', 'Stout'],
+    },
+    {
+        title: 'Marca',
+        filters: ['Heineken', 'Brahma', 'Skol', 'Corona', 'Stella','Artois','Amstel'],
+    },
+    {
+        title: 'Volume',
+        filters: ['330ml', '355ml', '600ml', '1L'],
+    },
+    {
+        title: 'Opções de Compra',
+        filters: ['Unidade', 'Pack'],
     },
 ]
 

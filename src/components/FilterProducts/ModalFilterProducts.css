@@ -62,3 +62,15 @@
   .modal-filter-products-filter input[type="checkbox"]:checked::before {
     transform: scale(1);
   }
+
+  .modal-filter-products-filter-container {
+    display: block;
+    position: relative;
+    overflow-y: hidden;
+    max-height: 200px;
+    transition: max-height .5s ease;
+  }
+
+  .modal-filter-products-filter-container.hidden {
+    max-height: 0px;
+  }

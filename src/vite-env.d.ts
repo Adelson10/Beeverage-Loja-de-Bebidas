@@ -36,10 +36,5 @@ type ImageProductModal = {
 
 interface ModalFilterProducts {
     title: string;
-    filters: FiltersProducts[];
-}
-
-type FiltersProducts = {
-    title: string,
-    src: string,
+    filters: string[];
 }

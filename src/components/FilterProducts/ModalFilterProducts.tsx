@@ -1,16 +1,12 @@
 import { CaretDown } from "@phosphor-icons/react";
 import './ModalFilterProducts.css'
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { ChangeEvent } from "react";
-
-interface ModalFilterProducts {
-    title: string;
-    filters: FiltersProducts[];
-}
+import { useSearchParams } from "react-router-dom";
+import React, { ChangeEvent } from "react";
 
 const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
     const key = 'filter';
-
+    const [animation, setAnimation] = React.useState<boolean>(false);
+    
     const [filter, setFilter] = useSearchParams();
 
     function handleChange(event: ChangeEvent) {
@@ -26,16 +22,15 @@ const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
                 } else {
                     values.push(value)
                 }
-                console.log(values);
                 
                 if (values.length) {                    
-                    filter.set(key, values);
+                    filter.set(key, values.toString());
                 } else {
                     filter.delete(key);
                 }
                 
             } else {
-                filter.set(key, [value]);
+                filter.set(key, [value].toString());
             }            
 
             return filter;
@@ -56,16 +51,19 @@ const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
     <div className='modal-filter-products-container'>
         <div className="modal-filter-products-title-container">
             <h1 className="modal-filter-products-title">{title}</h1>
-            <button className="modal-filter-products-title-close">
+            <button className="modal-filter-products-title-close"
+            onClick={() => setAnimation((n) => !n)}>
                 <CaretDown weight="fill" size='1.2rem'/>
             </button>
         </div>
-        {filters.map((filter) => 
-            <label key={filter.title} className="modal-filter-products-filter" htmlFor={filter.title}>
-                <input type="checkbox" onChange={handleChange} value={filter.title} name={filter.title} id={filter.title} checked={isChecked(filter.title)}/>
-                {filter.title}
-            </label>
-        )}
+            <div className={`modal-filter-products-filter-container ${ animation ? 'hidden' : ''}`}>
+                {filters.map((name) => 
+                    <label key={name} className="modal-filter-products-filter" htmlFor={name}>
+                        <input type="checkbox" onChange={handleChange} id={name} checked={isChecked(name)}/>
+                        {name}
+                    </label>
+                )}
+        </div>
     </div>
   )
 }
