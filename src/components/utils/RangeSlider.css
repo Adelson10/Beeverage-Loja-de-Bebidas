@@ -84,10 +84,9 @@
   
   /* For Chrome browsers */
   input[type=range]::-webkit-slider-thumb {
-    background-color: #f1f5f7;
+    background: none;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 1px 1px #ced4da;
     cursor: pointer;
     height: 18px;
     width: 18px;
@@ -100,10 +99,9 @@
   
   /* For Firefox browsers */
   input[type=range]::-moz-range-thumb {
-    background-color: #f1f5f7;
+    background: none;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 1px 1px #ced4da;
     cursor: pointer;
     height: 18px;
     width: 18px;
