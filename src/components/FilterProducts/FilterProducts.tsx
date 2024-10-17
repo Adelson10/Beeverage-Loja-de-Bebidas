@@ -1,6 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useParams } from 'react-router-dom';
 import './FilterProducts.css';
 import ModalFilterProducts from './ModalFilterProducts';
+import ModalPriceProducts from './ModalPriceProducts';
 
 const listFilterProduct: ModalFilterProducts[] = [
     {
@@ -39,6 +41,7 @@ const FilterProducts = () => {
             {listFilterProduct.map(({title, filters}) => 
                 (<ModalFilterProducts key={title} title={title} filters={filters}/>)
             )}
+            <ModalPriceProducts />
         </div>
     </div>
   )
