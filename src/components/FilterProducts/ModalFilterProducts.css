@@ -74,3 +74,8 @@
   .modal-filter-products-filter-container.hidden {
     max-height: 0px;
   }
+
+  .modal-filter-products-title-close.reverse > svg {
+    transition: transform .5s ease;
+    transform: rotate(180deg);
+  }

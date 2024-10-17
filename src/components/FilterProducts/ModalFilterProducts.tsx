@@ -51,7 +51,7 @@ const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
     <div className='modal-filter-products-container'>
         <div className="modal-filter-products-title-container">
             <h1 className="modal-filter-products-title">{title}</h1>
-            <button className="modal-filter-products-title-close"
+            <button className={`modal-filter-products-title-close ${animation ? 'reverse' : ''}`}
             onClick={() => setAnimation((n) => !n)}>
                 <CaretDown weight="fill" size='1.2rem'/>
             </button>
