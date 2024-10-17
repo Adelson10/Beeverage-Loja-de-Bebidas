@@ -76,6 +76,6 @@
   }
 
   .modal-filter-products-title-close.reverse > svg {
-    transition: transform .5s ease;
+    transition: transform .7s ease;
     transform: rotate(180deg);
   }
