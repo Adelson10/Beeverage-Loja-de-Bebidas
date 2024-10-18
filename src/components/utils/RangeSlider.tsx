@@ -21,8 +21,8 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
       const maxPercent = getPercent(maxValRef.current);
   
       if (range.current) {
-        range.current.style.left = `${minPercent}%`;
-        range.current.style.width = `${maxPercent - minPercent}%`;
+        range.current.style.left = `${minPercent+2}%`;
+        range.current.style.width = `${((maxPercent*0.95) - minPercent)}%`;
       }
     }, [minVal, getPercent]);
   
@@ -32,14 +32,14 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
       const maxPercent = getPercent(maxVal);
   
       if (range.current) {
-        range.current.style.width = `${maxPercent - minPercent}%`;
+        range.current.style.width = `${(maxPercent*0.95) - minPercent}%`;
       }
     }, [maxVal, getPercent]);
   
     // Get min and max values when their state changes
     React.useEffect(() => {
-      onChange({ min: minVal, max: maxVal });
-    }, [minVal, maxVal, onChange]);
+      onChange({ min: minVal, max: maxVal , setMin: setMinVal, setMax: setMaxVal});
+    }, [minVal, maxVal]);
   
     return (
       <div className="container">

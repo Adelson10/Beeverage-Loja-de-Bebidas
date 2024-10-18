@@ -25,7 +25,6 @@
   font-size: .8rem;
   color: var(--color-secundary);
   outline: none;
-  -moz-appearance: textfield;
 }
 
 .modal-price-products-coin {
