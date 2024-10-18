@@ -4,10 +4,10 @@ import React from 'react';
 import RangeSlider from '../utils/RangeSlider';
 import { useSearchParams } from 'react-router-dom';
 
-const useDebounce = (callback, delay) => {
+const useDebounce = (callback: Function, delay: number) => {
   const [timeoutId, setTimeoutId] = React.useState(null);
 
-  const debounce = (...args) => {
+  const debounce = (...args: any) => {
     if (timeoutId) clearTimeout(timeoutId);
     const id = setTimeout(() => {
       callback(...args);
@@ -23,6 +23,7 @@ const ModalPriceProducts = () => {
   const [minPrice, setMinPrice] = React.useState<number>(0);
   const [maxPrice, setMaxPrice] = React.useState<number>(0);
   const [filter, setFilter] = useSearchParams();
+  const [firstLoading, setFirstLoading] = React.useState<Boolean>(false);
   const key = 'price';
   const maxValue = 1000;
   const minValue = 0;
@@ -43,16 +44,19 @@ const ModalPriceProducts = () => {
 
   const handleRangeChange = useDebounce((min: number, max: number) => {
     setSearchParams(min, max);
-  }, 300);
+  }, 200);
 
   const handleChange = ({ min, max , setMin, setMax}: {min: number, max: number, setMin: React.Dispatch<React.SetStateAction<number>>, setMax: React.Dispatch<React.SetStateAction<number>> }) => 
     {
-      if(filter.get(key)) {
+      if(filter.get(key) && !firstLoading) {
         const value = filter.get(key)?.split(',');
-        setMin(value[0]);
-        setMax(value[1]);
-        setMinPrice(value[0]);
-        setMaxPrice(value[1]);        
+        setFirstLoading(true);
+        if(value) {
+          setMin(Number(value[0]));
+          setMax(Number(value[1]));
+          setMinPrice(Number(value[0]));
+          setMaxPrice(Number(value[1]));
+        }      
       } else {
         setMinPrice(min);
         setMaxPrice(max);
