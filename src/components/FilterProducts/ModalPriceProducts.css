@@ -2,6 +2,14 @@
   display: flex;
   gap: .4rem;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  max-height: 200px;
+  transition: max-height .5s ease;
+}
+
+.modal-filter-products-wraper-container.hidden {
+  max-height: 0px;
 }
 
 .modal-filter-products-wraper {

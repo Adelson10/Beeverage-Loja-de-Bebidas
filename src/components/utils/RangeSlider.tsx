@@ -1,5 +1,6 @@
 import React from 'react';
 import './RangeSlider.css';
+import useMedia from '../../hooks/useMedia';
 
 const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: any}) => {
 
@@ -8,7 +9,8 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
     const minValRef = React.useRef(min);
     const maxValRef = React.useRef(max);
     const range = React.useRef(null);
-  
+    const mobile = useMedia(1000);
+
     // Convert to percentage
     const getPercent = React.useCallback( (value: number) => 
         Math.round(((value - min) / (max - min)) * 100),
@@ -21,8 +23,8 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
       const maxPercent = getPercent(maxValRef.current);
   
       if (range.current) {
-        range.current.style.left = `${minPercent+2}%`;
-        range.current.style.width = `${((maxPercent*0.95) - minPercent)}%`;
+        range.current.style.left = `${!mobile ? minPercent+3 : minPercent+1}%`;
+        range.current.style.width = `${((!mobile ? maxPercent*0.94 : maxPercent*0.98 ) - minPercent)}%`;
       }
     }, [minVal, getPercent]);
   
@@ -32,7 +34,7 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
       const maxPercent = getPercent(maxVal);
   
       if (range.current) {
-        range.current.style.width = `${(maxPercent*0.95) - minPercent}%`;
+        range.current.style.width = `${(!mobile ? maxPercent*0.94 : maxPercent*0.98) - minPercent}%`;
       }
     }, [maxVal, getPercent]);
   

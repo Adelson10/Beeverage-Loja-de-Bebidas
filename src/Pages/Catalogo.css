@@ -2,3 +2,14 @@
     display: grid;
     grid-template-columns: 20% 70%;
 }
+
+@media (max-width: 1000px) {
+    .page-catalogo-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .thumb {
+        width: 100%;
+    }
+}
