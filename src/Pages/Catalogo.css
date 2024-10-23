@@ -1,6 +1,12 @@
 .page-catalogo-container {
     display: grid;
-    grid-template-columns: 20% 70%;
+    column-gap: 1rem;
+    grid-template-columns: 20% 78%;
+}
+
+.products-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
 }
 
 @media (max-width: 1000px) {

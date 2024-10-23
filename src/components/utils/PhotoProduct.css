@@ -26,6 +26,6 @@
     filter: blur(3px);
 }
 
-.ProductModal:hover .PhotoProduct_Photo {
+.PhotoProduct_Container:hover .PhotoProduct_Photo {
     bottom: 15px;
 }

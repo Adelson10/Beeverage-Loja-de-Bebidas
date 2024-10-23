@@ -1,6 +1,9 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
+import PhotoProduct from '../utils/PhotoProduct';
+import ScoreProduct from '../ListProductShow/ScoreProduct';
+import './ProductModal.css';
 
-const ProductModal = () => {
+const ProductModal = ({product}: {product: productModal}) => {
   return (
     <Link id={product.code} to={product.categoriaSrc} className='product-modal'>
         <div className="product-modal-image">
