@@ -5,7 +5,7 @@ import RangeSlider from '../utils/RangeSlider';
 import { useSearchParams } from 'react-router-dom';
 
 const useDebounce = (callback: Function, delay: number) => {
-  const [timeoutId, setTimeoutId] = React.useState(null);
+  const [timeoutId, setTimeoutId] = React.useState<number | null>(null);
 
   const debounce = (...args: any) => {
     if (timeoutId) clearTimeout(timeoutId);
