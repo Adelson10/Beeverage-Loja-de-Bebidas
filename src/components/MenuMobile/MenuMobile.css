@@ -45,7 +45,7 @@
 
 .MenuMobile_Container {
     width: 100vw;
-    height: calc(100vh - 80px);
+    height: 100vh;
     background-color: var(--bg);
 
     padding: 1rem 0;
@@ -70,6 +70,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    padding-bottom: 4rem;
 }
 
 .MenuMobile_footer_Image1 {

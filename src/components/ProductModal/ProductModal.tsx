@@ -5,7 +5,7 @@ import './ProductModal.css';
 
 const ProductModal = ({product}: {product: productModal}) => {
   return (
-    <Link id={product.code} to={product.categoriaSrc} className='product-modal'>
+    <Link id={product.code} to={`/catalogo/${product.categoria}/${product.code}/${product.name.replaceAll(' ','-')}`} className='product-modal'>
         <div className="product-modal-image">
         <PhotoProduct
         color1='#FFFFFF'

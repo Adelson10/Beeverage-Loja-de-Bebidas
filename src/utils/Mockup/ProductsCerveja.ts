@@ -1,14 +1,8 @@
-import Imagem01 from '../../assets/imagens/Mockup/Produto/cervejas.png';
-import Imagem02 from '../../assets/imagens/Mockup/Produto/CevejaAmstel.png';
-import Imagem03 from '../../assets/imagens/Mockup/Produto/CevejaHeineken.png';
-import Imagem04 from '../../assets/imagens/Mockup/Produto/CevejaOriginal.png';
-import Imagem05 from '../../assets/imagens/Mockup/Produto/CevejaSpaten.png';
-
 export const ProdutoCervejaMockup: productModal[] = [
     {
         code: '303030',
         image: {
-            src: Imagem01,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/cervejas.png?updatedAt=1730651842869',
             shadowWidth: 100
         },
         score: 3.5,
@@ -16,12 +10,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20,
         price: 0,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303031',
         image: {
-            src: Imagem02,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaAmstel.png?updatedAt=1730651842162',
             shadowWidth: 110
         },
         score: 5,
@@ -29,12 +23,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303032',
         image: {
-            src: Imagem03,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaHeineken.png?updatedAt=1730651842063',
             shadowWidth: 110
         },
         score: 5,
@@ -42,12 +36,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '330ml',
         priceNow: 6.78,
         price: 5.09,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303033',
         image: {
-            src: Imagem04,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaOriginal.png?updatedAt=1730651842056',
             shadowWidth: 110
         },
         score: 5,
@@ -55,12 +49,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303034',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -68,12 +62,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303024',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -81,12 +75,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '303059',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -94,12 +88,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '323159',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -107,12 +101,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '322152',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -120,12 +114,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '363259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -133,12 +127,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '393259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -146,12 +140,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '393259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -159,12 +153,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '315259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -172,12 +166,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '615259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -185,12 +179,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '306269',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -198,12 +192,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '393299',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -211,12 +205,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '333659',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -224,12 +218,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '309959',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -237,13 +231,13 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
 
     {
         code: '331959',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -251,12 +245,12 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
     {
         code: '312259',
         image: {
-            src: Imagem05,
+            src: 'https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958',
             shadowWidth: 110
         },
         score: 5,
@@ -264,6 +258,6 @@ export const ProdutoCervejaMockup: productModal[] = [
         volume: '200ml',
         priceNow: 20.78,
         price: 28.36,
-        categoriaSrc: '/catalogo/cervejas/lager/'
+        categoria: 'cervejas'
     },
 ]

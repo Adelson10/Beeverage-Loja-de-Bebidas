@@ -26,7 +26,7 @@ interface productModal {
     volume: string;
     priceNow: number;
     price: number;
-    categoriaSrc: string;
+    categoria: string;
 }
 
 type ImageProductModal = {
