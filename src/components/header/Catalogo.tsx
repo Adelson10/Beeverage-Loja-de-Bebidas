@@ -34,7 +34,7 @@ const Catalogo = ({mobile} : {mobile: boolean}) => {
                     const pageButton = catalogo.src.split('/').filter((path) => path!=='');
                     const filterPageNow = pageNow.filter((path, index) => index<= 1 && path == pageButton[index]);
                     const filterActive = pageButton.every((value, index) => value == filterPageNow[index]);                    
-                
+                    
                     return <li key={catalogo.name}><Link to={catalogo.src} className={`catalogo_button ${ filterActive? 'active' : ''}`}>
                         {catalogo.icon}{catalogo.name}
                     </Link></li>

@@ -5,19 +5,22 @@ import CatalogoPageProvider from './utils/context/CatalogoPageProvider';
 import CatalogoMobile from './components/MenuMobile/MenuMobile';
 import { MenuProps } from './utils/ProductsMenu/ProductsMenu';
 import Router from './routes/Router'
+import FilterActiveProvider from './utils/context/FilterActiveProvider';
 
 function App() {
   return (
     <>
-        <CatalogoPageProvider>
-          <BrowserRouter>
-          <CatalogoMobile MenuProps={MenuProps}/>
-          <div className="App">
-            <Header />
-                <Router />
-          </div>
-          </BrowserRouter>
-        </CatalogoPageProvider>
+        <FilterActiveProvider>
+          <CatalogoPageProvider>
+            <BrowserRouter>
+            <CatalogoMobile MenuProps={MenuProps}/>
+            <div className="App">
+              <Header />
+                  <Router />
+            </div>
+            </BrowserRouter>
+          </CatalogoPageProvider>
+        </FilterActiveProvider>
     </>
   )
 }

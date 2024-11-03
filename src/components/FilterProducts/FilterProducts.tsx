@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import './FilterProducts.css';
 import ModalFilterProducts from './ModalFilterProducts';
 import ModalPriceProducts from './ModalPriceProducts';
+import { useFilterActive } from '../../utils/context/FilterActiveProvider';
+import useMedia from '../../hooks/useMedia';
 
 const listFilterProduct: ModalFilterProducts[] = [
     {
@@ -30,8 +32,10 @@ const listFilterProduct: ModalFilterProducts[] = [
 const FilterProducts = () => {
     const catalogoProduct = useParams<{catalogo: string}>();
     const CatalogoTitle = `${catalogoProduct.catalogo?.charAt(0).toUpperCase()}${catalogoProduct.catalogo?.substring(1)}`;
+    const {filterActive} = useFilterActive();
+    const mobile = useMedia(1000);
 
-  return (
+  if(filterActive || !mobile) return (
     <div className='filter-products-container'>
         <div className="filter-products-title-container">
             <div className="filter-products-container-title-container">

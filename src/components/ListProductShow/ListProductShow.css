@@ -52,11 +52,11 @@
 
 @media (max-width: 1000px) {
     .swiper-cover-product-container {
-        width: 80%;
+        width: 30%;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .swiper-cover-product-container {
         width: 50%;
     }
