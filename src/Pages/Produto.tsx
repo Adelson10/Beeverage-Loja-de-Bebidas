@@ -13,9 +13,16 @@ const Produto = () => {
   const {json} = useFetch<productModal>(url.pathname);
   const [quantity, setQuantity] = React.useState<number>(1);
   const mobile = useMedia(1000);
+  const descriptionRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if(descriptionRef.current)
+    descriptionRef.current.innerHTML = json?.meta_description;
+  }, [json]);
   
   if (json) return (
-    <div className='description-product'>
+    <>
+      <div className='description-product'>
         <div className="description-product-image-container">
           <div className="description-product-image">
               <Swiper>
@@ -57,7 +64,12 @@ const Produto = () => {
             <button className='description-product-buy'><Basket size={20} weight="fill" />Comprar</button>
           }
         </div>
-    </div>
+      </div>
+      <div className="description-product-description-container">
+        <h2 className="description-product-title">DESCRIÇÃO DO PRODUTO</h2>
+        <div ref={descriptionRef} className="description-product-description"></div>
+      </div>
+    </>
   )
 }
 

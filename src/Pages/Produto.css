@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.PhotoProduct_Photo.Page:hover {
+    bottom: 5px;
+}
+
 .description-product-container {
     padding: 0 2rem;
     display: flex;
@@ -104,7 +108,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--brand);
+    color: var(--brand-dark);
 }
 
 .description-product-freight {
@@ -154,4 +158,13 @@
 
 .description-product-container .description-product-buy:hover {
     background: var(--brand-dark);
+}
+
+.description-product-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--brand-dark);
+    line-height: 1rem;
+    margin: 1rem 0;
 }
