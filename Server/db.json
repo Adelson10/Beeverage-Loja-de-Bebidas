@@ -27,10 +27,14 @@
              },
              {
                 "id":303031,
-                "image":{
+                "thumbnail":{
                    "src":"https://ik.imagekit.io/adelson/Cervejas/CevejaAmstel.png?updatedAt=1730651842162",
                    "shadowWidth":110
                 },
+                "imagens": [
+                  "",
+                  ""
+                ],
                 "score":5,
                 "name":"Cerveja Amstel Lager Puro Malte - Pack 6 unidades",
                 "volume":"200ml",
@@ -42,14 +46,20 @@
                    "Amstel",
                    "330ml",
                    "Unidade"
-                ]
+                ],
+                "reviews": 120,
+                "meta_description": "review"
              },
              {
                 "id":303032,
-                "image":{
+                "thumbnail":{
                    "src":"https://ik.imagekit.io/adelson/Cervejas/CevejaHeineken.png?updatedAt=1730651842063",
                    "shadowWidth":110
                 },
+                "imagens": [
+                  "",
+                  ""
+                ],
                 "score":5,
                 "name":"Cerveja Heineken Long Neck",
                 "volume":"330ml",
@@ -61,14 +71,20 @@
                    "Heineken",
                    "330ml",
                    "Unidade"
-                ]
+                ],
+                "reviews": 120,
+                "meta_description": "review"
              },
              {
                 "id":303033,
-                "image":{
+                "thumbnail":{
                    "src":"https://ik.imagekit.io/adelson/Cervejas/CevejaOriginal.png?updatedAt=1730651842056",
                    "shadowWidth":110
                 },
+                "imagens": [
+                  "",
+                  ""
+                ],
                 "score":5,
                 "name":"Cerveja Original (Pack 6 unidades)",
                 "volume":"200ml",
@@ -80,14 +96,20 @@
                    "Original",
                    "330ml",
                    "Unidade"
-                ]
+                ],
+                "reviews": 120,
+                "meta_description": "review"
              },
              {
                 "id":303034,
-                "image":{
+                "thumbnail":{
                    "src":"https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958",
                    "shadowWidth":110
                 },
+                "imagens": [
+                  "",
+                  ""
+                ],
                 "score":5,
                 "name":"Cerveja Spaten (Pack 6 unidades)",
                 "volume":"200ml",
@@ -99,7 +121,9 @@
                    "Spaten",
                    "330ml",
                    "Unidade"
-                ]
+                ],
+                "reviews": 120,
+                "meta_description": "review"
              }
    ]
  }

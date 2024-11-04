@@ -3,15 +3,15 @@ import PhotoProduct from '../utils/PhotoProduct';
 import ScoreProduct from '../ListProductShow/ScoreProduct';
 import './ProductModal.css';
 
-const ProductModal = ({product}: {product: productModal}) => {
+const ProductModal = ({product}: {product: productModal}) => {  
   return (
     <Link id={`${product.id}`} to={`/produto/${product.categoria}/${product.id}/${product.name.replaceAll('-', '').replaceAll('  ','').replaceAll(' ','-')}`} className='product-modal'>
         <div className="product-modal-image">
         <PhotoProduct
         color1='#FFFFFF'
         color2='#CECECE'
-        shadowImage={`${product.image.shadowWidth}px`}
-        srcImg={product.image.src}/>
+        shadowImage={product.thumbnail.shadowWidth}
+        srcImg={product.thumbnail.src}/>
         {product.price!==0 && <div className='product-modal-image-discount'>{(((product.priceNow*100)/product.price)-100).toFixed(0)}%</div>}
         </div>
             <ScoreProduct score={product.score}/>
