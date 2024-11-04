@@ -9,6 +9,7 @@
     flex-direction: column;
     gap: 4px;
     padding: .5rem 1rem;
+    box-sizing: content-box;
 }
 
 .product-modal h3 {

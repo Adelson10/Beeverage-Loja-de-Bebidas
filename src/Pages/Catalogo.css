@@ -7,6 +7,7 @@
 .products-grid-container {
     display: grid;
     grid-template-columns: repeat(4, auto);
+    grid-auto-rows: 325px;
 }
 
 @media (max-width: 1000px) {
@@ -14,8 +15,24 @@
         display: flex;
         flex-direction: column;
     }
+
+    .products-grid-container {
+        grid-template-columns: repeat(3, auto);
+    }
     
     .thumb {
         width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .products-grid-container {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width: 400px) {
+    .products-grid-container {
+        grid-template-columns: repeat(2, 170px);
     }
 }

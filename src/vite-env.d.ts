@@ -19,7 +19,7 @@ interface MenuCategorias {
 }
 
 interface productModal {
-    code: string;
+    id: number;
     image: ImageProductModal;
     score: number;
     name: string;

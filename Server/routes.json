@@ -1,3 +1,5 @@
 {
-    "/cervejas": "/cervejas"
+    "/catalogo/cervejas": "/cervejas",
+    "/produto/cervejas/:id/:name": "/cervejas/:id",
+    "/catalogo/cervejas?filter=:filter": "/cervejas?filter_like=:filter"
 }
