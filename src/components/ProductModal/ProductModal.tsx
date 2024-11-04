@@ -19,7 +19,7 @@ const ProductModal = ({product}: {product: productModal}) => {
                 <h4 className="product-modal-volume"><strong>Volume:</strong> {product.volume}</h4>
                 <div className='product-modal-price-container'>
                 { product.price>0 && <h2 className="price"><del>{product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
-                    <h2 className="price-now">{product.priceNow.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
+                <h2 className="price-now">{product.priceNow.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
                 </div>
         </Link>
   )

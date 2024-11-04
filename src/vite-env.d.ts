@@ -21,15 +21,16 @@ interface MenuCategorias {
 interface productModal {
     id: number;
     thumbnail: ImageProductModal;
-    images: string[];
+    imagens: string[];
     score: number;
     name: string;
     volume: string;
     priceNow: number;
     price: number;
     categoria: string;
-    reviews: string;
+    reviews: number;
     meta_description: string;
+    filter: string[]
 }
 
 type ImageProductModal = {

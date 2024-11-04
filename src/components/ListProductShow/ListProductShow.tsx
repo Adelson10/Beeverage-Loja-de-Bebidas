@@ -57,7 +57,7 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
         style={{width: HasCoverProduct ?  WidthSlidesView : '100%'}}
         slidesPerView={HasCoverProduct ? NumberSlidesView : NumberSlidesViewNotCover}>
             {productModal.map((product) => 
-                <SwiperSlide key={product.code}>
+                <SwiperSlide key={product.id}>
                     <ProductModal product={product}/>
                 </SwiperSlide>
             )}
