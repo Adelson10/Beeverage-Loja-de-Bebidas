@@ -3,12 +3,17 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .description-product-image-container {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.Slide-Thumbnail {
+    position: relative;
 }
 
 .Page {
@@ -39,6 +44,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 1rem;
+    transform: translateX(1rem) translateY(-1rem);
 }
 
 .description-product-name h4 {
@@ -176,7 +182,6 @@
 .description-product-description table {
     border-collapse: collapse;
     overflow: hidden;
-    border: 1px solid #141414;
     -webkit-border-radius: 25px;
        -moz-border-radius: 25px;
             border-radius: 25px;

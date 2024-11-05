@@ -33,6 +33,16 @@ interface productModal {
     filter: string[]
 }
 
+interface reviews {
+    id: number;
+    product: number;
+    address: number;
+    date: Date;
+    score: number;
+    message : string;
+    status: string;
+}
+
 type ImageProductModal = {
     src: string;
     shadowWidth: number;
@@ -41,4 +51,16 @@ type ImageProductModal = {
 interface ModalFilterProducts {
     title: string;
     filters: string[];
+}
+
+interface User {
+    id: number;
+    name: string;
+    gender: string;
+    dateOfBirth: Date;
+    cpf: string;
+    phone: string;
+    email: string;
+    senha: string;
+    photo: string;
 }

@@ -8,7 +8,6 @@ function useFetch<T>(url: string) {
             try {
                 const api = await fetch(`http://localhost:3000${url}`);                
                 const json = await api.json() as T;
-                console.log(`http://localhost:3000${url}`);
                 
                 if(api.ok) {
                     setJson(json);
