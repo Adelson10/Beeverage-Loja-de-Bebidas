@@ -13,11 +13,11 @@ const Produto = () => {
   const {json} = useFetch<productModal>(url.pathname);
   const [quantity, setQuantity] = React.useState<number>(1);
   const mobile = useMedia(1000);
-  const descriptionRef = React.useRef<HTMLDivElement>(null);
+  const descriptionRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
-    if(descriptionRef.current)
-    descriptionRef.current.innerHTML = json?.meta_description;
+    if(json?.meta_description)
+      descriptionRef.current.innerHTML = json?.meta_description;
   }, [json]);
   
   if (json) return (
