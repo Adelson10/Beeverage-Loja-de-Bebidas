@@ -123,7 +123,7 @@
             {
               "id": 303040,
               "thumbnail": {
-                "src": "https://ik.imagekit.io/adelson/Cervejas/Amstel.png?updatedAt=1730651841999",
+                "src": "https://ik.imagekit.io/adelson/Cervejas/Amstel%20Pilsen.webp?updatedAt=1730856360754",
                 "shadowWidth": 110
               },
               "imagens": [
@@ -147,7 +147,7 @@
             {
                "id": 303041,
                "thumbnail": {
-                 "src": "https://ik.imagekit.io/adelson/Cervejas/Skol_Premium.png?updatedAt=1730651841999",
+                 "src": "https://ik.imagekit.io/adelson/Cervejas/IPA%20Puro%20Malte%20Eisenbahn.webp?updatedAt=1730858521422",
                  "shadowWidth": 110
                },
                "imagens": [
@@ -155,14 +155,14 @@
                  ""
                ],
                "score": 4.5,
-               "name": "Cerveja Skol Premium Pilsen Lata 355ml",
+               "name": "Cerveja IPA Puro Malte Eisenbahn 355ml Lata",
                "volume": "355ml",
                "priceNow": 6.20,
                "price": 7.00,
                "categoria": "cervejas",
                "filter": [
-                 "Pilsen",
-                 "Skol",
+                 "IPA",
+                 "Eisenbahn",
                  "355ml",
                  "Unidade"
                ],
@@ -171,7 +171,7 @@
              {
                "id": 303042,
                "thumbnail": {
-                 "src": "https://ik.imagekit.io/adelson/Cervejas/Brahma_Extra.png?updatedAt=1730651842999",
+                 "src": "https://ik.imagekit.io/adelson/Cervejas/Brahma%20Extra%20Lager%20Lata.webp?updatedAt=1730859675886",
                  "shadowWidth": 110
                },
                "imagens": [
@@ -195,7 +195,7 @@
              {
                "id": 303043,
                "thumbnail": {
-                 "src": "https://ik.imagekit.io/adelson/Cervejas/Guinness.png?updatedAt=1730651842099",
+                 "src": "https://ik.imagekit.io/adelson/Cervejas/Guinness%20Stout%20Lata.webp?updatedAt=1730859921686",
                  "shadowWidth": 110
                },
                "imagens": [
@@ -219,7 +219,7 @@
              {
                "id": 303044,
                "thumbnail": {
-                 "src": "https://ik.imagekit.io/adelson/Cervejas/Beck_s.png?updatedAt=1730651842055",
+                 "src": "https://ik.imagekit.io/adelson/Cervejas/BeckLata.webp?updatedAt=1730860142965",
                  "shadowWidth": 110
                },
                "imagens": [
