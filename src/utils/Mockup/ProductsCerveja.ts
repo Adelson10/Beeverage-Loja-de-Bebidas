@@ -1,126 +1,57 @@
-export const ProdutoCervejaMockup: productModal[] = 
-    [ {
-        id: 303030,
-        thumbnail: {
-          src: "https://ik.imagekit.io/adelson/Cervejas/cervejas.png?updatedAt=1730651842869",
-          shadowWidth: 100
-        },
-        imagens: [
-          "",
-          ""
-        ],
-        score: 3.5,
-        name: "Cerveja Amstel Lager Puro Malte - Pack 6 unidades",
-        volume: "200ml",
-        priceNow: 20,
-        price: 0,
-        categoria: "cervejas",
-        filter: [
-          "Lager",
-          "Amstel",
-          "330ml",
-          "Unidade"
-        ],
-        reviews: 120,
-        meta_description: "review"
-      },
-      {
-        id: 303031,
-        thumbnail: {
-          src: "https://ik.imagekit.io/adelson/Cervejas/CevejaAmstel.png?updatedAt=1730651842162",
-          shadowWidth: 110
-        },
-        imagens: [
-          "",
-          ""
-        ],
-        score: 5,
-        name: "Cerveja Amstel Lager Puro Malte - Pack 6 unidades",
-        volume: "200ml",
-        priceNow: 20.78,
-        price: 28.36,
-        categoria: "cervejas",
-        filter: [
-          "Lager",
-          "Amstel",
-          "330ml",
-          "Unidade"
-        ],
-        reviews: 120,
-        meta_description: "review"
-      },
-      {
-        id: 303032,
-        thumbnail: {
-          src: "https://ik.imagekit.io/adelson/Cervejas/CevejaHeineken.png?updatedAt=1730651842063",
-          shadowWidth: 110
-        },
-        imagens: [
-          "",
-          ""
-        ],
-        score: 5,
-        name: "Cerveja Heineken Long Neck",
-        volume: "330ml",
-        priceNow: 6.78,
-        price: 5.09,
-        categoria: "cervejas",
-        filter: [
-          "Lager",
-          "Heineken",
-          "330ml",
-          "Unidade"
-        ],
-        reviews: 120,
-        meta_description: "review"
-      },
-      {
-        id: 303033,
-        thumbnail: {
-          src: "https://ik.imagekit.io/adelson/Cervejas/CevejaOriginal.png?updatedAt=1730651842056",
-          shadowWidth: 110
-        },
-        imagens: [
-          "",
-          ""
-        ],
-        score: 5,
-        name: "Cerveja Original (Pack 6 unidades)",
-        volume: "200ml",
-        priceNow: 20.78,
-        price: 28.36,
-        categoria: "cervejas",
-        filter: [
-          "Lager",
-          "Original",
-          "330ml",
-          "Unidade"
-        ],
-        reviews: 120,
-        meta_description: "review"
-      },
-      {
-        id: 303034,
-        thumbnail: {
-          src: "https://ik.imagekit.io/adelson/Cervejas/CevejaSpaten.png?updatedAt=1730651841958",
-          shadowWidth: 110
-        },
-        imagens: [
-          "",
-          ""
-        ],
-        score: 5,
-        name: "Cerveja Spaten (Pack 6 unidades)",
-        volume: "200ml",
-        priceNow: 20.78,
-        price: 28.36,
-        categoria: "cervejas",
-        filter: [
-          "Lager",
-          "Spaten",
-          "330ml",
-          "Unidade"
-        ],
-        reviews: 120,
-        meta_description: "review"
-}]
+export const ReviewMockup: reviews[] = 
+[
+  {
+    id: 0,
+    product: 303035,
+    address: 1,
+    date: "2024-11-01",
+    score: 2.5,
+    message: "Muito saborosa.",
+    status: "Comprou"
+  },
+  {
+    id: 1,
+    product: 303035,
+    address: 2,
+    date: "2024-11-02",
+    score: 3.7,
+    message: "Muito boa.",
+    status: "Comprou"
+  },
+  {
+    id: 2,
+    product: 303035,
+    address: 3,
+    date: "2024-11-03",
+    score: 4.5,
+    message: "Ótimo gosto.",
+    status: "Comprou"
+  },
+  {
+    id: 3,
+    product: 303035,
+    address: 4,
+    date: "2024-11-04",
+    score: 4.2,
+    message: "Ótima.",
+    status: "Comprou"
+  },
+  {
+    id: 4,
+    product: 303035,
+    address: 5,
+    date: "2024-11-05",
+    score: 1.5,
+    message: "Deliciosa.",
+    status: "Comprou"
+  },
+  {
+    id: 5,
+    product: 303031,
+    address: 5,
+    date: "2024-11-06",
+    score: 0.5,
+    message: "Deliciosa.",
+    status: "Comprou"
+  }
+]

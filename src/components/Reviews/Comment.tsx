@@ -1,4 +1,3 @@
-import React from 'react'
 import ScoreProductPartial from '../ListProductShow/ScoreProductPartial';
 import useFetch from '../../hooks/useFetch';
 

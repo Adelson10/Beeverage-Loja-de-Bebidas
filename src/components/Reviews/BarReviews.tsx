@@ -1,5 +1,3 @@
-import React from 'react'
-
 const BarReviews = ({number, Scores, total} : {number: number, Scores: number[], total: number}) => {    
     
   function handleNumber(value: number, total: number) {

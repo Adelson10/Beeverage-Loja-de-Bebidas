@@ -1,4 +1,3 @@
-import ScoreProductPartial from '../ListProductShow/ScoreProductPartial';
 import BarReviews from './BarReviews';
 import Comment from './Comment';
 import './Reviews.css';

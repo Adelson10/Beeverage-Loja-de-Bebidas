@@ -28,7 +28,6 @@ interface productModal {
     priceNow: number;
     price: number;
     categoria: string;
-    reviews: number;
     meta_description: string;
     filter: string[]
 }
@@ -37,7 +36,7 @@ interface reviews {
     id: number;
     product: number;
     address: number;
-    date: Date;
+    date: string;
     score: number;
     message : string;
     status: string;
