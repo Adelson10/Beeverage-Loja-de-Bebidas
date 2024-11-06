@@ -7,11 +7,13 @@ const Comment = ({review}: {review: reviews}) => {
   
   return (
     <div className='reviews-comment-container'>
-        <div className="reviews-comment-photo-user" style={{background: user.json?.photo}}></div>
         <div className="reviews-comment-user-container">
-            <h2 className="reviews-comment-user-name">{user.json?.name}</h2>
-            <p className='reviews-comment-user-date'>{review.date.toString()}</p>
-            <div className="reviews-comment-user-status">{review.status}</div>
+            <div className="reviews-comment-photo-user" style={{backgroundImage: `url(${user.json?.photo})`}}></div>
+            <div className='reviews-comment-user'>
+              <h2 className="reviews-comment-user-name">{user.json?.name}</h2>
+              <p className='reviews-comment-user-date'>{review.date.toString()}</p>
+              <div className="reviews-comment-user-status">{review.status}</div>
+            </div>
         </div>
         <div className="reviews-comment">
             <ScoreProductPartial score={review.score}/>

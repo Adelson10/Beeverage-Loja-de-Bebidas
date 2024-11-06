@@ -9,12 +9,11 @@ const Reviews = ({reviews}: {reviews: reviews[]}) => {
 
   return (
     <div className='reviews-container'>
-        <h2>Comentários</h2>
+        <h2 className='reviews-title'>Comentários</h2>
         <div className="reviews-infos-container">
             <div className="reviews-infos">
-                <h1>{valueReviews.toString()}</h1>
-                <ScoreProductPartial score={valueReviews}/>
-                <p>( {reviews.length} Reviews )</p>
+                <h1>{valueReviews ? valueReviews.toString() : 0}</h1>
+                <p>{`( ${reviews.length} Reviews )`}</p>
             </div>
             <div className="reviews-infos-graphics-container">
                 <BarReviews number={5} Scores={Scores} total={reviews.length}/>
@@ -24,9 +23,11 @@ const Reviews = ({reviews}: {reviews: reviews[]}) => {
                 <BarReviews number={1} Scores={Scores} total={reviews.length}/>
             </div>
         </div>
-        {reviews.map((review) => 
-          (<Comment key={review.id} review={review} />)
-        )}
+        <div className="reviews-commentes-container">
+          {reviews.map((review) => 
+            (<Comment key={review.id} review={review} />)
+          )}
+        </div>
     </div>
   )
 }
