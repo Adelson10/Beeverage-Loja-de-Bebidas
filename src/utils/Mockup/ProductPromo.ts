@@ -30,10 +30,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Brahma.webp?updatedAt=1730852868736",
       shadowWidth: 50
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4,
     name: "Cerveja Brahma Chopp 300ml",
     volume: "300ml",
@@ -54,10 +51,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Skol%20Pilsen.webp?updatedAt=1730853978489",
       shadowWidth: 100
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4.5,
     name: "Cerveja Skol Pilsen Lata 355ml",
     volume: "355ml",
@@ -78,10 +72,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Corona%20Extra.webp?updatedAt=1730854198114",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 5,
     name: "Cerveja Corona Extra Lata 330ml",
     volume: "330ml",
@@ -102,10 +93,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Stella%20Artois.webp?updatedAt=1730854365184",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 5,
     name: "Cerveja Stella Artois Lata 355ml",
     volume: "355ml",
@@ -126,10 +114,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Amstel%20Pilsen.webp?updatedAt=1730856360754",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4.5,
     name: "Cerveja Amstel Pilsen Lata 355ml",
     volume: "355ml",
@@ -150,10 +135,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/IPA%20Puro%20Malte%20Eisenbahn.webp?updatedAt=1730858521422",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4.5,
     name: "Cerveja IPA Puro Malte Eisenbahn 355ml Lata",
     volume: "355ml",
@@ -174,10 +156,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Brahma%20Extra%20Lager%20Lata.webp?updatedAt=1730859675886",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4.8,
     name: "Cerveja Brahma Extra Lager Lata 355ml",
     volume: "355ml",
@@ -198,10 +177,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/Guinness%20Stout%20Lata.webp?updatedAt=1730859921686",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 5,
     name: "Cerveja Guinness Stout Lata 440ml",
     volume: "440ml",
@@ -222,10 +198,7 @@ export const ProdutoMockup: productModal[] = [
       src: "https://ik.imagekit.io/adelson/Cervejas/BeckLata.webp?updatedAt=1730860142965",
       shadowWidth: 110
     },
-    imagens: [
-      "",
-      ""
-    ],
+    imagens: [],
     score: 4.5,
     name: "Cerveja Beck's Lata 330ml",
     volume: "330ml",

@@ -56,7 +56,7 @@ interface User {
     id: number;
     name: string;
     gender: string;
-    dateOfBirth: Date;
+    dateOfBirth: string;
     cpf: string;
     phone: string;
     email: string;

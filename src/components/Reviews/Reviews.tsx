@@ -2,7 +2,7 @@ import BarReviews from './BarReviews';
 import Comment from './Comment';
 import './Reviews.css';
 
-const Reviews = ({reviews}: {reviews: reviews[]}) => {
+const Reviews = ({reviews}: {reviews: reviews[]}) => {  
   const Scores = reviews.map((review) => review.score);
   const valueReviews = Scores.reduce( (acc, now) => acc + now, 0)/reviews.length;
 

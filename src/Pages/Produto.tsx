@@ -1,7 +1,7 @@
-import { useLocation, useParams } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+import { useParams } from 'react-router-dom';
+//import useFetch from '../hooks/useFetch';
 import PhotoProduct from '../components/utils/PhotoProduct';
-import { SwiperSlide, Swiper } from 'swiper/react';
+import { SwiperSlide, Swiper, SwiperClass } from 'swiper/react';
 import ScoreProduct from '../components/ListProductShow/ScoreProduct';
 import React from 'react';
 import { Basket, ShoppingCart, TruckTrailer } from '@phosphor-icons/react';
@@ -10,21 +10,25 @@ import './Produto.css';
 import Reviews from '../components/Reviews/Reviews';
 import { ReviewMockup } from '../utils/Mockup/ProductsCerveja';
 import { ProdutoMockup } from '../utils/Mockup/ProductPromo';
+import 'swiper/swiper-bundle.css';
+import 'swiper/css';
 
 const Produto = () => {
-  const url = useLocation();  
+  //const url = useLocation();  
   const {id} = useParams(); 
 
   //const product = useFetch<productModal>(url.pathname);
-   const product = ProdutoMockup.filter((product) => product.id == Number(id));
-   console.log(product);
-   
+   const product = ProdutoMockup.filter((product) => product.id == Number(id));   
   //const reviews = useFetch<reviews[]>(`/comentarios/${product.json?.id}`);
-  const reviews = ReviewMockup;
+  const reviews = ReviewMockup.filter((review) => review.product === Number(id));
   const [quantity, setQuantity] = React.useState<number>(1);
-  const mobile = useMedia(1000);
   const descriptionRef = React.useRef<HTMLDivElement | null>(null);
-  const tablet = useMedia(750);
+  const [activeIndex, setActiveIndex] = React.useState<number>(0);
+  const mobile = useMedia(750);
+  
+  const handleSlideChange = (swiper: SwiperClass) => {
+    setActiveIndex(swiper.activeIndex);
+  };
 
   React.useEffect(() => {
     document.title = product[0].name ? product[0].name : '';
@@ -36,25 +40,32 @@ const Produto = () => {
   if (product[0]) return (
     <>
       <div className='description-product'>
-        { tablet && <div className="description-product-score">
+        { mobile && <div className="description-product-score">
             <ScoreProduct score={product[0].score}/>
             <p>( {reviews.length} Reviews )</p>
         </div>}
         <div className="description-product-image-container">
           <div className="description-product-image">
-              <Swiper>
+              <Swiper
+              onSlideChange={handleSlideChange}
+              >
                 <SwiperSlide>
                   <div className='Slide-Thumbnail'>
                     <PhotoProduct type='Page' color1='#FFFFFF' color2='#CECECE' shadowImage={product[0].thumbnail.shadowWidth} srcImg={product[0].thumbnail.src}/>
                     {product[0].price!==0 && <div className='product-modal-image-discount description'>{(((product[0].priceNow*100)/product[0].price)-100).toFixed(0)}%</div>}
                   </div>
                 </SwiperSlide>
-                {product[0].imagens.map( () => 
-                  <SwiperSlide>
-                      <div className="product-modal-imagem"></div>
+                {product[0].imagens.map( (image,index) => 
+                  <SwiperSlide key={index}>
+                      <div className="product-modal-imagem" style={{backgroundImage: `url(${image})`}}></div>
                   </SwiperSlide>
                 )}
               </Swiper>
+            </div>
+            <div className="swiper-pagination-perso">
+                {[...Array(product[0].imagens.length+1)].map((_,index) =>
+                  <div key={index} className={ `swiper-pagination-bullet ${activeIndex===index ? 'swiper-pagination-bullet-active' : ''} product`}></div>
+                )}
             </div>
         </div>
         <div className="description-product-container">
@@ -62,11 +73,11 @@ const Produto = () => {
             <h1>{product[0].name}</h1>
             <h4>Volume: {product[0].volume}</h4>
           </div>
-          { !tablet && <div className="description-product-score">
+          { !mobile && <div className="description-product-score">
             <ScoreProduct score={product[0].score}/>
             <p>( {reviews.length} Reviews )</p>
           </div>}
-          { !tablet && 
+          { !mobile && 
           <div className="description-product-price-container">
             <div className="description-product-quantity-container">
               <button onClick={() => { if(quantity > 1 ) setQuantity(quantity-1) }}>-</button>
@@ -80,7 +91,7 @@ const Produto = () => {
           </div>
           }
           <div className="description-product-freight-container">
-              { !tablet && <p>Calcular Frete:</p>}
+              { !mobile && <p>Calcular Frete:</p>}
               <label htmlFor='freight' className="description-product-freight">
                   <input type="text" id='freight' placeholder='Insirir CEP' autoComplete='false' autoSave='false'/>
                   <button><TruckTrailer size={16} weight="fill" /></button>
@@ -90,7 +101,7 @@ const Produto = () => {
             <button className='description-product-buy'><Basket size={20} weight="fill" />Comprar</button>
           }
         </div>
-        { tablet && 
+        { mobile && 
         <button className='button-product'>
             <div className="description-product-prices">
                 {product[0].price > 0 && <h2 className='price'><del>{(product[0].price*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}

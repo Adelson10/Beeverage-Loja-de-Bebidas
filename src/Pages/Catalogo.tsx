@@ -1,5 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { useLocation } from "react-router-dom";
+//import { useLocation } from "react-router-dom";
 import FilterProducts from "../components/FilterProducts/FilterProducts";
 import ProductModal from "../components/ProductModal/ProductModal";
 // import useFetch from "../hooks/useFetch";
@@ -7,7 +7,7 @@ import './Catalogo.css';
 import { ProdutoMockup } from "../utils/Mockup/ProductPromo";
 
 const Catalogo = () => {
-  const url = useLocation();  
+  // const url = useLocation();  
   // const {json} = useFetch<productModal[]>( !url.search ? url.pathname : `${url.pathname}${url.search}`);
   
   return (
