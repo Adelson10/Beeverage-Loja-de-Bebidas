@@ -7,10 +7,11 @@
                 "shadowWidth": 100
               },
               "imagens": [
-                "",
-                ""
+                "https://ik.imagekit.io/adelson/Cervejas/222-cerveja-heineken-long-neck-330ml-1.webp?updatedAt=1730904196265",
+                "https://ik.imagekit.io/adelson/Cervejas/222-cerveja-heineken-long-neck-330ml-2.webp?updatedAt=1730904196379",
+                "https://ik.imagekit.io/adelson/Cervejas/222-cerveja-heineken-long-neck-330ml-3.webp?updatedAt=1730904196448"
               ],
-              "score": 5,
+              "score": 3.28,
               "name": "Cerveja Heineken Long Neck",
               "volume": "330ml",
               "priceNow": 6.99,

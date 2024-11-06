@@ -46,9 +46,6 @@ const Header = () => {
                         <ButtonIcon className="icons">
                             <WechatLogo size='1.5rem' weight="fill"/>
                         </ButtonIcon>
-                        <ButtonIcon className="icons">
-                            <Heart size='1.5rem' weight="fill"/>
-                        </ButtonIcon>
                     </nav>
                 </>)
                 : (<>

@@ -12,7 +12,7 @@ const Reviews = ({reviews}: {reviews: reviews[]}) => {
         <h2 className='reviews-title'>Comentários</h2>
         <div className="reviews-infos-container">
             <div className="reviews-infos">
-                <h1>{valueReviews ? valueReviews.toString() : 0}</h1>
+                <h1>{valueReviews ? valueReviews.toFixed(1).toString() : 0}</h1>
                 <p>{`( ${reviews.length} Reviews )`}</p>
             </div>
             <div className="reviews-infos-graphics-container">

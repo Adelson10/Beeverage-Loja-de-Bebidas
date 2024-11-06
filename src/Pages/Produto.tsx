@@ -41,6 +41,11 @@ const Produto = () => {
                     {product.json.price!==0 && <div className='product-modal-image-discount description'>{(((product.json.priceNow*100)/product.json.price)-100).toFixed(0)}%</div>}
                   </div>
                 </SwiperSlide>
+                {product.json.imagens.map( () => 
+                  <SwiperSlide>
+                      <div className="product-modal-imagem"></div>
+                  </SwiperSlide>
+                )}
               </Swiper>
             </div>
         </div>
