@@ -1,3 +1,5 @@
+// RangeSlider.css now only holds ::-webkit-slider-thumb / ::-moz-range-thumb rules,
+// which cannot be expressed as Tailwind utility classes.
 import './RangeSlider.css';
 import useMedia from '../../hooks/useMedia';
 import React from 'react';
@@ -39,7 +41,7 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
     }, [minVal, maxVal]);
   
     return (
-      <div className="container">
+      <div className="h-4 flex items-center justify-center">
         <input
           type="range"
           min={min}
@@ -50,7 +52,7 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
             setMinVal(value);
             minValRef.current = value;
           }}
-          className="thumb thumb--left"
+          className="thumb pointer-events-none absolute h-0 w-[200px] outline-none appearance-none [-webkit-appearance:none] z-[3]"
           style={{ zIndex: minVal > max - 100 ? "5" : undefined}}
         />
         <input
@@ -63,12 +65,12 @@ const RangeSlider = ({min, max, onChange}: {min: number, max: number, onChange: 
             setMaxVal(value);
             maxValRef.current = value;
           }}
-          className="thumb thumb--right"
+          className="thumb pointer-events-none absolute h-0 w-[200px] outline-none appearance-none [-webkit-appearance:none] z-[4]"
         />
-  
-        <div className="slider">
-          <div className="slider__track" />
-          <div ref={range} className="slider__range" />
+
+        <div className="relative w-[200px] bottom-[7px] max-[1000px]:w-full">
+          <div className="absolute rounded-[2px] h-2 bg-white py-1 px-0 w-full z-[1]" />
+          <div ref={range} className="absolute rounded-[2px] h-2 top-1 bg-brand-dark z-[2]" />
         </div>
       </div>
     );

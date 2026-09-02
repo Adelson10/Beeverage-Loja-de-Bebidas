@@ -1,5 +1,4 @@
 import { CaretDown } from '@phosphor-icons/react';
-import './ModalPriceProducts.css'
 import React from 'react';
 import RangeSlider from '../utils/RangeSlider';
 import { useSearchParams } from 'react-router-dom';
@@ -65,29 +64,29 @@ const ModalPriceProducts = () => {
     }
 
   return (
-    <div className="modal-filter-products-container">
-        <div className="modal-filter-products-title-container">
-            <h1 className="modal-filter-products-title">Preço</h1>
-            <button className="modal-filter-products-title-close"
+    <div className="py-[.6rem] px-2 rounded-[.8rem] bg-bg-secundary">
+        <div className="flex items-center justify-between">
+            <h1 className="text-base font-medium text-brand-dark">Preço</h1>
+            <button className="text-brand-dark"
             onClick={() => setAnimation((n) => !n)}>
                 <CaretDown weight="fill" size='1.2rem'/>
             </button>
         </div>
-        <div className={`modal-filter-products-wraper-container ${ animation ? 'hidden' : ''}`}>
+        <div className={`flex flex-col gap-[.4rem] relative overflow-hidden transition-[max-height] duration-500 ease ${ animation ? 'max-h-0' : 'max-h-[200px]'}`}>
           <RangeSlider min={minValue}  max={maxValue} onChange={handleChange}/>
-          <div className='modal-filter-products-wraper'>
-            <div className="modal-price-products-field">
-              <div className="modal-price-products-coin">
-                <span>R$</span>
+          <div className='flex items-center justify-between gap-[.6rem]'>
+            <div className="border border-brand-dark flex rounded-[.2rem]">
+              <div className="border-r border-brand-dark inline-block px-[.4rem] text-brand-dark font-semibold">
+                <span className='text-[.8rem]'>R$</span>
               </div>
-              <span className='modal-price-products-number'>{minPrice}</span>
+              <span className='w-full py-[.2rem] px-[.4rem] bg-transparent border-none text-[.8rem] text-secundary outline-none'>{minPrice}</span>
             </div>
-            <div className='modal-price-products-divide'>-</div>
-            <div className="modal-price-products-field">
-              <div className="modal-price-products-coin">
-                <span>R$</span>
+            <div className='text-brand-dark'>-</div>
+            <div className="border border-brand-dark flex rounded-[.2rem]">
+              <div className="border-r border-brand-dark inline-block px-[.4rem] text-brand-dark font-semibold">
+                <span className='text-[.8rem]'>R$</span>
               </div>
-              <span className='modal-price-products-number'>{maxPrice}</span>
+              <span className='w-full py-[.2rem] px-[.4rem] bg-transparent border-none text-[.8rem] text-secundary outline-none'>{maxPrice}</span>
             </div>
           </div>
         </div>

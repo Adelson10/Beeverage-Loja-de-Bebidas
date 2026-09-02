@@ -12,7 +12,7 @@ const useMedia = (media: number) => {
 
         window.addEventListener('resize', changeMatch);
         return () => {
-            window.addEventListener('resize', changeMatch);
+            window.removeEventListener('resize', changeMatch);
         }
     },[Media]);
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import './ButtonIcon.css';
 
 type buttonProps = React.ComponentProps<'button'> & React.PropsWithChildren;
 
-const ButtonIcon = ({children, ...props}: buttonProps) => {
+const ButtonIcon = ({children, className, ...props}: buttonProps) => {
   return (
-    <button {...props}>{children}</button>
+    <button className={`border-none bg-transparent inline-flex cursor-pointer ${className ?? ''}`} {...props}>{children}</button>
   )
 }
 

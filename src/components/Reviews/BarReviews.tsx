@@ -28,10 +28,10 @@ const BarReviews = ({number, Scores, total} : {number: number, Scores: number[],
   }
 
   return (
-    <div className="reviews-info-graphics">
-        <p>{number.toString()}</p>
-        <div className="line-reviews-container">
-            <div className="line-reviews" style={{maxWidth: `${handleNumber(number, total)}%`}}></div>
+    <div className="flex items-center gap-[1.2rem]">
+        <p className="w-[15px] text-center font-light">{number.toString()}</p>
+        <div className="w-[250px] h-3 flex items-center justify-start bg-[#D9D9D9] rounded-2xl overflow-hidden max-[750px]:w-full">
+            <div className="h-full w-full block bg-brand-dark rounded-2xl" style={{maxWidth: `${handleNumber(number, total)}%`}}></div>
         </div>
     </div>
   )

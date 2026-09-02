@@ -1,6 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useParams } from 'react-router-dom';
-import './FilterProducts.css';
 import ModalFilterProducts from './ModalFilterProducts';
 import ModalPriceProducts from './ModalPriceProducts';
 import { useFilterActive } from '../../utils/context/FilterActiveProvider';
@@ -37,10 +36,10 @@ const FilterProducts = () => {
 
   if(filterActive || !mobile) return (
     <div className='filter-products-container'>
-        <div className="filter-products-title-container">
+        <div className="filter-products-title-container flex flex-col justify-between gap-4">
             <div className="filter-products-container-title-container">
-                <h1 style={{display: 'inline-block'}} className='list-products-title'>{CatalogoTitle}</h1>
-                <p className='filter-products-title-itens'>(100 itens)</p>
+                <h1 className='inline-block text-[1.4rem] font-semibold bg-linear-to-l from-brand-dark to-brand bg-clip-text text-transparent selection:text-white'>{CatalogoTitle}</h1>
+                <p className='inline-block text-[.6rem] ml-[.1rem] text-primary'>(100 itens)</p>
             </div>
             {listFilterProduct.map(({title, filters}) => 
                 (<ModalFilterProducts key={title} title={title} filters={filters}/>)

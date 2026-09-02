@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
 
 @font-face {
     font-family: 'Bebidas';
@@ -7,40 +8,47 @@
     font-style: normal;
 }
 
-.MenuTitle {
-    font-family: 'Bebidas', sans-serif;
-    font-weight: normal;
-}
-
-:root {
-    --brand: #009C33;
-    --brand-dark: #006B23;
-    --brand-select: #003010;
+@theme {
+    --color-brand: #009C33;
+    --color-brand-dark: #006B23;
+    --color-brand-select: #003010;
     --color-primary: #989898;
     --color-secundary: #3C3C3C;
-    --brand-menu: #32353A;
-    --bg: #EEE9E2;
-    --bg-secundary: #E5E0D7;
+    --color-brand-menu: #32353A;
+    --color-bg: #EEE9E2;
+    --color-bg-secundary: #E5E0D7;
+
+    --font-poppins: "Poppins", sans-serif;
+    --font-bebidas: "Bebidas", sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-}
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+    }
 
-.App {
-    max-width: 990px;
-    margin: 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    body, html {
+        background: var(--color-bg);
+    }
 
-button, input, textarea {
-    outline: none;
-    -webkit-tap-highlight-color: transparent;
+    button, input, textarea {
+        outline: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+        border: none;
+        background: none;
+        display: inline-flex;
+        cursor: pointer;
+    }
+
+    ::selection {
+        background-color: var(--color-brand);
+        color: var(--color-bg);
+    }
 }
 
 .swiper-pagination-perso {
@@ -64,20 +72,5 @@ button, input, textarea {
 .swiper-pagination-perso > .swiper-pagination-bullet-active {
     width: 2.5rem;
     border-radius: .5rem;
-    background: var(--brand-dark);
-}
-
-@media (max-width: 1000px) {
-    .App {
-        max-width: 90%;
-    }
-}
-
-body, html {
-    background: var(--bg);
-}
-
-::selection {
-    background-color: var(--brand);
-    color: var(--bg);
+    background: var(--color-brand-dark);
 }
