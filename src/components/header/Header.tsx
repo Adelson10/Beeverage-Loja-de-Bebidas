@@ -8,6 +8,7 @@ import React from "react";
 import ModalBox from "../utils/ModalBox";
 import { Link } from "react-router-dom";
 import LogoImg from "../../assets/Logo/Logo.png";
+import { useCart } from "../../utils/context/CartProvider";
 
 const MenuMobileModal: IModal[] = [
     {
@@ -27,10 +28,12 @@ const MenuMobileModal: IModal[] = [
     },
 ]
 
-const Header = () => {    
+const Header = () => {
     const mobile = useMedia(1000);
     const [menuMobile, setMenuMobile] = React.useState<boolean>(false);
-    
+    const { items } = useCart();
+    const cartCount = items.reduce((total, item) => total + item.quantity, 0);
+
     return (
     <>
         <header className="pt-4 min-[1000px]:mb-4">
@@ -40,9 +43,10 @@ const Header = () => {
                 { !mobile ?
                 (<>
                     <nav className="order-3 flex w-auto gap-8">
-                        <ButtonIcon className="p-0 text-brand-dark hover:text-brand-select">
+                        <Link to='/carrinho' className="relative inline-flex text-brand-dark hover:text-brand-select">
                             <ShoppingCartSimple size='1.5rem' weight="fill"/>
-                        </ButtonIcon>
+                            { cartCount > 0 && <span className="absolute -top-2 -right-2 flex items-center justify-center h-4 w-4 rounded-full bg-brand-dark text-[0.6rem] text-white">{cartCount}</span> }
+                        </Link>
                         <ButtonIcon className="p-0 text-brand-dark hover:text-brand-select">
                             <WechatLogo size='1.5rem' weight="fill"/>
                         </ButtonIcon>

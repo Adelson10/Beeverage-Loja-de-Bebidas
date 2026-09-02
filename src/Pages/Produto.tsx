@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 //import useFetch from '../hooks/useFetch';
 import PhotoProduct from '../components/utils/PhotoProduct';
 import { SwiperSlide, Swiper, SwiperClass } from 'swiper/react';
@@ -10,19 +10,27 @@ import './Produto.css';
 import Reviews from '../components/Reviews/Reviews';
 import { ReviewMockup } from '../utils/Mockup/ProductsCerveja';
 import { ProdutoMockup } from '../utils/Mockup/ProductPromo';
+import { useCart } from '../utils/context/CartProvider';
 import discountIcon from '../assets/imagens/Product/discount.svg';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css';
 
 const Produto = () => {
-  //const url = useLocation();  
-  const {id} = useParams(); 
+  //const url = useLocation();
+  const {id} = useParams();
+  const navigate = useNavigate();
+  const {addToCart} = useCart();
 
   //const product = useFetch<productModal>(url.pathname);
-   const product = ProdutoMockup.filter((product) => product.id == Number(id));   
+   const product = ProdutoMockup.filter((product) => product.id == Number(id));
   //const reviews = useFetch<reviews[]>(`/comentarios/${product.json?.id}`);
   const reviews = ReviewMockup.filter((review) => review.product === Number(id));
   const [quantity, setQuantity] = React.useState<number>(1);
+
+  const handleAddToCart = () => {
+    addToCart(product[0].id, quantity);
+    navigate('/carrinho');
+  };
   const descriptionRef = React.useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = React.useState<number>(0);
   const mobile = useMedia(750);
@@ -71,7 +79,7 @@ const Produto = () => {
         </div>
         <div className="w-1/2 h-full px-8 flex flex-col gap-4 max-[1000px]:px-0 max-[750px]:p-0 max-[750px]:text-center max-[750px]:w-full">
           <div className="description-product-name">
-            <h1 className="text-[1.8rem] leading-8 font-bold text-brand-select">{product[0].name}</h1>
+            <h1 className="text-[1.8rem] leading-8 font-bold text-brand-select mb-2">{product[0].name}</h1>
             <h4 className="text-primary font-normal text-base leading-4 mt-[0.2rem]">Volume: {product[0].volume}</h4>
           </div>
           { !mobile && <div className="flex justify-between items-center h-8 max-[750px]:w-full max-[750px]:flex-col-reverse max-[750px]:gap-[0.2rem] max-[750px]:h-full">
@@ -99,7 +107,7 @@ const Produto = () => {
               </label>
           </div>
           {!mobile &&
-            <button className='w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base hover:bg-brand-dark'><Basket size={20} weight="fill" />Comprar</button>
+            <button onClick={handleAddToCart} className='w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base hover:bg-brand-dark'><Basket size={20} weight="fill" />Comprar</button>
           }
         </div>
         { mobile &&
@@ -113,7 +121,7 @@ const Produto = () => {
               <p>{quantity}</p>
               <button className="text-primary hover:text-brand-dark max-[750px]:text-white" onClick={() => setQuantity(quantity+1)}>+</button>
             </div>
-            <button className='max-[750px]:text-brand-dark max-[750px]:flex max-[750px]:items-center max-[750px]:text-[0.8rem] max-[750px]:font-semibold max-[750px]:p-2 max-[750px]:rounded-lg max-[750px]:bg-white'><ShoppingCart weight='fill' color='var(--color-brand-dark)' size={'1.3rem'}/>Carrinho</button>
+            <button onClick={handleAddToCart} className='max-[750px]:text-brand-dark max-[750px]:flex max-[750px]:items-center max-[750px]:text-[0.8rem] max-[750px]:font-semibold max-[750px]:p-2 max-[750px]:rounded-lg max-[750px]:bg-white'><ShoppingCart weight='fill' color='var(--color-brand-dark)' size={'1.3rem'}/>Carrinho</button>
         </button>
       }
       </div>

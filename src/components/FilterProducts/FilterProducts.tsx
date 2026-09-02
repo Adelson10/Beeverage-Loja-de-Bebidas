@@ -5,7 +5,7 @@ import ModalPriceProducts from './ModalPriceProducts';
 import { useFilterActive } from '../../utils/context/FilterActiveProvider';
 import useMedia from '../../hooks/useMedia';
 
-const listFilterProduct: ModalFilterProducts[] = [
+export const listFilterProduct: ModalFilterProducts[] = [
     {
         title: 'Em Promoção',
         filters: ['Promoção']
@@ -28,7 +28,7 @@ const listFilterProduct: ModalFilterProducts[] = [
     },
 ]
 
-const FilterProducts = () => {
+const FilterProducts = ({total}: {total?: number}) => {
     const catalogoProduct = useParams<{catalogo: string}>();
     const CatalogoTitle = `${catalogoProduct.catalogo?.charAt(0).toUpperCase()}${catalogoProduct.catalogo?.substring(1)}`;
     const {filterActive} = useFilterActive();
@@ -39,7 +39,7 @@ const FilterProducts = () => {
         <div className="filter-products-title-container flex flex-col justify-between gap-4">
             <div className="filter-products-container-title-container">
                 <h1 className='inline-block text-[1.4rem] font-semibold bg-linear-to-l from-brand-dark to-brand bg-clip-text text-transparent selection:text-white'>{CatalogoTitle}</h1>
-                <p className='inline-block text-[.6rem] ml-[.1rem] text-primary'>(100 itens)</p>
+                <p className='inline-block text-[.6rem] ml-[.1rem] text-primary'>({total ?? 0} itens)</p>
             </div>
             {listFilterProduct.map(({title, filters}) => 
                 (<ModalFilterProducts key={title} title={title} filters={filters}/>)

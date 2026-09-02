@@ -32,12 +32,12 @@ const Footer = () => {
             Beba com moderação. Não compartilhe este conteúdo com menores de idade.
           </p>
         </div>
-        <div className="flex flex-row items-center flex-1 justify-around underline">
-          <a href="" className="text-[0.8rem] font-semibold text-center">Consumo Responsável</a>
-          <a href="" className="text-[0.8rem] font-semibold text-center">Política de Privacidade</a>
-          <a href="" className="text-[0.8rem] font-semibold text-center">SAC</a>
-          <a href="" className="text-[0.8rem] font-semibold text-center">Seja um revendedor</a>
-          <a href="" className="text-[0.8rem] font-semibold text-center">Termos de uso</a>
+        <div className="flex flex-row items-center flex-1 justify-around">
+          <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Consumo Responsável</a>
+          <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Política de Privacidade</a>
+          <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">SAC</a>
+          <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Seja um revendedor</a>
+          <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Termos de uso</a>
         </div>
       </div>
     </>

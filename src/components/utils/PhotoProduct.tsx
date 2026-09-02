@@ -12,7 +12,7 @@ const PhotoProduct = ({color1 ,color2 ,shadowImage, srcImg, type = '' }: PhotoPr
     const isPage = type === 'Page';
 
   return (
-    <div className={`group inline-flex relative justify-center items-end ${isPage ? 'h-[330px] w-[330px]' : 'h-[170px]'}`}>
+    <div className={`group inline-flex relative justify-center items-end ${isPage ? 'h-[330px] w-[330px]' : 'h-[160px]'}`}>
         <PhotoMold height={`${type == 'Page' ? 135*2 : 135}px`} width={`${type == 'Page' ? 155*2 : 155}px`} color1={color1} color2={color2}/>
         <div style={{width: `${type == 'Page' ? shadowImage*2 : shadowImage}px`}} className="absolute bg-[rgba(0,0,0,0.274)] h-[13px] rounded-[50%] bottom-[4px] blur-[3px]"></div>
         <div style={{backgroundImage: `url(${srcImg})`}} className={`absolute bg-contain bg-center bg-no-repeat bottom-[5px] [transition:bottom_.1s_ease] ${isPage ? 'h-[310px] w-[250px]' : 'h-[155px] w-[125px] group-hover:bottom-[15px]'}`}></div>

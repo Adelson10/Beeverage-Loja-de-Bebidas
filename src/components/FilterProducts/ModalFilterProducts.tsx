@@ -48,7 +48,7 @@ const ModalFilterProducts = ({title, filters}: ModalFilterProducts) => {
 
   return (
     <div className='py-[.6rem] px-2 rounded-[.8rem] bg-bg-secundary'>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mb-1">
             <h1 className="text-base font-medium text-brand-dark">{title}</h1>
             <button className="text-brand-dark"
             onClick={() => setAnimation((n) => !n)}>

@@ -6,11 +6,11 @@
     appearance: none;
     background: none;
     border: none;
-    border-radius: 50%;
+    box-shadow: none;
     cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
+    height: 16px;
+    width: 16px;
+    margin-top: -8px;
     pointer-events: all;
     position: relative;
 }
@@ -19,11 +19,10 @@
 .thumb::-moz-range-thumb {
     background: none;
     border: none;
-    border-radius: 50%;
+    box-shadow: none;
     cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
+    height: 16px;
+    width: 16px;
     pointer-events: all;
     position: relative;
     appearance: none;
