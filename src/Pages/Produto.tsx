@@ -111,7 +111,7 @@ const Produto = () => {
           }
         </div>
         { mobile &&
-        <button className='max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-6 max-[750px]:py-8 max-[750px]:px-4 max-[750px]:w-[90%] max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100] max-[750px]:rounded-2xl'>
+        <div className='max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-0 max-[750px]:left-0 max-[750px]:right-0 max-[750px]:py-6 max-[750px]:px-4 max-[750px]:w-full max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100]'>
             <div className="flex gap-2 items-center max-[750px]:flex-col max-[750px]:gap-0">
                 {product[0].price > 0 && <h2 className='price text-[1.1rem] font-normal text-primary max-[750px]:text-white'><del>{(product[0].price*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
                 <h2 className='price-now text-[2rem] text-brand-dark max-[750px]:leading-6 max-[750px]:text-[1.7rem] max-[750px]:text-white'>{(product[0].priceNow*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
@@ -122,7 +122,7 @@ const Produto = () => {
               <button className="text-primary hover:text-brand-dark max-[750px]:text-white" onClick={() => setQuantity(quantity+1)}>+</button>
             </div>
             <button onClick={handleAddToCart} className='max-[750px]:text-brand-dark max-[750px]:flex max-[750px]:items-center max-[750px]:text-[0.8rem] max-[750px]:font-semibold max-[750px]:p-2 max-[750px]:rounded-lg max-[750px]:bg-white'><ShoppingCart weight='fill' color='var(--color-brand-dark)' size={'1.3rem'}/>Carrinho</button>
-        </button>
+        </div>
       }
       </div>
       <div className="max-[750px]:border-t max-[750px]:border-brand-dark max-[750px]:pt-4">

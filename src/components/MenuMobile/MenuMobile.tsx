@@ -17,7 +17,7 @@ const CatalogoMobile = ({MenuProps}: {MenuProps: MenuContainerProps[]}) => {
     }
 
   if (CatalogoPage) return (
-    <div className="inset-0 w-screen h-dvh bg-bg pt-4 fixed z-[989] overflow-y-scroll overflow-x-hidden [&::-webkit-scrollbar]:hidden">
+    <div className="inset-0 w-screen h-dvh bg-bg p-4 fixed z-[989] overflow-y-scroll overflow-x-hidden [&::-webkit-scrollbar]:hidden">
         <div className="absolute w-full h-full top-0 z-[991]">
             <div className="absolute block h-[100px] w-[170px] bg-cover left-0 [transform:rotateZ(100deg)_translate(55px,40px)]" style={{backgroundImage: `url(${cevadaBg})`}}></div>
             <div className="absolute block h-[100px] w-[170px] bg-cover right-0 [transform:rotateZ(-100deg)_translate(-55px,40px)_scaleX(-1)]" style={{backgroundImage: `url(${cevadaBg})`}}></div>

@@ -4,6 +4,7 @@ import ModalFilterProducts from './ModalFilterProducts';
 import ModalPriceProducts from './ModalPriceProducts';
 import { useFilterActive } from '../../utils/context/FilterActiveProvider';
 import useMedia from '../../hooks/useMedia';
+import './FilterProducts.css';
 
 export const listFilterProduct: ModalFilterProducts[] = [
     {
@@ -35,7 +36,7 @@ const FilterProducts = ({total}: {total?: number}) => {
     const mobile = useMedia(1000);
 
   if(filterActive || !mobile) return (
-    <div className='filter-products-container'>
+    <div className={`filter-products-container ${mobile ? 'animate-[FilterPanelIn_350ms_ease-out_forwards]' : ''}`}>
         <div className="filter-products-title-container flex flex-col justify-between gap-4">
             <div className="filter-products-container-title-container">
                 <h1 className='inline-block text-[1.4rem] font-semibold bg-linear-to-l from-brand-dark to-brand bg-clip-text text-transparent selection:text-white'>{CatalogoTitle}</h1>

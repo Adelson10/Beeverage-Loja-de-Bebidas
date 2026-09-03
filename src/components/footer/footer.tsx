@@ -3,7 +3,7 @@ import { Facebook, Instagram, X } from "@mui/icons-material";
 const Footer = () => {
   return (
     <>
-      <div className="bg-(--color-brand-dark) w-full py-[.5rem] flex flex-row px-[100px] mt-[4rem]">
+      <div className="bg-(--color-brand-dark) w-full py-[1rem] min-[1000px]:py-[.5rem] flex flex-col items-center gap-3 px-4 min-[1000px]:flex-row min-[1000px]:gap-0 min-[1000px]:px-[100px] mt-[4rem]">
         <div
           className="w-[100px] h-[100px] bg-(--color-bg)"
           style={{
@@ -17,13 +17,13 @@ const Footer = () => {
             maskPosition: "center",
           }}
         />
-        <div className="flex gap-8 items-center ml-auto">
+        <div className="flex gap-8 items-center min-[1000px]:ml-auto">
           <a href=""><Instagram sx={{ color: "var(--color-bg)" , fontSize: "1.5rem" }}/></a>
           <a href=""><X sx={{ color: "var(--color-bg)" , fontSize: "1.5rem" }}/></a>
           <a href=""><Facebook sx={{ color: "var(--color-bg)" , fontSize: "1.5rem" }}/></a>
         </div>
       </div>
-      <div className="mx-[100px] py-[1.3rem] flex flex-row text-(--color-brand-dark)">
+      <div className="mx-4 min-[1000px]:mx-[100px] py-[1.3rem] flex flex-col items-center text-center min-[1000px]:flex-row min-[1000px]:items-center min-[1000px]:text-left gap-3 text-(--color-brand-dark)">
         <div className="px-2 flex-1">
           <p className="text-[0.8rem] font-semibold">
           © 2025 Todos os direitos reservados
@@ -32,7 +32,7 @@ const Footer = () => {
             Beba com moderação. Não compartilhe este conteúdo com menores de idade.
           </p>
         </div>
-        <div className="flex flex-row items-center flex-1 justify-around">
+        <div className="flex flex-row flex-wrap items-center justify-center flex-1 min-[1000px]:justify-around gap-2">
           <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Consumo Responsável</a>
           <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">Política de Privacidade</a>
           <a href="" className="text-[0.8rem] font-semibold text-center hover:underline">SAC</a>
