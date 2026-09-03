@@ -111,17 +111,17 @@ const Produto = () => {
           }
         </div>
         { mobile &&
-        <div className='w-5/6 max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-[5rem] max-[750px]:left-0 max-[750px]:right-0 max-[750px]:py-6 max-[750px]:px-4  max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100]'>
+        <div className='m-auto rounded-[1rem] max-w-[90%] max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-[1rem] max-[750px]:left-0 max-[750px]:right-0 max-[750px]:py-6 max-[750px]:px-4  max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100]'>
             <div className="flex gap-2 items-center max-[750px]:flex-col max-[750px]:gap-0">
                 {product[0].price > 0 && <h2 className='price text-[1.1rem] font-normal text-primary max-[750px]:text-white'><del>{(product[0].price*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
-                <h2 className='price-now text-[2rem] text-brand-dark max-[750px]:leading-6 max-[750px]:text-[1.7rem] max-[750px]:text-white'>{(product[0].priceNow*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
+                <h2 className='price-now text-[2rem] font-bold text-brand-dark max-[750px]:leading-6 max-[750px]:text-[1.7rem] max-[750px]:text-white'>{(product[0].priceNow*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
             </div>
-            <div className="px-2 py-[0.2rem] flex gap-4 items-center border border-primary text-primary rounded-lg leading-[0.5rem] max-[750px]:rounded-[2rem] max-[750px]:text-white max-[750px]:border-white">
+            <div className="px-2 py-[0.5rem] flex gap-4 items-center border border-primary text-primary rounded-lg leading-[0.5rem] max-[750px]:rounded-[2rem] max-[750px]:text-white max-[750px]:border-white">
               <button className="text-primary hover:text-brand-dark max-[750px]:text-white" onClick={() => { if(quantity > 1 ) setQuantity(quantity-1) }}>-</button>
               <p>{quantity}</p>
               <button className="text-primary hover:text-brand-dark max-[750px]:text-white" onClick={() => setQuantity(quantity+1)}>+</button>
             </div>
-            <button onClick={handleAddToCart} className='max-[750px]:text-brand-dark max-[750px]:flex max-[750px]:items-center max-[750px]:text-[0.8rem] max-[750px]:font-semibold max-[750px]:p-2 max-[750px]:rounded-lg max-[750px]:bg-white'><ShoppingCart weight='fill' color='var(--color-brand-dark)' size={'1.3rem'}/>Carrinho</button>
+            <button onClick={handleAddToCart} className='max-[750px]:text-brand-dark max-[750px]:flex max-[750px]:items-center max-[750px]:text-[0.9rem] max-[750px]:font-semibold max-[750px]:p-2 max-[750px]:rounded-lg max-[750px]:bg-white'><ShoppingCart weight='fill' color='var(--color-brand-dark)' size={'1.3rem'}/>Carrinho</button>
         </div>
       }
       </div>

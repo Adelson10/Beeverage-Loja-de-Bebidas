@@ -6,9 +6,9 @@ const Reviews = ({reviews}: {reviews: reviews[]}) => {
   const valueReviews = Scores.reduce( (acc, now) => acc + now, 0)/reviews.length;
 
   return (
-    <div className='flex flex-row gap-8'>
+    <div className='flex flex-row max-[750px]:flex-col gap-8'>
         <div>
-          <h2 className='text-[1.2rem] text-brand-dark font-semibold'>Comentários</h2>
+          <h2 className='max-[750px]:text-center mb-4 text-[1.2rem] text-brand-dark font-semibold'>Comentários</h2>
           <div className="flex items-center justify-center gap-8 max-[750px]:gap-4">
               <div className="flex flex-col gap-[0.7rem]">
                   <h1 className="text-[4rem] font-semibold text-secundary leading-[3.2rem] text-center">{valueReviews ? valueReviews.toFixed(1).toString() : 0}</h1>
@@ -23,7 +23,7 @@ const Reviews = ({reviews}: {reviews: reviews[]}) => {
               </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 w-full">
           {reviews.map((review) =>
             (<Comment key={review.id} review={review} />)
           )}

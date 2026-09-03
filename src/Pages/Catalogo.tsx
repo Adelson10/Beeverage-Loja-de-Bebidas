@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 //import { useLocation } from "react-router-dom";
 import { useParams, useSearchParams } from "react-router-dom";
-import FilterProducts, { listFilterProduct } from "../components/FilterProducts/FilterProducts";
+import FilterProducts, { filterProductsByCategory, defaultFilterProducts } from "../components/FilterProducts/FilterProducts";
 import ProductModal from "../components/ProductModal/ProductModal";
 // import useFetch from "../hooks/useFetch";
 import './Catalogo.css';
@@ -15,6 +15,7 @@ const Catalogo = () => {
 
   const selectedFilters = searchParams.get('filter')?.split(',').filter(Boolean) ?? [];
   const priceRange = searchParams.get('price')?.split(',').map(Number);
+  const filterGroups = (catalogo && filterProductsByCategory[catalogo]) || defaultFilterProducts;
 
   const products = ProdutoMockup.filter((product) => {
     if (catalogo && product.categoria !== catalogo) {
@@ -25,7 +26,7 @@ const Catalogo = () => {
       return false;
     }
 
-    return listFilterProduct.every(({ filters }) => {
+    return filterGroups.every(({ filters }) => {
       const selectedInGroup = filters.filter((filter) => selectedFilters.includes(filter));
 
       if (!selectedInGroup.length) return true;

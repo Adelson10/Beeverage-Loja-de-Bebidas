@@ -56,7 +56,7 @@ const Header = () => {
     return (
     <>
         <header className="pt-4 min-[1000px]:mb-4">
-            <div className="flex flex-wrap py-2 min-[1000px]:flex-nowrap min-[1000px]:items-center min-[1000px]:justify-between">
+            <div className="flex flex-wrap py-2 min-[1000px]:px-6 min-[1000px]:flex-nowrap min-[1000px]:items-center min-[1000px]:justify-between">
                 { !mobile && <Link to={'/'} className="block h-[5.8rem] w-[5.8rem] bg-cover bg-center" style={{ backgroundImage: `url(${LogoImg})` }}></Link> }
                 <Search mobile={mobile}/>
                 { !mobile ?

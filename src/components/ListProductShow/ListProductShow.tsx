@@ -42,7 +42,7 @@ const ListProductShow = ({title, productModal, HasCoverProduct }: ListProductSho
   return (
     <div className='relative'>
       <div className="list-products">
-        <h1 className='bg-linear-to-l from-brand-dark to-brand bg-clip-text text-transparent text-[1.4rem] font-semibold selection:text-white'>{title}</h1>
+        <h1 className='bg-linear-to-l from-brand-dark to-brand bg-clip-text text-transparent text-[1.4rem] font-semibold selection:text-white mb-[1rem]'>{title}</h1>
         <div style={{display: 'flex', gap: '1rem'}}>
         { HasCoverProduct &&
           <Link to={HasCoverProduct.src} className='h-[318px] w-1/5 block max-[1000px]:w-[30%] max-[600px]:w-[50%]'>

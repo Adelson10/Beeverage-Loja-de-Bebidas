@@ -7,10 +7,9 @@ const Comment = ({review}: {review: reviews}) => {
   const user = CommetMockup.filter((comment) => comment.id === review.address);
   
   return (
-    <div className='flex gap-4 py-2'>
-        <div className="flex gap-2">
+      <div className="flex gap-4 py-2">
             <div className="h-[70px] w-[70px] rounded-lg bg-cover bg-no-repeat bg-center" style={{backgroundImage: `url(${user[0].photo})`}}></div>
-            <div className='flex flex-col justify-around'>
+            <div className='flex flex-col justify-around flex-1'>
               <div className="flex items-center gap-2">
                 <h2 className="text-[1.1rem] font-semibold text-brand-dark">{user[0].name}</h2>
                 <ScoreProductPartial score={review.score} className='w-fit h-8' style={{ transform: 'scale(1.3) translateX(0.8rem)' }} />
@@ -21,8 +20,7 @@ const Comment = ({review}: {review: reviews}) => {
               </div>
               <p className='text-[0.9rem] text-primary leading-[1.2rem] mt-1'>{review.message}</p>
             </div>
-        </div>
-    </div>
+      </div>
   )
 }
 

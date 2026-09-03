@@ -51,7 +51,10 @@ const Catalogo = ({mobile} : {mobile: boolean}) => {
             { showCategories &&
             <ul className="absolute z-[15] flex animate-[ModalCatalogo_300ms_forwards] flex-col gap-[0.2rem] rounded-lg bg-white p-4 shadow-[0px_0px_8px_rgba(0,0,0,0.15)]">
                 {MenuProps.map((catalogo) =>
-                        <li key={catalogo.title}><h3 className="mb-[0.3rem] font-semibold text-brand-dark">{catalogo.title}</h3>
+                        <li key={catalogo.title}>
+                            <Link to={catalogo.src} onClick={() => setShowCategories(false)} className="flex items-center gap-2 no-underline text-brand-dark hover:text-brand hover:underline active:text-brand active:underline">
+                                <h3 className="mb-[0.3rem] font-semibold text-brand-dark">{catalogo.title}</h3>
+                            </Link>
                             <ul className="grid grid-cols-2 gap-y-2">
                                 {catalogo.categorias.map((catalogo) =>
                                     <li key={catalogo.name}><Link onClick={() => setShowCategories(false)} to={catalogo.src} className="text-primary no-underline hover:text-brand hover:underline active:text-brand active:underline">{catalogo.name}</Link></li>

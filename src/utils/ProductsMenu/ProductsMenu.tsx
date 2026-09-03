@@ -16,19 +16,19 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Lager',
-                src: '/catalogo/cervejas/lager',
+                src: '/catalogo/cervejas?filter=Lager',
             },
             {
                 name: 'Long',
-                src: '/catalogo/cervejas/long',
+                src: '/catalogo/cervejas?filter=Long',
             },
             {
                 name: 'Pilsen',
-                src: '/catalogo/cervejas/pilsen',
+                src: '/catalogo/cervejas?filter=Pilsen',
             },
             {
                 name: 'IPA (India Pale Ale)',
-                src: '/catalogo/cervejas/ipa',
+                src: '/catalogo/cervejas?filter=IPA',
             },
         ]
     },
@@ -39,23 +39,23 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Vinhos Tintos',
-                src: '/catalogo/vinhos/vinhosTintos',
+                src: '/catalogo/vinhos?filter=VinhosTintos',
             },
             {
                 name: 'Vinhos Brancos',
-                src: '/catalogo/vinhos/vinhosBrancos',
+                src: '/catalogo/vinhos?filter=VinhosBrancos',
             },
             {
                 name: 'Vinhos Rosés',
-                src: '/catalogo/vinhos/vinhosRoses',
+                src: '/catalogo/vinhos?filter=VinhosRoses',
             },
             {
                 name: 'Vinhos de Sobremesa',
-                src: '/catalogo/vinhos/vinhosDeSobremesa',
+                src: '/catalogo/vinhos?filter=VinhosDeSobremesa',
             },
             {
                 name: 'Vinhos Espumantes',
-                src: '/catalogo/vinhos/vinhosEspumantes',
+                src: '/catalogo/vinhos?filter=VinhosEspumantes',
             },
         ]
     },
@@ -66,23 +66,23 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Uísque',
-                src: '/catalogo/destilados/uisque',
+                src: '/catalogo/destilados?filter=Uísque',
             },
             {
                 name: 'Vodka',
-                src: '/catalogo/destilados/vodka',
+                src: '/catalogo/destilados?filter=Vodka',
             },
             {
                 name: 'Rum',
-                src: '/catalogo/destilados/rum',
+                src: '/catalogo/destilados?filter=Rum',
             },
             {
                 name: 'Tequila e Mezcal',
-                src: '/catalogo/destilados/tequilaMezcal',
+                src: '/catalogo/destilados?filter=TequilaEMezcal',
             },
             {
                 name: 'Cachaça',
-                src: '/catalogo/destilados/cachaca',
+                src: '/catalogo/destilados?filter=Cachaça',
             },
         ]
     },
@@ -93,19 +93,19 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Champagne',
-                src: '/catalogo/espumantes/champagne',
+                src: '/catalogo/espumantes?filter=Champagne',
             },
             {
                 name: 'Prosecco',
-                src: '/catalogo/espumantes/prosecco',
+                src: '/catalogo/espumantes?filter=Prosecco',
             },
             {
                 name: 'Cava',
-                src: '/catalogo/espumantes/cava',
+                src: '/catalogo/espumantes?filter=Cava',
             },
             {
                 name: 'Espumante Brasileiro',
-                src: '/catalogo/espumantes/espumanteBrasileiro',
+                src: '/catalogo/espumantes?filter=EspumanteBrasileiro',
             },
         ]
     },
@@ -116,27 +116,27 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'London Dry Gin',
-                src: '/catalogo/gin/londonDryGin',
+                src: '/catalogo/gin?filter=LondonDryGin',
             },
             {
                 name: 'Gin Floral',
-                src: '/catalogo/gin/ginFloral',
+                src: '/catalogo/gin?filter=GinFloral',
             },
             {
                 name: 'Gin Saborizado',
-                src: '/catalogo/gin/ginSaborizado',
+                src: '/catalogo/gin?filter=GinSaborizado',
             },
             {
                 name: 'Gin Old Tom',
-                src: '/catalogo/gin/ginOldTom',
+                src: '/catalogo/gin?filter=GinOldTom',
             },
             {
                 name: 'Gin Navy Strength',
-                src: '/catalogo/gin/ginNavyStrength',
+                src: '/catalogo/gin?filter=GinNavyStrength',
             },
             {
                 name: 'Gin Artesanal',
-                src: '/catalogo/gin/ginArtesanal',
+                src: '/catalogo/gin?filter=GinArtesanal',
             },
         ]
     },
@@ -147,27 +147,27 @@ export const MenuProps: MenuContainerProps[]  = [
         categorias: [
             {
                 name: 'Frios e Queijos',
-                src: '/catalogo/petiscos/friosQueijos',
+                src: '/catalogo/petiscos?filter=FriosEQueijos',
             },
             {
                 name: 'Petiscos de Boteco',
-                src: '/catalogo/petiscos/petiscosDeBoteco',
+                src: '/catalogo/petiscos?filter=PetiscosDeBoteco',
             },
             {
                 name: 'Carnes e Grelhados',
-                src: '/catalogo/petiscos/carnesGrelhados',
+                src: '/catalogo/petiscos?filter=CarnesEGrelhados',
             },
             {
                 name: 'Frutos do Mar',
-                src: '/catalogo/petiscos/frutosDoMar',
+                src: '/catalogo/petiscos?filter=FrutosDoMar',
             },
             {
                 name: 'Vegetarianos',
-                src: '/catalogo/petiscos/vegetarianos',
+                src: '/catalogo/petiscos?filter=Vegetarianos',
             },
             {
                 name: 'Snacks Rápidos',
-                src: '/catalogo/petiscos/snacksRápidos',
+                src: '/catalogo/petiscos?filter=SnacksRápidos',
             },
         ]
     },
