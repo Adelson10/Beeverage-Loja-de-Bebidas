@@ -47,7 +47,7 @@ const Produto = () => {
   }, [product[0]]);
   
   if (product[0]) return (
-    <>
+    <div className='max-[750px]:pb-28'>
       <div className='flex gap-4 items-center mb-8 max-[750px]:flex-wrap max-[750px]:justify-center'>
         { mobile && <div className="flex justify-between items-center h-8 max-[750px]:w-full max-[750px]:flex-col-reverse max-[750px]:gap-[0.2rem] max-[750px]:h-full">
             <ScoreProduct score={product[0].score} className="scale-150 translate-x-[20px] max-[750px]:translate-x-0 max-[750px]:gap-2 max-[750px]:h-8 max-[750px]:[&>div]:gap-[0.2rem]"/>
@@ -111,7 +111,7 @@ const Produto = () => {
           }
         </div>
         { mobile &&
-        <div className='max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-0 max-[750px]:left-0 max-[750px]:right-0 max-[750px]:py-6 max-[750px]:px-4 max-[750px]:w-full max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100]'>
+        <div className='w-5/6 max-[750px]:fixed max-[750px]:flex max-[750px]:items-center max-[750px]:justify-between max-[750px]:bottom-[5rem] max-[750px]:left-0 max-[750px]:right-0 max-[750px]:py-6 max-[750px]:px-4  max-[750px]:bg-linear-to-l max-[750px]:from-brand max-[750px]:to-brand-dark max-[750px]:z-[100]'>
             <div className="flex gap-2 items-center max-[750px]:flex-col max-[750px]:gap-0">
                 {product[0].price > 0 && <h2 className='price text-[1.1rem] font-normal text-primary max-[750px]:text-white'><del>{(product[0].price*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</del></h2>}
                 <h2 className='price-now text-[2rem] text-brand-dark max-[750px]:leading-6 max-[750px]:text-[1.7rem] max-[750px]:text-white'>{(product[0].priceNow*quantity).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h2>
@@ -130,7 +130,7 @@ const Produto = () => {
         <div ref={descriptionRef} className="description-product-description"></div>
       </div>
       { reviews && <Reviews reviews={reviews}/> }
-    </>
+    </div>
   )
 }
 
