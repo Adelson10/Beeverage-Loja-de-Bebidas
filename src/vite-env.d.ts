@@ -63,3 +63,30 @@ interface User {
     senha: string;
     photo: string;
 }
+
+interface PedidoItem {
+    productId: number;
+    quantity: number;
+}
+
+interface PedidoEndereco {
+    rua: string;
+    bairro: string;
+    cidade: string;
+    cep: string;
+}
+
+type PedidoStatus = 'Processando' | 'Enviado' | 'Entregue' | 'Cancelado';
+
+interface Pedido {
+    id: number;
+    numero: string;
+    data: string;
+    hora: string;
+    formaPagamento: string;
+    status: PedidoStatus;
+    dataEntregaTexto: string;
+    endereco: PedidoEndereco;
+    frete: number;
+    items: PedidoItem[];
+}
