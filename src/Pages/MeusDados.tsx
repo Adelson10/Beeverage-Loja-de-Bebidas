@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-    Buildings, Cake, CalendarBlank, Camera, CreditCard, Envelope, GenderIntersex, Hash, House,
+    Buildings, Cake, CalendarBlank, Camera, CreditCard, Envelope, FloppyDisk, GenderIntersex, Hash, House,
+    IdentificationBadge,
     IdentificationCard, Lock, LockKey, MapPinLine, Pencil, Phone, Plus, ShieldCheck,
     Star, Trash, User, UserCircle, X
 } from '@phosphor-icons/react';
@@ -73,10 +74,9 @@ const maskValidade = (value: string) => {
 };
 
 const inputClass = 'flex items-center gap-2 rounded-xl border border-primary/30 bg-white p-3 text-secundary';
-const saveButtonClass = 'px-6 py-3 rounded-lg text-white font-normal text-[0.9rem] bg-linear-to-r from-brand to-brand-dark transition-colors duration-200 hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed';
+const saveButtonClass = 'px-4 py-3 gap-2 items-center rounded-lg text-white font-normal bg-linear-to-r from-brand to-brand-dark transition-colors duration-200 hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed';
 const cancelButtonClass = 'px-6 py-3 rounded-lg text-brand-dark font-normal text-[0.9rem] hover:underline';
 const tabButtonClass = (active: boolean) => `flex items-center gap-2 rounded-lg px-4 py-2 text-[0.85rem] font-normal transition-colors duration-200 [&_svg]:shrink-0 ${active ? 'bg-linear-to-r from-brand to-brand-dark text-white' : 'bg-white text-brand-dark border border-primary/20 hover:bg-bg-secundary'}`;
-const cardClass = 'flex flex-col gap-4 p-4 bg-white/40 rounded-[1rem] max-[750px]:p-3';
 
 const MeusDados = () => {
     const { user, updateProfile, changePassword, updatePhoto } = useAuth();
@@ -84,7 +84,6 @@ const MeusDados = () => {
 
     const [activeTab, setActiveTab] = React.useState<Tab>('pessoais');
     const [fotoErro, setFotoErro] = React.useState('');
-
     const [nome, setNome] = React.useState(user?.nome ?? '');
     const [email, setEmail] = React.useState(user?.email ?? '');
     const [cpf, setCpf] = React.useState(user?.cpf ?? '');
@@ -261,6 +260,44 @@ const MeusDados = () => {
         saveCartoes(cartoes.map((item) => ({ ...item, padrao: item.id === id })));
     };
 
+    const renderFotoPerfil = (podeEditar: boolean) => (
+        <div className="bg-bg">
+            <div className="bg-white/40">
+                <div className="p-8 bg-bg rounded-br-[2rem]">
+                    <div className="relative shrink-0 flex flex-col items-center gap-2 max-[750px]:w-full max-[750px]:flex-row ">
+                        <div className="p-4 rounded-[1rem] bg-white/40">
+                            <div className="relative">
+                                <div
+                                    style={user.foto ? { backgroundImage: `url(${user.foto})` } : undefined}
+                                    className={`h-[128px] w-[128px] flex items-center justify-center rounded-[0.5rem] bg-cover bg-center max-[750px]:h-[100px] max-[750px]:w-[100px] ${user.foto ? '' : 'bg-brand-dark'}`}
+                                >
+                                    {!user.foto && <User size="3.5rem" weight="fill" className="text-white/70" />}
+                                </div>
+                                {podeEditar &&
+                                    <button
+                                        type="button"
+                                        onClick={() => fotoInputRef.current?.click()}
+                                        title="Alterar foto"
+                                        className="absolute -bottom-2 -right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-bg bg-brand text-white hover:bg-brand-dark"
+                                    >
+                                        <Camera size="1rem" weight="fill" />
+                                    </button>
+                                }
+                                <input ref={fotoInputRef} type="file" accept="image/*" onChange={handleFotoChange} className="hidden" disabled={!podeEditar} />
+                            </div>
+                        </div>
+                        {podeEditar && user.foto &&
+                            <button type="button" onClick={() => updatePhoto('')} className="flex items-center gap-1 text-primary text-[0.8rem] hover:text-red-500 transition-colors duration-200 absolute bottom-[-1.5rem]">
+                                <Trash size="0.9rem" />Remover foto
+                            </button>
+                        }
+                        {fotoErro && <p className="text-sm text-red-500 text-center">{fotoErro}</p>}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
     const idade = dataNascimento ? Math.floor((Date.now() - new Date(dataNascimento).getTime()) / (1000 * 60 * 60 * 24 * 365.25)) : null;
 
     return (
@@ -277,107 +314,95 @@ const MeusDados = () => {
                     )}
                 </div>
             </div>
-
-            <div className="flex gap-6 items-start max-[750px]:flex-col">
-                <div className="w-[220px] shrink-0 flex flex-col items-center gap-2 max-[750px]:w-full max-[750px]:flex-row">
-                    <div className="relative">
-                        <div
-                            style={user.foto ? { backgroundImage: `url(${user.foto})` } : undefined}
-                            className={`h-[128px] w-[128px] flex items-center justify-center rounded-2xl bg-cover bg-center max-[750px]:h-[100px] max-[750px]:w-[100px] ${user.foto ? '' : 'bg-brand-dark'}`}
-                        >
-                            {!user.foto && <User size="3.5rem" weight="fill" className="text-white/70" />}
-                        </div>
-                        <button
-                            type="button"
-                            onClick={() => fotoInputRef.current?.click()}
-                            title="Alterar foto"
-                            className="absolute -bottom-2 -right-2 flex h-9 w-9 items-center justify-center rounded-full border-4 border-bg bg-brand text-white hover:bg-brand-dark"
-                        >
-                            <Camera size="1rem" weight="fill" />
-                        </button>
-                        <input ref={fotoInputRef} type="file" accept="image/*" onChange={handleFotoChange} className="hidden" />
-                    </div>
-                    {user.foto &&
-                        <button type="button" onClick={() => updatePhoto('')} className="flex items-center gap-1 text-primary text-[0.8rem] hover:text-red-500">
-                            <Trash size="0.9rem" />Remover foto
-                        </button>
-                    }
-                    {fotoErro && <p className="text-sm text-red-500 text-center">{fotoErro}</p>}
-                </div>
-
-                <div className="flex-1 w-full min-w-0">
+               
+                <div className="flex items-start max-[750px]:flex-col">
                     {activeTab === 'pessoais' &&
-                        <form onSubmit={handleSalvarPerfil} className={cardClass}>
-                            <h2 className="font-semibold text-brand-dark text-[1.1rem]">Dados Pessoais</h2>
+                        <div className="w-full">
+                            <form onSubmit={handleSalvarPerfil}>
+                                <div className="flex flex-row">
+                                    {renderFotoPerfil(true)}
+                                    <div className="flex flex-col px-8 py-4 gap-4 grow max-[750px]:mt-4 bg-white/40 rounded-t-[1rem] min-h-[192px]">
+                                        <h2 className="font-semibold text-brand-dark text-[1.1rem] mt-4">Dados Pessoais</h2>
 
-                            <label className={inputClass}>
-                                <User size="1.25rem" className="text-primary shrink-0" />
-                                <input type="text" required placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                            </label>
+                                        <label className={inputClass}>
+                                            <User size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="text" required placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                        </label>
 
-                            <label className={inputClass}>
-                                <Hash size="1.25rem" className="text-primary shrink-0" />
-                                <input type="text" inputMode="numeric" placeholder="CPF" maxLength={14} value={cpf} onChange={(e) => setCpf(maskCPF(e.target.value))} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                            </label>
+                                        <label className={inputClass}>
+                                            <IdentificationBadge size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="text" inputMode="numeric" placeholder="CPF" maxLength={14} value={cpf} onChange={(e) => setCpf(maskCPF(e.target.value))} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                        </label>
+                                    </div>
+                                </div>
 
-                            <div className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1">
-                                <label className={inputClass}>
-                                    <Envelope size="1.25rem" className="text-primary shrink-0" />
-                                    <input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                                </label>
+                                <div className="flex flex-col p-8 rounded-bl-[1rem] rounded-br-[1rem] rounded-tl-[1rem] gap-4 bg-white/40">
+                                    <div className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1">
+                                        <label className={inputClass}>
+                                            <Envelope size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                        </label>
 
-                                <label className={inputClass}>
-                                    <Phone size="1.25rem" className="text-primary shrink-0" />
-                                    <input type="text" inputMode="numeric" placeholder="Telefone/Whatsapp" maxLength={15} value={telefone} onChange={(e) => setTelefone(maskTelefone(e.target.value))} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                                </label>
-                            </div>
+                                        <label className={inputClass}>
+                                            <Phone size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="text" inputMode="numeric" placeholder="Telefone/Whatsapp" maxLength={15} value={telefone} onChange={(e) => setTelefone(maskTelefone(e.target.value))} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                        </label>
+                                    </div>
 
-                            <div className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1">
-                                <label className={inputClass}>
-                                    <Cake size="1.25rem" className="text-primary shrink-0" />
-                                    <input type="date" placeholder="Data de nascimento" value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} className="w-full bg-transparent text-secundary placeholder:text-primary focus:outline-none" />
-                                </label>
+                                    <div className="grid grid-cols-2 gap-4 max-[600px]:grid-cols-1">
+                                        <label className={inputClass}>
+                                            <Cake size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="date" placeholder="Data de nascimento" value={dataNascimento} onChange={(e) => setDataNascimento(e.target.value)} className="w-full bg-transparent text-secundary placeholder:text-primary focus:outline-none" />
+                                        </label>
 
-                                <label className={inputClass}>
-                                    <GenderIntersex size="1.25rem" className="text-primary shrink-0" />
-                                    <select value={genero} onChange={(e) => setGenero(e.target.value)} className="w-full bg-transparent text-secundary focus:outline-none">
-                                        <option value="">Gênero</option>
-                                        <option value="Feminino">Feminino</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Outro">Outro</option>
-                                        <option value="Prefiro não dizer">Prefiro não dizer</option>
-                                    </select>
-                                </label>
-                            </div>
+                                        <label className={inputClass}>
+                                            <GenderIntersex size="1.25rem" className="text-primary shrink-0" />
+                                            <select value={genero} onChange={(e) => setGenero(e.target.value)} className="w-full bg-transparent text-secundary focus:outline-none">
+                                                <option value="">Gênero</option>
+                                                <option value="Feminino">Feminino</option>
+                                                <option value="Masculino">Masculino</option>
+                                                <option value="Outro">Outro</option>
+                                                <option value="Prefiro não dizer">Prefiro não dizer</option>
+                                            </select>
+                                        </label>
+                                    </div>
 
-                            {idade !== null &&
-                                <p className={`flex items-center gap-2 text-[0.8rem] ${idade >= 18 ? 'text-brand-dark' : 'text-red-500'}`}>
-                                    <ShieldCheck size="1rem" weight="fill" />
-                                    {idade >= 18 ? 'Idade verificada: maior de 18 anos' : 'É necessário ter 18 anos ou mais para comprar bebidas alcoólicas'}
-                                </p>
-                            }
+                                    {idade !== null &&
+                                        <p className={`flex items-center gap-2 text-[0.8rem] ${idade >= 18 ? 'text-brand-dark' : 'text-red-500'}`}>
+                                            <ShieldCheck size="1rem" weight="fill" />
+                                            {idade >= 18 ? 'Idade verificada: maior de 18 anos' : 'É necessário ter 18 anos ou mais para comprar bebidas alcoólicas'}
+                                        </p>
+                                    }
 
-                            {perfilErro && <p className="text-sm text-red-500">{perfilErro}</p>}
-                            {perfilSucesso && <p className="text-sm text-green-600">{perfilSucesso}</p>}
+                                    {perfilErro && <p className="text-sm text-red-500">{perfilErro}</p>}
+                                    {perfilSucesso && <p className="text-sm text-green-600">{perfilSucesso}</p>}
 
-                            <div className="flex items-center justify-end gap-2">
-                                <button type="button" onClick={handleCancelarPerfil} className={cancelButtonClass}>Cancelar</button>
-                                <button type="submit" className={saveButtonClass}>Salvar</button>
-                            </div>
-                        </form>
+                                    <div className="flex items-center justify-end gap-2 mt-4">
+                                        <button type="button" onClick={handleCancelarPerfil} className={cancelButtonClass}>Cancelar</button>
+                                        <button type="submit" className={saveButtonClass}><FloppyDisk weight='fill' size="1.4rem" color="white"/> Salvar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     }
 
                     {activeTab === 'enderecos' &&
-                        <div className={cardClass}>
-                            <div className="flex items-center justify-between">
-                                <h2 className="font-semibold text-brand-dark text-[1.1rem]">Endereços</h2>
-                                {!enderecoForm &&
-                                    <button type="button" onClick={() => setEnderecoForm({ id: Date.now().toString(), apelido: '', cep: '', rua: '', numero: '', complemento: '', bairro: '', cidade: '', estado: '', padrao: enderecos.length === 0 })} className="flex items-center gap-1 text-brand-dark text-[0.85rem] hover:underline">
-                                        <Plus size="1rem" weight="bold" />Adicionar Endereço
-                                    </button>
-                                }
+                        <div className="w-full">
+                            <div className="flex flex-row">
+                                {renderFotoPerfil(false)}
+                                <div className="flex flex-col px-8 py-4 gap-4 grow max-[750px]:mt-4 bg-white/40 rounded-t-[1rem] min-h-[192px]">
+                                    <div className="flex items-center justify-between">
+                                        <h2 className="font-semibold text-brand-dark text-[1.1rem] mt-4">Endereços</h2>
+                                        {!enderecoForm &&
+                                            <button type="button" onClick={() => setEnderecoForm({ id: Date.now().toString(), apelido: '', cep: '', rua: '', numero: '', complemento: '', bairro: '', cidade: '', estado: '', padrao: enderecos.length === 0 })} className="flex items-center gap-1 text-brand-dark text-[0.85rem] hover:underline">
+                                                <Plus size="1rem" weight="bold" />Adicionar Endereço
+                                            </button>
+                                        }
+                                    </div>
+                                </div>
                             </div>
 
+                            <div className="flex flex-col p-8 rounded-bl-[1rem] rounded-br-[1rem] rounded-tl-[1rem] gap-4 bg-white/40">
                             {enderecoForm &&
                                 <form onSubmit={handleSalvarEndereco} className="flex flex-col gap-3 rounded-lg bg-white p-3">
                                     <label className={inputClass}>
@@ -448,48 +473,62 @@ const MeusDados = () => {
                                     </div>
                                 </div>
                             )}
+                            </div>
                         </div>
                     }
 
                     {activeTab === 'seguranca' &&
-                        <form onSubmit={handleAlterarSenha} className={cardClass}>
-                            <h2 className="font-semibold text-brand-dark text-[1.1rem]">Alterar Senha</h2>
+                        <div className="w-full">
+                            <form onSubmit={handleAlterarSenha}>
+                                <div className="flex flex-row">
+                                    {renderFotoPerfil(false)}
+                                    <div className="flex flex-col px-8 py-4 gap-4 grow max-[750px]:mt-4 bg-white/40 rounded-t-[1rem] min-h-[192px]">
+                                        <h2 className="font-semibold text-brand-dark text-[1.1rem] mt-4">Alterar Senha</h2>
 
-                            <label className={inputClass}>
-                                <LockKey size="1.25rem" className="text-primary shrink-0" />
-                                <input type="password" required placeholder="Senha atual" value={senhaAtual} onChange={(e) => setSenhaAtual(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                            </label>
+                                        <label className={inputClass}>
+                                            <LockKey size="1.25rem" className="text-primary shrink-0" />
+                                            <input type="password" required placeholder="Senha atual" value={senhaAtual} onChange={(e) => setSenhaAtual(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                        </label>
+                                    </div>
+                                </div>
 
-                            <label className={inputClass}>
-                                <LockKey size="1.25rem" className="text-primary shrink-0" />
-                                <input type="password" required placeholder="Nova senha" value={novaSenha} onChange={(e) => setNovaSenha(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                            </label>
+                                <div className="flex flex-col p-8 rounded-bl-[1rem] rounded-br-[1rem] rounded-tl-[1rem] gap-4 bg-white/40">
+                                    <label className={inputClass}>
+                                        <LockKey size="1.25rem" className="text-primary shrink-0" />
+                                        <input type="password" required placeholder="Nova senha" value={novaSenha} onChange={(e) => setNovaSenha(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                    </label>
 
-                            <label className={inputClass}>
-                                <LockKey size="1.25rem" className="text-primary shrink-0" />
-                                <input type="password" required placeholder="Confirmar nova senha" value={confirmarNovaSenha} onChange={(e) => setConfirmarNovaSenha(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
-                            </label>
+                                    <label className={inputClass}>
+                                        <LockKey size="1.25rem" className="text-primary shrink-0" />
+                                        <input type="password" required placeholder="Confirmar nova senha" value={confirmarNovaSenha} onChange={(e) => setConfirmarNovaSenha(e.target.value)} className="w-full bg-transparent placeholder:text-primary focus:outline-none" />
+                                    </label>
 
-                            {senhaErro && <p className="text-sm text-red-500">{senhaErro}</p>}
-                            {senhaSucesso && <p className="text-sm text-green-600">{senhaSucesso}</p>}
+                                    {senhaErro && <p className="text-sm text-red-500">{senhaErro}</p>}
+                                    {senhaSucesso && <p className="text-sm text-green-600">{senhaSucesso}</p>}
 
-                            <div className="flex items-center justify-end">
-                                <button type="submit" className={saveButtonClass}>Alterar Senha</button>
-                            </div>
-                        </form>
+                                    <div className="flex items-center justify-end gap-2 mt-4">
+                                        <button type="submit" className={saveButtonClass}>Alterar Senha</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     }
 
                     {activeTab === 'pagamento' &&
-                        <div className={cardClass}>
-                            <div className="flex items-center justify-between">
-                                <h2 className="font-semibold text-brand-dark text-[1.1rem]">Formas de Pagamento</h2>
-                                {!cartaoForm &&
-                                    <button type="button" onClick={() => setCartaoForm(true)} className="flex items-center gap-1 text-brand-dark text-[0.85rem] hover:underline">
-                                        <Plus size="1rem" weight="bold" />Adicionar Cartão
-                                    </button>
-                                }
+                        <div className="w-full">
+                            <div className="flex flex-row">
+                                {renderFotoPerfil(false)}
+                                <div className="flex flex-col px-8 py-4 gap-4 grow max-[750px]:mt-4 bg-white/40 rounded-t-[1rem] min-h-[192px]">
+                                    <h2 className="font-semibold text-brand-dark text-[1.1rem] mt-4">Formas de Pagamento</h2>
+                                    {!cartaoForm &&
+                                        <button type="button" onClick={() => setCartaoForm(true)} className="flex items-center gap-1 text-brand-dark text-[0.85rem] hover:underline">
+                                            <Plus size="1rem" weight="bold" />Adicionar Cartão
+                                        </button>
+                                    }
+                                </div>
                             </div>
 
+                            <div className="flex flex-col p-8 rounded-bl-[1rem] rounded-br-[1rem] rounded-tl-[1rem] gap-4 bg-white/40">
                             {cartaoForm &&
                                 <form onSubmit={handleSalvarCartao} className="flex flex-col gap-3 rounded-lg bg-white p-3">
                                     <div className="flex items-center justify-between">
@@ -543,11 +582,11 @@ const MeusDados = () => {
                                     </div>
                                 </div>
                             )}
+                            </div>
                         </div>
                     }
                 </div>
             </div>
-        </div>
     )
 }
 
