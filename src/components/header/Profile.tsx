@@ -57,7 +57,12 @@ const Profile = () => {
   return (
     <div ref={containerRef} className="relative flex w-1/2 items-center min-[1000px]:w-auto min-[1000px]:order-4">
       <button type="button" onClick={() => setShowMenu(!showMenu)} className="flex items-center gap-2 border-none bg-transparent cursor-pointer" disabled={mobile}>
-        <div className="h-[60px] w-[60px] rounded-lg bg-brand-dark min-[1000px]:order-2"></div>
+        <div
+          style={user.foto ? { backgroundImage: `url(${user.foto})` } : undefined}
+          className={`h-[60px] w-[60px] flex items-center justify-center rounded-lg bg-cover bg-center min-[1000px]:order-2 ${user.foto ? '' : 'bg-brand-dark'}`}
+        >
+          {!user.foto && <User size="1.75rem" weight="fill" className="text-white/70" />}
+        </div>
         <div className="text-start min-[1000px]:order-1 min-[1000px]:text-end">
           <p className="text-brand-dark">Olá,</p>
           <h3 className="font-semibold text-brand-dark text-[1.17rem]">{user.nome.split(' ')[0]}</h3>

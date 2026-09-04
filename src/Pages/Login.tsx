@@ -89,7 +89,7 @@ const Login = () => {
               />
             </label>
 
-            <button className='p-4 font-medium rounded-lg flex justify-center items-center font-light text-white bg-linear-[-68deg] from-brand-dark to-brand [&_svg]:min-w-6'>Continuar</button>
+            <button className='p-4 font-medium rounded-lg flex justify-center items-center font-light text-white bg-linear-[-68deg] from-brand-dark to-brand [&_svg]:min-w-6 transition-[filter] duration-200 hover:brightness-90 active:brightness-95'>Continuar</button>
           </form>
 
           <div className="w-full border-t border-primary/30" />
@@ -158,7 +158,7 @@ const Login = () => {
 
             {erro && <p className="text-sm text-red-500">{erro}</p>}
 
-            <button className="p-4 font-medium rounded-lg flex justify-center items-center font-light text-white bg-linear-[-68deg] from-brand-dark to-brand [&_svg]:min-w-6" type="submit">{mode === 'login' ? 'Entrar' : 'Criar conta'}</button>
+            <button className="p-4 font-medium rounded-lg flex justify-center items-center font-light text-white bg-linear-[-68deg] from-brand-dark to-brand [&_svg]:min-w-6 transition-[filter] duration-200 hover:brightness-90 active:brightness-95" type="submit">{mode === 'login' ? 'Entrar' : 'Criar conta'}</button>
           </form>
         </>
       )}

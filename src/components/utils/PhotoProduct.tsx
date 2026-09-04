@@ -6,9 +6,10 @@ interface PhotoProductProps {
     shadowImage: number;
     srcImg: string;
     type?: 'Page' | 'Carrinho' | '';
+    noAnimation?: boolean;
 }
 
-const PhotoProduct = ({color1 ,color2 ,shadowImage, srcImg, type = '' }: PhotoProductProps) => {
+const PhotoProduct = ({color1 ,color2 ,shadowImage, srcImg, type = '', noAnimation = false }: PhotoProductProps) => {
     const isPage = type === 'Page';
     const isCarrinho = type === 'Carrinho';
 
@@ -16,7 +17,8 @@ const PhotoProduct = ({color1 ,color2 ,shadowImage, srcImg, type = '' }: PhotoPr
     const moldHeight = isPage ? 135 * 2 : isCarrinho ? 135 * 0.7 : 135;
     const moldWidth = isPage ? 155 * 2 : isCarrinho ? 155 * 0.7 : 155;
     const shadowWidth = isPage ? shadowImage * 2 : isCarrinho ? shadowImage * 0.7 : shadowImage;
-    const imageClass = isPage ? 'h-[310px] w-[250px]' : isCarrinho ? 'h-[108px] w-[87px] group-hover:bottom-[12px]' : 'h-[155px] w-[125px] group-hover:bottom-[15px]';
+    const hoverClass = isCarrinho ? 'group-hover:bottom-[12px]' : 'group-hover:bottom-[15px]';
+    const imageClass = isPage ? 'h-[310px] w-[250px]' : isCarrinho ? `h-[108px] w-[87px] ${noAnimation ? '' : hoverClass}` : `h-[155px] w-[125px] ${noAnimation ? '' : hoverClass}`;
 
   return (
     <div className={`group inline-flex relative justify-center items-end ${containerClass}`}>

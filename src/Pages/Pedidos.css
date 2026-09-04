@@ -1,0 +1,41 @@
+@keyframes PedidoDetalhesIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes PedidoStepLoading {
+    0% {
+        left: -35%;
+        width: 35%;
+    }
+    50% {
+        width: 55%;
+    }
+    100% {
+        left: 100%;
+        width: 35%;
+    }
+}
+
+.pedido-step-loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.pedido-step-loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -35%;
+    width: 35%;
+    border-radius: inherit;
+    background: var(--color-brand);
+    animation: PedidoStepLoading 1.3s ease-in-out infinite;
+}

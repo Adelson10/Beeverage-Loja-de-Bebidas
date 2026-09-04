@@ -5,6 +5,7 @@ import Produto from "../Pages/Produto";
 import Carrinho from "../Pages/Carrinho";
 import Login from "../Pages/Login";
 import Pedidos from "../Pages/Pedidos";
+import MeusDados from "../Pages/MeusDados";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path='/produto/:catalogo/:id/:produto'element={<Produto />}/>
         <Route path='/carrinho' element={<Carrinho />}/>
         <Route path='/pedidos' element={<Pedidos />}/>
+        <Route path='/meus-dados' element={<MeusDados />}/>
         <Route path='/login' element={<Login />}/>
     </Routes>
   )

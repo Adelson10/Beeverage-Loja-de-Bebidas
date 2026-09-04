@@ -60,7 +60,7 @@ const Produto = () => {
               >
                 <SwiperSlide>
                   <div className='relative'>
-                    <PhotoProduct type='Page' color1='#FFFFFF' color2='#CECECE' shadowImage={product[0].thumbnail.shadowWidth} srcImg={product[0].thumbnail.src}/>
+                    <PhotoProduct noAnimation type='Page' color1='#FFFFFF' color2='#CECECE' shadowImage={product[0].thumbnail.shadowWidth} srcImg={product[0].thumbnail.src}/>
                     {product[0].price!==0 && <div style={{backgroundImage: `url(${discountIcon})`}} className='absolute bottom-0 h-[4rem] w-[4rem] bg-cover text-[1rem] bg-center flex items-center justify-center text-white text-[0.6rem]'>{(((product[0].priceNow*100)/product[0].price)-100).toFixed(0)}%</div>}
                   </div>
                 </SwiperSlide>
@@ -103,11 +103,11 @@ const Produto = () => {
               { !mobile && <p>Calcular Frete:</p>}
               <label htmlFor='freight' className="flex items-center justify-between p-2 gap-2 rounded-lg border border-primary max-[750px]:w-full">
                   <input className="border-none bg-transparent outline-none" type="text" id='freight' placeholder='Insirir CEP' autoComplete='false' autoSave='false'/>
-                  <button className="flex items-center justify-between p-2 gap-2 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white hover:bg-brand-dark"><TruckTrailer size={16} weight="fill" /></button>
+                  <button className="flex items-center justify-between p-2 gap-2 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white transition-colors duration-200 hover:bg-brand-dark"><TruckTrailer size={16} weight="fill" /></button>
               </label>
           </div>
           {!mobile &&
-            <button onClick={handleAddToCart} className='w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base hover:bg-brand-dark'><Basket size={20} weight="fill" />Comprar</button>
+            <button onClick={handleAddToCart} className='w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base transition-colors duration-200 hover:bg-brand-dark'><Basket size={20} weight="fill" />Comprar</button>
           }
         </div>
         { mobile &&

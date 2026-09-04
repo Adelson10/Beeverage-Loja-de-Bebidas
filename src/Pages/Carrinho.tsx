@@ -83,7 +83,7 @@ const Carrinho = () => {
             <Basket size={64} weight="fill" color="var(--color-primary)" />
             <h1 className="text-[1.4rem] font-semibold text-secundary">Seu carrinho está vazio</h1>
             <p className="text-primary text-[0.9rem]">Adicione produtos para vê-los por aqui.</p>
-            <Link to="/" className="py-3 px-6 rounded-lg text-white font-normal bg-linear-to-r from-brand to-brand-dark hover:bg-brand-dark">Ver Catálogo</Link>
+            <Link to="/" className="py-3 px-6 rounded-lg text-white font-normal bg-linear-to-r from-brand to-brand-dark transition-colors duration-200 hover:bg-brand-dark">Ver Catálogo</Link>
         </div>
     )
 
@@ -105,13 +105,13 @@ const Carrinho = () => {
                             <div key={product.id} className="flex items-center gap-4 p-4 bg-white/40 rounded-[16px] max-[600px]:gap-2 max-[600px]:p-3 w-full">
                                 <div className="shrink-0 hidden min-[601px]:flex items-center justify-center">
                                     <div className="relative">
-                                        <PhotoProduct color1="#FFFFFF" color2="#CECECE" shadowImage={product.thumbnail.shadowWidth} srcImg={product.thumbnail.src} />
+                                        <PhotoProduct noAnimation color1="#FFFFFF" color2="#CECECE" shadowImage={product.thumbnail.shadowWidth} srcImg={product.thumbnail.src} />
                                         {product.price !== 0 && <div style={{ backgroundImage: `url(${discountIcon})` }} className='absolute bottom-0 h-[35px] w-[35px] bg-center flex items-center justify-center text-white text-[0.6rem]'>{(((product.priceNow * 100) / product.price) - 100).toFixed(0)}%</div>}
                                     </div>
                                 </div>
                                 <div className="shrink-0 flex min-[601px]:hidden items-center justify-center">
                                     <div className="relative">
-                                        <PhotoProduct type="Carrinho" color1="#FFFFFF" color2="#CECECE" shadowImage={product.thumbnail.shadowWidth} srcImg={product.thumbnail.src} />
+                                        <PhotoProduct noAnimation type="Carrinho" color1="#FFFFFF" color2="#CECECE" shadowImage={product.thumbnail.shadowWidth} srcImg={product.thumbnail.src} />
                                         {product.price !== 0 && <div style={{ backgroundImage: `url(${discountIcon})` }} className='absolute bottom-0 h-[35px] w-[35px] bg-center flex items-center justify-center text-white text-[0.6rem]'>{(((product.priceNow * 100) / product.price) - 100).toFixed(0)}%</div>}
                                     </div>
                                 </div>
@@ -184,7 +184,7 @@ const Carrinho = () => {
                             type="button"
                             onClick={calculateFreight}
                             disabled={freightLoading}
-                            className="flex items-center justify-center p-2 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center p-2 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white transition-colors duration-200 hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <TruckTrailer size={16} weight="fill" />
                         </button>
@@ -192,9 +192,9 @@ const Carrinho = () => {
                     {freightError && <p className="text-red-500 text-[0.8rem] max-[750px]:order-1">{freightError}</p>}
                     <label htmlFor="freight" className="flex items-center justify-between p-2 gap-2 rounded-lg border border-primary max-[750px]:order-2">
                         <input className="border-none bg-transparent outline-none w-full text-[0.9rem] text-secundary" type="text" id="freight" placeholder="Codigo de Promoção" autoComplete="off" />
-                        <button className="flex items-center justify-center py-1 px-4 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white hover:bg-brand-dark">Aplicar</button>
+                        <button className="flex items-center justify-center py-1 px-4 bg-linear-to-r from-brand to-brand-dark rounded-lg text-white transition-colors duration-200 hover:bg-brand-dark">Aplicar</button>
                     </label>
-                    <button disabled={!selectedProducts.length} className="max-[750px]:order-6 w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent">
+                    <button disabled={!selectedProducts.length} className="max-[750px]:order-6 w-full py-4 px-2 bg-linear-to-r from-brand to-brand-dark flex items-center justify-center gap-4 rounded-lg text-white font-normal text-base transition-colors duration-200 hover:bg-brand-dark disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent">
                         <Wallet size={20} weight="fill" />Ir para o Pagamento
                     </button>
                     <a href="/" className="text-brand-dark text-center hover:text-brand-dark/80 max-[750px]:order-7">

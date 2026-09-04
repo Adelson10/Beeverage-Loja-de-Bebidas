@@ -7,7 +7,7 @@ import { MenuProps, QuickAcess, sizeIcon } from '../../utils/ProductsMenu/Produc
 
 const catalogoButtonBase = "flex w-[calc((100vw*0.90)/3_-_1rem)] max-w-[130px] items-center justify-center gap-2 rounded-lg px-2 py-3 text-[0.8rem] font-light [&_svg]:min-w-[1.2rem] min-[1000px]:max-w-[135px] min-[1000px]:gap-[0.3rem] min-[1000px]:p-2 min-[1000px]:text-[0.9rem]";
 const catalogoButtonInactive = "bg-white text-brand-dark";
-const catalogoButtonActive = "bg-linear-[-68deg] from-brand-dark to-brand text-white";
+const catalogoButtonActive = "bg-linear-[-68deg] from-brand-dark to-brand text-white transition-[filter] duration-200 hover:brightness-90 active:brightness-95";
 
 const Catalogo = ({mobile} : {mobile: boolean}) => {
     const {CatalogoPage, setCatalogoPage} = useCatalogoPage();
